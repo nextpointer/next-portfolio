@@ -69,8 +69,8 @@ const Cli: NextPage = () => {
   }, [line, logoLines]);
 
   return (
-    <div className="h-screen w-screen flex justify-between items-center text-black font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300">
-      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex">
+    <div className="h-screen w-screen flex justify-between items-center text-black font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300 ">
+      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll no-scrollbar">
         <span className="text-gray-600">Hello! I am Surajit, write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
@@ -90,7 +90,7 @@ const Cli: NextPage = () => {
             value={input}
             onChange={handleInput}
             ref={inputRef}
-            className="w-full bg-transparent border-none focus:outline-none transition-all duration-200 ease-in-out"
+            className="w-full bg-transparent border-none focus:outline-none "
             autoFocus
           />
         </form>
