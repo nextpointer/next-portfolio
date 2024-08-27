@@ -2,7 +2,7 @@
 
 import { NextPage } from "next";
 import { aschiLogo } from "../../../lib/aschii";
-import { useState, useEffect, useRef, useMemo, DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import commandData from "../../../lib/cliObject";
 
 // Define the type for the keys in commandData
@@ -97,7 +97,7 @@ const processCommand = (command: string) => {
 
   return (
     <div className="h-screen w-screen flex justify-between items-center text-white font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300 bg-black ">
-      <div className="terminal md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll pb-24  text-[10px] md:text-[12px]" ref={terminalRef}>
+      <div className="terminal md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll pb-36  text-[10px] md:text-[12px]" ref={terminalRef}>
         <span className="text-gray-200">Hello! <br></br> I am Surajit,a developer,learner and explorer. <br /> write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
