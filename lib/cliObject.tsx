@@ -18,7 +18,7 @@ const commandData = {
     },
     about: {
       description: "Information about Surajit Maity.",
-      result: "I am Surajit Maity, a web developer with expertise in Preact, TypeScript, and more.",
+      result: "I am Surajit Maity, a full stack web developer,love to learn and build new things",
     },
     education: {
       description: "Academic background.",
@@ -38,7 +38,7 @@ const commandData = {
       result: `
         Programming: C, C++, Java, JavaScript, TypeScript, Python
         Front-End Development: HTML, CSS
-        Frameworks: React, Preact, Fresh
+        Frameworks: React, Preact, Fresh, NextJs, Tailwind
         Back-End Development: Node.js, MongoDB
         Frameworks: Express.js
         Cyber Security | Networking: Linux, Penetration testing, Cisco Packet Tracer
@@ -59,20 +59,20 @@ const commandData = {
         Remindify - Client Side Reminder App (Vanilla JS | PWA | IndexDB)
         - Users can add learning concepts and set customized revision reminders.
         - Supports recurring and one-time reminders for flexible scheduling.
-        - Command: 'go remindify'
+        - For live preview type: 'go remindify'
   
         The Next Queue - Movie Recommendation System (Python | Pandas | Scikit-learn)
         - Employed collaborative filtering to analyze user ratings and recommend similar movies.
         - Achieved a 15% increase in recommendation accuracy.
-        - Command: 'go the-next-queue'
+        - For live preview type: 'go the-next-queue'
   
         Mr. Calculator - Web app for arbitrary-precision calculation (Fresh(Meta Framework) | Big.Js)
         - Handles calculations with extremely large numbers beyond JavaScript's limits.
-        - Command: 'go mr-calculator'
+        - For live preview type: 'go mr-calculator'
   
         Mind-Matrix - Mental Health Management Platform (React | ExpressJs | MongoDB)
         - A platform to help users find mental health solutions and interact with a chatbot or a counselor.
-        - Command: 'go mind-matrix'
+        - For live preview type: 'go mind-matrix'
       
         `,
     },
@@ -91,11 +91,11 @@ const commandData = {
     links: {
       description: "External links.",
       result: `
-        Portfolio: https://surajitmaity.netlify.app/
+        Portfolio: https://surajitmaity.vercel.app/
         Facebook: https://www.facebook.com/surajit3112
         Github: https://github.com/nextpointer
         LinkedIn: https://www.linkedin.com/in/surajitmaity3112/
-        X (Twitter): https://twitter.com/necstpointer?t=Ed85VDQ-ydayrwyptQ-lxw&s=09
+        X: https://twitter.com/necstpointer
       `,
     },
     go: {

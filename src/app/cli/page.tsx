@@ -14,6 +14,7 @@ const Cli: NextPage = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState<{ command: string; result: string }[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  const terminalRef = useRef<HTMLDivElement>(null);
 
   // Memoized logo lines for better performance
   const displayedLogoLines = useMemo(() => logoLines.slice(0, line).join("\n"), [line, logoLines]);
@@ -41,18 +42,34 @@ const Cli: NextPage = () => {
   };
 
   // Function for processing commands
-  const processCommand = (command: string) => {
-    const [baseCommand, arg] = command.toLowerCase().split(" ") as [CommandKey, string ];
-    
-    if (baseCommand in commandData) {
-      const commandInfo = commandData[baseCommand];
-      return typeof commandInfo.result === "function"
-        ? commandInfo.result(arg)
-        : commandInfo.result;
-    } else {
-      return `Command not found: ${command}. Type 'help' to see available commands.`;
+const processCommand = (command: string) => {
+  const [baseCommand, arg] = command.toLowerCase().split(" ") as [CommandKey, string ];
+  
+  if (baseCommand in commandData) {
+    const commandInfo = commandData[baseCommand];
+
+    if (baseCommand === "go" && arg) {
+      const result = typeof commandInfo.result === "function" ? commandInfo.result(arg) : commandInfo.result;
+      if (result.startsWith("http")) {
+        window.open(result, "_blank");
+      }
+      return result;
     }
-  };
+
+    if (baseCommand === "/") {
+      setTimeout(() => window.location.assign("/"), 0);
+      return "Returning to the home section...";
+    }
+
+    return typeof commandInfo.result === "function"
+      ? commandInfo.result(arg)
+      : commandInfo.result;
+  } else {
+    return `Command not found: ${command}. Type 'help' to see available commands.`;
+  }
+};
+
+
 
   // Effect to animate ASCII logo display
   useEffect(() => {
@@ -66,10 +83,22 @@ const Cli: NextPage = () => {
     return () => clearInterval(intervalId);
   }, [line, logoLines]);
 
+    // Effect to auto-focus the input field after each output update
+    useEffect(() => {
+      inputRef.current?.focus();
+    }, [output]); 
+
+    useEffect(() => {
+      terminalRef.current?.scrollTo({
+        top: terminalRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }, [output]);
+
   return (
     <div className="h-screen w-screen flex justify-between items-center text-white font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300 bg-black ">
-      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll pb-24 no-scrollbar text-[10px]">
-        <span className="text-gray-200">Hello! I am Surajit, write {"'help'"} for more...</span>
+      <div className="terminal md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll pb-24  text-[10px] md:text-[12px]" ref={terminalRef}>
+        <span className="text-gray-200">Hello! <br></br> I am Surajit,a developer,learner and explorer. <br /> write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
             <div key={index} className="flex flex-col mb-2 transition-opacity duration-200 ease-in-out">
@@ -88,7 +117,7 @@ const Cli: NextPage = () => {
             value={input}
             onChange={handleInput}
             ref={inputRef}
-            className="w-full bg-transparent border-none focus:outline-none "
+            className="w-full bg-transparent caret-green-400 border-none focus:outline-none  "
             autoFocus
           />
         </form>
