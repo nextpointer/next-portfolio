@@ -9,10 +9,9 @@
 }
 
 body {
-  color: #000000; /* Light text color */
   overflow: hidden;
   font-family: Geist;
-  background:url('../../public/nnnoise.svg') repeat , rgb(255, 255, 255);
+  /* background:url('../../public/nnnoise.svg') repeat , rgb(255, 255, 255); */
   width: 100%;
   height: auto;
 }

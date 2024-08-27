@@ -2,7 +2,11 @@
 
 import { NextPage } from "next";
 import { aschiLogo } from "../../../lib/aschii";
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import commandData from "../../../lib/cliObject";
+
+// Define the type for the keys in commandData
+type CommandKey = keyof typeof commandData;
 
 const Cli: NextPage = () => {
   const [line, setLine] = useState(0);
@@ -31,28 +35,22 @@ const Cli: NextPage = () => {
         return;
       }
       const result = processCommand(command);
-      setOutput((prevOutput) => [...prevOutput, { command, result }]);
+      setOutput((prevOutput) => [...prevOutput, { command, result}]);
       setInput("");
     }
   };
 
   // Function for processing commands
   const processCommand = (command: string) => {
-    switch (command.toLowerCase()) {
-      case "help":
-        return "Available commands: 'about', 'skills', 'projects', 'contact', 'clear'";
-      case "about":
-        return "I am Surajit Maity, a web developer with expertise in Preact, TypeScript, and more.";
-      case "skills":
-        return "Skills: Preact, TypeScript, JavaScript, HTML, CSS, Node.js, React, and more.";
-      case "projects":
-        return "Project 1: MyPortfolio - A Preact-based portfolio website.\nProject 2: WaveApp - A web app with a 'wave feeling' effect.";
-      case "contact":
-        return "Email: surajit@example.com\nLinkedIn: linkedin.com/in/surajitmaity";
-      case "clear":
-        return "";
-      default:
-        return `Command not found: ${command}. Type 'help' to see available commands.`;
+    const [baseCommand, arg] = command.toLowerCase().split(" ") as [CommandKey, string ];
+    
+    if (baseCommand in commandData) {
+      const commandInfo = commandData[baseCommand];
+      return typeof commandInfo.result === "function"
+        ? commandInfo.result(arg)
+        : commandInfo.result;
+    } else {
+      return `Command not found: ${command}. Type 'help' to see available commands.`;
     }
   };
 
@@ -69,17 +67,17 @@ const Cli: NextPage = () => {
   }, [line, logoLines]);
 
   return (
-    <div className="h-screen w-screen flex justify-between items-center text-black font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300 ">
-      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll no-scrollbar">
-        <span className="text-gray-600">Hello! I am Surajit, write {"'help'"} for more...</span>
+    <div className="h-screen w-screen flex justify-between items-center text-white font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300 bg-black ">
+      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll no-scrollbar text-[10px]">
+        <span className="text-gray-200">Hello! I am Surajit, write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
             <div key={index} className="flex flex-col mb-2 transition-opacity duration-200 ease-in-out">
-              <span className="text-gray-600">
+              <span className="text-gray-200">
                 <span className="text-green-400">@nextpointer:~$ </span>
                 {item.command}
               </span>
-              {item.result && <span className="text-gray-800 ml-4">{item.result}</span>}
+              {item.result && <pre className="text-gray-200whitespace-pre-wrap">{item.result}</pre>}
             </div>
           ))}
         </div>
@@ -95,7 +93,7 @@ const Cli: NextPage = () => {
           />
         </form>
       </div>
-      <pre className="text-[0.5vw] w-full md:w-1/2 font-mono whitespace-pre-wrap flex justify-center items-center transition-opacity duration-200 ease-in-out">
+      <pre className="text-[0.5vw] w-full md:w-1/2 text-green-400 font-mono whitespace-pre-wrap flex justify-center items-center transition-opacity duration-200 ease-in-out">
         {displayedLogoLines}
       </pre>
     </div>
