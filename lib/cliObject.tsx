@@ -2,18 +2,18 @@ const commandData = {
     help: {
       description: "Available commands: 'about', 'education', 'skills', 'experience', 'projects', 'interests', 'contact', 'links', 'clear', 'go [project-name]', '/'",
       result: `
-        Available commands:
-        - 'about': Information about Surajit Maity.
-        - 'education': Academic background.
-        - 'skills': List of technical skills.
-        - 'experience': Work experience.
-        - 'projects': Overview of projects.
-        - 'interests': Personal interests.
-        - 'contact': Contact information.
-        - 'links': External links.
-        - 'clear': Clears the terminal.
-        - 'go [project-name]': Redirects to the project link.
-        - '/': Return to the home section.
+    Available commands:
+     - 'about': Information about Surajit Maity.
+     - 'education': Academic background.
+     - 'skills': List of technical skills.
+     - 'experience': Work experience.
+     - 'projects': Overview of projects.
+     - 'interests': Personal interests.
+     - 'contact': Contact information.
+     - 'links': External links.
+     - 'clear': Clears the terminal.
+     - 'go [project-name]': Redirects to the project link.
+     - '/': Return to the home section.
       `,
     },
     about: {

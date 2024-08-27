@@ -68,7 +68,7 @@ const Cli: NextPage = () => {
 
   return (
     <div className="h-screen w-screen flex justify-between items-center text-white font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300 bg-black ">
-      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll no-scrollbar text-[10px]">
+      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex overflow-y-scroll pb-24 no-scrollbar text-[10px]">
         <span className="text-gray-200">Hello! I am Surajit, write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
@@ -77,7 +77,7 @@ const Cli: NextPage = () => {
                 <span className="text-green-400">@nextpointer:~$ </span>
                 {item.command}
               </span>
-              {item.result && <pre className="text-gray-200whitespace-pre-wrap">{item.result}</pre>}
+              {item.result && <pre className="text-gray-200 whitespace-pre-wrap">{item.result}</pre>}
             </div>
           ))}
         </div>
