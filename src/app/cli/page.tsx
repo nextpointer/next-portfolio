@@ -2,7 +2,7 @@
 
 import { NextPage } from "next";
 import { aschiLogo } from "../../../lib/aschii";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 
 const Cli: NextPage = () => {
   const [line, setLine] = useState(0);
@@ -10,6 +10,9 @@ const Cli: NextPage = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState<{ command: string; result: string }[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Memoized logo lines for better performance
+  const displayedLogoLines = useMemo(() => logoLines.slice(0, line).join("\n"), [line, logoLines]);
 
   // Function for handling the input
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,7 +26,7 @@ const Cli: NextPage = () => {
     if (command) {
       if (command.toLowerCase() === "clear") {
         setOutput((prevOutput) => [...prevOutput, { command, result: "" }]);
-        setTimeout(() => setOutput([]), 0); // Slight delay before clearing output to show the "clear" command
+        setTimeout(() => setOutput([]), 200); // Slight delay before clearing output to show the "clear" command
         setInput("");
         return;
       }
@@ -57,7 +60,7 @@ const Cli: NextPage = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (line < logoLines.length) {
-        setLine(line + 1);
+        setLine((prevLine) => prevLine + 1);
       } else {
         clearInterval(intervalId);
       }
@@ -66,31 +69,34 @@ const Cli: NextPage = () => {
   }, [line, logoLines]);
 
   return (
-    <div className="h-screen w-screen flex justify-between items-center text-black font-mono flex-col-reverse md:flex-row">
+    <div className="h-screen w-screen flex justify-between items-center text-black font-mono flex-col-reverse md:flex-row transition-all ease-in-out duration-300">
       <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex">
         <span className="text-gray-600">Hello! I am Surajit, write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
-            <div key={index} className="flex flex-col mb-2">
-              <span className="text-gray-600"><span className="text-green-400">@nextpointer:~$ </span>{item.command}</span>
+            <div key={index} className="flex flex-col mb-2 transition-opacity duration-200 ease-in-out">
+              <span className="text-gray-600">
+                <span className="text-green-400">@nextpointer:~$ </span>
+                {item.command}
+              </span>
               {item.result && <span className="text-gray-800 ml-4">{item.result}</span>}
             </div>
           ))}
         </div>
         <form onSubmit={handleSubmit} className="flex">
-        <span className="text-green-400 pr-2">@nextpointer:~$ </span>
+          <span className="text-green-400 pr-2">@nextpointer:~$ </span>
           <input
             type="text"
             value={input}
             onChange={handleInput}
             ref={inputRef}
-            className="w-full bg-transparent border-none focus:outline-none"
+            className="w-full bg-transparent border-none focus:outline-none transition-all duration-200 ease-in-out"
             autoFocus
           />
         </form>
       </div>
-      <pre className="text-[0.5vw] w-full md:w-1/2 font-mono whitespace-pre-wrap flex justify-center items-center">
-        {logoLines.slice(0, line).join("\n")}
+      <pre className="text-[0.5vw] w-full md:w-1/2 font-mono whitespace-pre-wrap flex justify-center items-center transition-opacity duration-200 ease-in-out">
+        {displayedLogoLines}
       </pre>
     </div>
   );
