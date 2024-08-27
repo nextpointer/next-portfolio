@@ -67,7 +67,7 @@ const Cli: NextPage = () => {
 
   return (
     <div className="h-screen w-screen flex justify-between items-center text-black font-mono flex-col-reverse md:flex-row">
-      <div className="w-1/2 h-screen p-4 flex-col flex">
+      <div className="md:w-1/2 w-screen h-screen p-4 flex-col flex">
         <span className="text-gray-600">Hello! I am Surajit, write {"'help'"} for more...</span>
         <div className="terminal-output mt-1">
           {output.map((item, index) => (
@@ -89,7 +89,7 @@ const Cli: NextPage = () => {
           />
         </form>
       </div>
-      <pre className="text-[0.5vw] font-mono whitespace-pre-wrap text-gray-600 p-4 w-1/2 border-l-2 border-gray-300">
+      <pre className="text-[0.5vw] w-full md:w-1/2 font-mono whitespace-pre-wrap flex justify-center items-center">
         {logoLines.slice(0, line).join("\n")}
       </pre>
     </div>
