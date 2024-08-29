@@ -18,8 +18,7 @@ body {
 }
 
 
-.terminal::-webkit-scrollbar {
-  display: none;
+.terminal{
   scrollbar-width: none;
 }
 

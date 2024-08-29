@@ -84,7 +84,6 @@ const commandData = {
       description: "Contact information.",
       result: `
         Email: maitysurajit0901@gmail.com
-        Phone: 8670039246
         LinkedIn: https://www.linkedin.com/in/surajitmaity3112/
       `,
     },
