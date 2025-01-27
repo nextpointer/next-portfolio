@@ -102,7 +102,7 @@ const commandData = {
       description: "Redirects to the specified project link.",
       result: (projectName: string) => {
         const projectLinks: Record<string, string> = {
-          remindify: "https://remindmeup.vercel.app",
+          remindify: "https://r69.vercel.app",
           "the-next-queue": "https://www.kaggle.com/code/lazy34/movie-recommendation",
           "mr-calculator": "https://mr-calculator.deno.dev/",
           "mind-matrix": "https://github.com/lazy34/Mind-Matrix",
