@@ -1,6 +1,6 @@
 const commandData = {
     help: {
-      description: "Available commands: 'about', 'education', 'skills', 'experience', 'projects', 'interests', 'contact', 'links', 'clear', 'go [project-name]', '/'",
+      description: "Available commands: 'about', 'education', 'skills', 'experience', 'projects', 'interests', 'contact', 'links', 'clear', 'go [project-name]','download','/'",
       result: `
     Available commands:
      - 'about': Information about Surajit Maity.
@@ -13,6 +13,7 @@ const commandData = {
      - 'links': External links.
      - 'clear': Clears the terminal.
      - 'go [project-name]': Redirects to the project link.
+     - 'download': To download my resume.
      - '/': Return to the home section.
       `,
     },
@@ -108,6 +109,10 @@ const commandData = {
         };
         return projectLinks[projectName] || `Project not found: ${projectName}.`;
       },
+    },
+    download: {
+      description: "Download my resume.",
+      result: "Downloading resume...",
     },
     "/": {
       description: "Return to the home section.",

@@ -61,6 +61,12 @@ const processCommand = (command: string) => {
       return "Returning to the home section...";
     }
 
+    if (baseCommand === "download") {
+      const pdfUrl = "https://drive.google.com/file/d/1H1v90cuUdzqWg4LSD799cue5Xa8IXPEr/view?usp=sharing";
+      window.open(pdfUrl, "_blank");
+    }
+
+
     return typeof commandInfo.result === "function"
       ? commandInfo.result(arg)
       : commandInfo.result;
