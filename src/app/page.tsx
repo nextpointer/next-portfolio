@@ -16,7 +16,7 @@ export default function Home() {
       <span className="mt-2 ">
         I am full-stack developer, love to explore and build things
       </span>
-      <h2 className="mt-4 font-bold text-base">What i'm up to</h2>
+      <h2 className="mt-4 font-bold text-base">What i&apos;m up to</h2>
       <p className="ml-4 mt-2">CS undergradute.Still finding who am i {":}"}</p>
       <h2 className="mt-4 font-bold text-base">My Works</h2>
       <ul className="list-disc ml-8 mt-2 underline decoration-gray-500 underline-offset-2">
