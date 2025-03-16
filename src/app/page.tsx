@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex h-screen flex-col items-center justify-center bg-[#09090b] text-white overflow-scroll">
+    <main className="flex h-screen flex-col items-center justify-start sm:justify-center bg-[#09090b] text-white overflow-scroll">
       <div className="p-4">
       <div className="flex items-center w-[100%] justify-between ">
         <div className="h-8 overflow-hidden">
