@@ -4,7 +4,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-start justify-start p-8 xl:p-24 xl:pl-[32rem] bg-[#09090b] text-white">
       <div className="flex items-center w-[100%] md:w-[46%] justify-between ">
-        <h1 className="text-2xl">Surajit Maity</h1>
+        <div className="h-8 overflow-hidden">
+          <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
+            Surajit Maity <br></br> nextpointer
+          </h1>
+          {/* <h1 className="text-2xl transition-transform duration-300 hover:translate-y-4">nextpointer</h1> */}
+        </div>
         <div className="flex items-center justify-center gap-2">
           <span className="relative flex size-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
@@ -13,11 +18,11 @@ export default function Home() {
           <span>Open to work</span>
         </div>
       </div>
-      <span className="mt-2 ">
-        I am full-stack developer, love to explore and build things
+      <span className="mt-2">
+        I am full-stack developer, love to learn and build things
       </span>
       <h2 className="mt-4 font-bold text-base">What i&apos;m up to</h2>
-      <p className="ml-4 mt-2">CS undergradute.Still finding who am i {":}"}</p>
+      <p className="ml-4 mt-2">CS undergradute. Still finding who am i {":}"}</p>
       <h2 className="mt-4 font-bold text-base">My Works</h2>
       <ul className="list-disc ml-8 mt-2 underline decoration-gray-500 underline-offset-2">
         <li>
@@ -90,22 +95,19 @@ export default function Home() {
               <path d="M9 18c-4.51 2-5-2-7-2" />
             </svg>
           </Link>
-          <Link href="https://www.instagram.com/necstpointer/">
+          <Link href="https://x.com/necstpointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
-              viewBox="0 0 24 24"
+              viewBox="0 0 50 50"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              className="lucide lucide-instagram"
             >
-              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
             </svg>
           </Link>
           <Link href="https://www.linkedin.com/in/surajitmaity3112/">
@@ -129,7 +131,8 @@ export default function Home() {
         </div>
       </div>
       <span className="ml-4 mt-2">
-        The greatest ideas come from collaboration.Feel free to reach out {":)"}
+        The greatest ideas come from collaboration. Feel free to reach out{" "}
+        {":)"}
       </span>
     </main>
   );
