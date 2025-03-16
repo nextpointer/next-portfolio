@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-start justify-start p-8 xl:p-24 xl:pl-[32rem] bg-[#09090b] text-white">
-      <div className="flex items-center w-[100%] md:w-[46%] justify-between ">
+    <main className="flex h-screen flex-col items-center justify-center bg-[#09090b] text-white overflow-scroll">
+      <div className="p-4">
+      <div className="flex items-center w-[100%] justify-between ">
         <div className="h-8 overflow-hidden">
           <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
             Surajit Maity <br></br> nextpointer
           </h1>
-          {/* <h1 className="text-2xl transition-transform duration-300 hover:translate-y-4">nextpointer</h1> */}
         </div>
         <div className="flex items-center justify-center gap-2">
           <span className="relative flex size-3">
@@ -18,9 +18,9 @@ export default function Home() {
           <span>Open to work</span>
         </div>
       </div>
-      <span className="mt-2">
+      <p className="mt-2">
         I am full-stack developer, love to learn and build things
-      </span>
+      </p>
       <h2 className="mt-4 font-bold text-base">What i&apos;m up to</h2>
       <p className="ml-4 mt-2">CS undergradute. Still finding who am i {":}"}</p>
       <h2 className="mt-4 font-bold text-base">My Works</h2>
@@ -58,7 +58,7 @@ export default function Home() {
         See More...
       </Link>
       <h2 className="mt-4 font-bold text-base">Experience</h2>
-      <div className="md:w-[50%] w-full flex justify-between items-center">
+      <div className=" w-full flex justify-between items-center">
         <span className="m-2 ml-4">
           Math Coders Pvt. Ltd
           <span className="font-light italic">
@@ -70,7 +70,7 @@ export default function Home() {
         </span>
       </div>
       <h2 className="mt-4 font-bold text-base">Contact Me</h2>
-      <div className="w-full xl:w-[50%] mt-2 flex justify-between items-center flex-row">
+      <div className="w-full mt-2 flex justify-between items-center flex-row">
         <Link
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"
           className="ml-4 italic underline decoration-gray-500 underline-offset-2"
@@ -134,6 +134,7 @@ export default function Home() {
         The greatest ideas come from collaboration. Feel free to reach out{" "}
         {":)"}
       </span>
+      </div>
     </main>
   );
 }
