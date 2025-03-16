@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex h-screen flex-col items-center justify-start pt-4 sm:pt-0 sm:justify-center bg-[#09090b] text-white overflow-scroll">
-      <div className="p-4">
+    <main className="flex h-screen flex-col items-center justify-center  bg-[#09090b] text-white overflow-scroll">
+      <div className="p-4 pt-0">
       <div className="flex items-center w-[100%] justify-between ">
         <div className="h-8 overflow-hidden">
           <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
