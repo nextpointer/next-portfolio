@@ -4,13 +4,13 @@
 
 
 @font-face {
-  font-family: Geist;
-  src: url(../../public/Fonts/GeistVF.ttf);
+  font-family: GeistMono;
+  src: url(../../public/Fonts/GeistMonoVF.woff);
 }
 
 body {
   overflow: hidden;
-  font-family: Geist;
+  font-family: GeistMono;
   background-color: rgb(236, 236, 236);
   /* background:url('../../public/nnnoise.svg') repeat , rgb(255, 255, 255); */
   width: 100%;
