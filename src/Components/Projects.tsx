@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from 'next/link'; // Make sure to import Link from Next.js
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -41,11 +42,12 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div 
             key={index} 
-            className='flex flex-col w-full mb-4 transition-all duration-200 border-[#6c6c6c] ease-linear hover:border hover:border-[#6c6c6c] hover:text-[#d6d6d6] hover:outline-2 hover:py-2 hover:px-3 rounded-lg' >
+            className='flex flex-col w-full mb-4 transition-all duration-200 border-[#6c6c6c] ease-linear hover:border rounded-lg group projects-border' > 
             <div className='flex flex-row w-full justify-between'>
-              <h3 className=''>
-                <Link href={project.url} target="_blank" rel="noopener noreferrer">
+              <h3 className='flex items-center gap-1'>
+                <Link href={project.url} target="_blank" rel="noopener noreferrer" className='flex items-center gap-1'>
                   {project.title}
+                  <ArrowUpRight className='h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 project-link' /> 
                 </Link>
               </h3>
               <span>{project.date}</span>

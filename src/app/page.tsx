@@ -1,10 +1,11 @@
 import Projects from "@/Components/Projects";
 import Link from "next/link";
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
   return (
     <main className="h-dvh flex flex-col items-center bg-[#09090b] text-[#818181] overflow-auto ">
-      <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-8">
+      <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8">
       <div className="flex items-center w-[100%] justify-between ">
         <div className="h-8 overflow-hidden">
           <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8 text-[#d6d6d6]">
@@ -30,10 +31,10 @@ export default function Home() {
       <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">My Works</h2>
       <Projects/>
       <Link
-        className="underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
+        className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
         href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
       >
-        See More...
+        See More<ArrowUpRight className="h-4"/>
       </Link>
       <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">Experience</h2>
       <div className=" w-full flex justify-between items-center">
