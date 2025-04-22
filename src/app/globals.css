@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: GeistMono;
-  src: url(../../public/Fonts/GeistMonoVF.woff);
+  src: url('/Fonts/GeistMonoVF.woff') format('woff');
+  font-display: swap;
 }
 
 body {
