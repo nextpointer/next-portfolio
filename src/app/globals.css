@@ -23,14 +23,3 @@ body {
 
 
 
-.projects-border:hover{
-  border: 1px solid #6c6c6c;
-  color: #d6d6d6;
-  padding: 12px 8px;
-}
-
-.projects-border:hover .project-link{
-  opacity: 100;
-}
-
-
