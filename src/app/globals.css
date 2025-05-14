@@ -1,17 +1,7 @@
 @import "tailwindcss";
 
-
-@font-face {
-  font-family: GeistMono;
-  src: url('/Fonts/GeistMonoVF.woff') format('woff');
-  font-display: swap;
-}
-
 body {
   overflow: hidden;
-  font-family: GeistMono;
-  background-color: rgb(236, 236, 236);
-  /* background:url('../../public/nnnoise.svg') repeat , rgb(255, 255, 255); */
   width: 100%;
   height: auto;
 }
@@ -21,5 +11,32 @@ body {
   scrollbar-width: none;
 }
 
+.glow-hover {
+  position: relative;
+  transition: border-color 0.3s ease;
+}
 
+.glow-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    300px circle at var(--x, 50%) var(--y, 50%),
+    rgba(208, 208, 208, 0.15),
+    transparent
+  );
+}
+
+.glow-hover:hover::before {
+  opacity: 1;
+}
+
+.glow-hover:hover {
+  border-color: #00000035;
+  box-shadow: 0 0 20px #ffffff14;
+}
 

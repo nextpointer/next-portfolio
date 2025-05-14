@@ -17,7 +17,7 @@ export default function Home() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
             <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
           </span>
-          <span className="text-red-100">Open to work</span>
+          <span className="text-red-100 text-[0.8rem] leading-3">Open to work</span>
         </div>
       </div>
       <p className="mt-2">
@@ -118,3 +118,5 @@ export default function Home() {
     </main>
   );
 }
+
+export const dynamic = "force-static"; 

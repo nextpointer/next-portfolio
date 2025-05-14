@@ -1,9 +1,11 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-// icons
+
+// Icons
 import Next from "../../public/logos--nextjs-icon.svg";
 import Gemini from "../../public/gemini.svg";
 import Drizzle from "../../public/drizzle-orm_dark.svg";
@@ -37,36 +39,29 @@ const Projects = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent, card: HTMLDivElement) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      card.style.setProperty("--x", `${x}px`);
-      card.style.setProperty("--y", `${y}px`);
-    };
+    const handlers: ((e: MouseEvent) => void)[] = [];
 
-    const addMouseMoveListeners = () => {
-      cardsRef.current.forEach((card) => {
-        if (card) {
-          card.addEventListener("mousemove", (e) => handleMouseMove(e, card));
-        }
-      });
-    };
+    cardsRef.current.forEach((card, index) => {
+      if (!card) return;
 
-    const removeMouseMoveListeners = () => {
-      cardsRef.current.forEach((card) => {
-        if (card) {
-          card.removeEventListener("mousemove", (e) =>
-            handleMouseMove(e as MouseEvent, card)
-          );
-        }
-      });
-    };
+      const handler = (e: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--x", `${x}px`);
+        card.style.setProperty("--y", `${y}px`);
+      };
 
-    addMouseMoveListeners();
+      handlers[index] = handler;
+      card.addEventListener("mousemove", handler);
+    });
 
     return () => {
-      removeMouseMoveListeners();
+      cardsRef.current.forEach((card, index) => {
+        if (card && handlers[index]) {
+          card.removeEventListener("mousemove", handlers[index]);
+        }
+      });
     };
   }, []);
 
@@ -110,7 +105,7 @@ const Projects = () => {
       url: "https://github.com/nextpointer/Mr.-Calculator",
       techStack: [Fresh, Deno],
       liveLink: "https://mr-calculator.deno.dev/"
-    },
+    }
   ];
 
   return (
@@ -121,42 +116,44 @@ const Projects = () => {
           ref={(el) => {
             cardsRef.current[index] = el;
           }}
-          className="relative flex flex-col w-full mb-4 ease-linear rounded-lg group border border-gray-800 p-4 hover:before:opacity-100 before:content-[''] before:opacity-0 before:transition-opacity before:duration-500 before:absolute before:inset-0 before:rounded-lg before:pointer-events-none before:bg-[radial-gradient(300px_circle_at_var(--x,_100px)_var(--y,_100px),rgba(48, 92, 163, 0.1)]"
+          className="glow-hover border border-gray-800 rounded-lg p-4 mb-4 group"
         >
           <div className="flex flex-row w-full justify-between">
-            <h3 className="flex items-center gap-1">
+            <h3 className="flex items-center gap-1 text-lg font-semibold">
               <Link
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1"
+                className="flex items-center gap-1 hover:underline"
               >
                 {project.title}
                 <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
               </Link>
             </h3>
             <Link href={project.url} target="_blank" rel="noopener noreferrer">
-              <Image 
-                src={MovingGithub} 
-                alt="GitHub" 
-                width={24} 
-                height={24} 
+              <Image
+                src={MovingGithub}
+                alt="GitHub"
+                width={24}
+                height={24}
                 className="h-5 w-5"
               />
             </Link>
           </div>
-          <div className="flex flex-col gap-2">
-            <p className="text-sm">{project.about}</p>
+
+          <div className="flex flex-col gap-2 mt-1">
+            <p className="text-sm text-gray-300">{project.about}</p>
             <div className="flex flex-row justify-between items-center">
               <div className="flex flex-row gap-2">
                 {project.techStack.map((tech, techIndex) => (
                   <Image
                     key={techIndex}
                     src={tech}
-                    alt={`${project.title} tech stack icon`}
+                    alt={`${project.title} tech`}
                     width={24}
                     height={24}
                     className="h-5 w-5 object-contain"
+                    loading="lazy"
                   />
                 ))}
               </div>
