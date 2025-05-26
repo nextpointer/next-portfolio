@@ -20,13 +20,13 @@ export default function Home() {
           <span className="text-red-100 text-[0.8rem] leading-3">Open to work</span>
         </div>
       </div>
-      <p className="mt-8 text-sm leading-5">
+      <p className="mt-8 text-sm leading-6">
         I&apos;m full-stack developer from India, love to explore, build things and solving problems.
       </p>
-      <p className="mt-4 text-sm leading-5">
+      <p className="mt-4 text-sm leading-6">
         Now building <Link href={"https://github.com/nextpointer/careflow"} className="underline decoration-gray-500 underline-offset-3">careflow </Link>💊- a secure healthcare system that enables efficient patient management and communication.
       </p>
-      <h2 className="mt-4 font-bold text-base">What i&apos;m up to</h2>
+      <h2 className="mt-8 font-bold text-base">What i&apos;m up to</h2>
       <p className="mt-1 text-sm leading-5">CS undergradute. Still finding who am i {":}"}</p>
       <h2 className="mt-4 font-bold text-base">My Works 🍀</h2>
       <Projects/>
