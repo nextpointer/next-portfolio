@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <main className="h-dvh flex flex-col items-center bg-[#09090b] text-[#818181] overflow-auto ">
+    <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto ">
       <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8">
       <div className="flex items-center w-[100%] justify-between ">
         <div className="h-8 overflow-hidden">
@@ -20,14 +20,14 @@ export default function Home() {
           <span className="text-red-100 text-[0.8rem] leading-3">Open to work</span>
         </div>
       </div>
-      <p className="mt-2">
-        I&apos;m full-stack developer from India, love to explore, build things and solving problems
+      <p className="mt-8 md:text-sm">
+        I&apos;m full-stack developer from India, love to explore, build things and solving problems.
       </p>
-      <p className="mt-2">
-        Now building <Link href={"https://piplup-quiz.vercel.app"} className="text-[#d6d6d6] underline decoration-gray-500 underline-offset-3">piplup</Link> - a AI integrated quiz app that enable users to create quizzes using AI and participate in quizzes 
+      <p className="mt-1 md:text-sm">
+        Now building <Link href={"https://github.com/nextpointer/careflow"} className="text-[#d6d6d6] underline decoration-gray-500 underline-offset-3">careflow</Link> - a secure healthcare system that enables efficient patient management and communication.
       </p>
       <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">What i&apos;m up to</h2>
-      <p className="mt-2">CS undergradute. Still finding who am i {":}"}</p>
+      <p className="mt-1 md:text-sm">CS undergradute. Still finding who am i {":}"}</p>
       <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">My Works</h2>
       <Projects/>
       <Link
