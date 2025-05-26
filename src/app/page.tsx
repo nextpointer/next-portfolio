@@ -8,7 +8,7 @@ export default function Home() {
       <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8">
       <div className="flex items-center w-[100%] justify-between ">
         <div className="h-8 overflow-hidden">
-          <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8 text-[#d6d6d6]">
+          <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
             Surajit Maity <br></br> nextpointer
           </h1>
         </div>
@@ -20,15 +20,15 @@ export default function Home() {
           <span className="text-red-100 text-[0.8rem] leading-3">Open to work</span>
         </div>
       </div>
-      <p className="mt-8 md:text-sm">
+      <p className="mt-8 text-sm leading-5">
         I&apos;m full-stack developer from India, love to explore, build things and solving problems.
       </p>
-      <p className="mt-1 md:text-sm">
-        Now building <Link href={"https://github.com/nextpointer/careflow"} className="text-[#d6d6d6] underline decoration-gray-500 underline-offset-3">careflow</Link> - a secure healthcare system that enables efficient patient management and communication.
+      <p className="mt-4 text-sm leading-5">
+        Now building <Link href={"https://github.com/nextpointer/careflow"} className="underline decoration-gray-500 underline-offset-3">careflow </Link>💊- a secure healthcare system that enables efficient patient management and communication.
       </p>
-      <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">What i&apos;m up to</h2>
-      <p className="mt-1 md:text-sm">CS undergradute. Still finding who am i {":}"}</p>
-      <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">My Works</h2>
+      <h2 className="mt-4 font-bold text-base">What i&apos;m up to</h2>
+      <p className="mt-1 text-sm leading-5">CS undergradute. Still finding who am i {":}"}</p>
+      <h2 className="mt-4 font-bold text-base">My Works 🍀</h2>
       <Projects/>
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
@@ -36,23 +36,23 @@ export default function Home() {
       >
         See More<ArrowUpRight className="h-4"/>
       </Link>
-      <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">Experience</h2>
+      <h2 className="mt-4 font-bold text-base">Experience</h2>
       <div className=" w-full flex justify-between items-center">
-        <span className="m-2 ml-0">
-          Math Coders Pvt. Ltd
-          <span className="font-light italic">
-            &nbsp;&nbsp;&nbsp;&nbsp;Developer
+        <span className="m-1 ml-0 text-sm">
+          Math Coders
+          <span className="font-light italic bg-[#1f1f1f] ml-4 p-2 rounded-4xl text-sm">
+            Developer
           </span>
         </span>
-        <span className="md:text-base font-light text-[15px]">
+        <span className="font-light text-sm max-w-28 md:max-w-full">
           Jun 2024 - Aug 2024
         </span>
       </div>
-      <h2 className="mt-4 font-bold text-base text-[#d6d6d6]">Contact Me</h2>
-      <div className="w-full mt-2 flex justify-between items-center flex-row">
+      <h2 className="mt-4 font-bold text-base">Contact Me</h2>
+      <div className="w-full mt-1 flex justify-between items-center flex-row">
         <Link
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"
-          className="italic underline decoration-gray-500 underline-offset-2 hover:text-[#d6d6d6]"
+          className="italic underline decoration-gray-500 underline-offset-2 text-sm"
         >
           maitysurajit0901@gmail.com
         </Link>
@@ -110,7 +110,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <span className="mt-2">
+      <span className="mt-2 text-sm leadin-5">
         The greatest ideas come from collaboration. Feel free to reach out{" "}
         {":)"}
       </span>
