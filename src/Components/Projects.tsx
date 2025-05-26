@@ -173,10 +173,9 @@ const Projects = () => {
             <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
               <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
                 {project.techStack.map((tech, techIndex) => (
-                  <span className="mt-1 text-[10px] flex flex-row items-center justify-center pl-2 pr-2 pt-1 pb-1 gap-2 bg-[#1f1f1f] rounded-md min-w-20">
+                  <span key={techIndex} className="mt-1 text-[10px] flex flex-row items-center justify-center pl-2 pr-2 pt-1 pb-1 gap-2 bg-[#1f1f1f] rounded-md min-w-20">
                     
                     <Image
-                      key={techIndex}
                       src={techIcons[tech]}
                       alt={`${project.title} tech`}
                       width={24}
