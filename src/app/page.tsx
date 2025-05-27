@@ -1,12 +1,11 @@
 import Projects from "@/Components/Projects";
 import Link from "next/link";
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto ">
-      <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8">
-      <div className="flex items-center w-[100%] justify-between ">
+    <>
+      <div className="flex items-center w-[100%] justify-between mt-12 md:mt-8">
         <div className="h-8 overflow-hidden">
           <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
             Surajit Maity <br></br> nextpointer
@@ -17,24 +16,38 @@ export default function Home() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
             <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
           </span>
-          <span className="text-red-100 text-[0.8rem] leading-3">Open to work</span>
+          <span className="text-red-100 text-[0.8rem] leading-3">
+            Open to work
+          </span>
         </div>
       </div>
       <p className="mt-8 text-sm leading-6">
-        I&apos;m full-stack developer from India, love to explore, build things and solving problems.
+        I&apos;m full-stack developer from India, love to explore, build things
+        and solving problems.
       </p>
       <p className="mt-4 text-sm leading-6">
-        Now building <Link href={"https://github.com/nextpointer/careflow"} className="underline decoration-gray-500 underline-offset-3">careflow </Link>💊- a secure healthcare system that enables efficient patient management and communication.
+        Now building{" "}
+        <Link
+          href={"https://github.com/nextpointer/careflow"}
+          className="underline decoration-gray-500 underline-offset-3"
+        >
+          careflow{" "}
+        </Link>
+        💊- a secure healthcare system that enables efficient patient management
+        and communication.
       </p>
       <h2 className="mt-8 font-bold text-base">What i&apos;m up to</h2>
-      <p className="mt-1 text-sm leading-5">CS undergradute. Still finding who am i {":}"}</p>
+      <p className="mt-1 text-sm leading-5">
+        CS undergradute. Still finding who am i {":}"}
+      </p>
       <h2 className="mt-4 font-bold text-base">My Works 🍀</h2>
-      <Projects/>
+      <Projects />
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
         href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
       >
-        See More<ArrowUpRight className="h-4"/>
+        See More
+        <ArrowUpRight className="h-4" />
       </Link>
       <h2 className="mt-4 font-bold text-base">Experience</h2>
       <div className=" w-full flex justify-between items-center">
@@ -114,9 +127,8 @@ export default function Home() {
         The greatest ideas come from collaboration. Feel free to reach out{" "}
         {":)"}
       </span>
-      </div>
-    </main>
+    </>
   );
 }
 
-export const dynamic = "force-static"; 
+export const dynamic = "force-static";

@@ -4,10 +4,10 @@ body {
   overflow: hidden;
   width: 100%;
   height: auto;
+  background: #171717;
 }
 
-
-.terminal{
+.terminal {
   scrollbar-width: none;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 .glow-hover::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -42,24 +42,46 @@ body {
 }
 
 .glow-hover > * {
-    position: relative;
-    z-index: 1; 
+  position: relative;
+  z-index: 1;
 }
 
 .glow-hover::after {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    background: #171717f7;
-    border-radius: inherit;
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: #171717f7;
+  border-radius: inherit;
 }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/*page transition class */
+.exit-animation {
+  opacity: 0;
+  transform: translateY(-30px);
+  filter: blur(8px);
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  will-change: opacity, transform, filter;
+}
+.enter-animation {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 1s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  will-change: opacity, transform, filter;
+}
