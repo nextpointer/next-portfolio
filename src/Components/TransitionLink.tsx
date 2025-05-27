@@ -23,13 +23,13 @@ const TransitionLink = ({
     e.preventDefault();
     const body = document.body;
     body.classList.add("exit-animation");
-    await new Promise((res) => setTimeout(res, 1000));
+    await new Promise((res) => setTimeout(res, 700));
     body.classList.remove("exit-animation");
     router.push(href);
     body.classList.add("enter-animation");
     setTimeout(() => {
       body.classList.remove("enter-animation");
-    }, 1000);
+    }, 700);
   };
 
   return (
