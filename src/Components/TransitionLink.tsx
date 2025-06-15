@@ -7,12 +7,14 @@ interface TransitionLinkProps extends LinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  ariaLabel?: string;
 }
 
 const TransitionLink = ({
   href,
   children,
   className,
+  ariaLabel,
   ...props
 }: TransitionLinkProps) => {
   const router = useRouter();
@@ -33,7 +35,7 @@ const TransitionLink = ({
   };
 
   return (
-    <Link href={href} {...props} onClick={handleNavigation}>
+    <Link href={href}  aria-label={ariaLabel} {...props} onClick={handleNavigation}>
       {children}
     </Link>
   );

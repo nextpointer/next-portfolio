@@ -40,7 +40,7 @@ interface TechIcons {
   [key: string]: IconType;
 }
 
-const techIcons:TechIcons = {
+const techIcons: TechIcons = {
   Next: Next,
   ReactJS: ReactJS,
   Neon: Neon,
@@ -67,7 +67,7 @@ const projects: Project[] = [
     date: "2024",
     about: "🌟 A simple AI integrated Quiz App 📚",
     url: "https://github.com/nextpointer/piplup",
-    techStack: ['Next', 'Neon', 'Gemini', 'Langchain', 'Drizzle', 'Auth0'], 
+    techStack: ["Next", "Neon", "Gemini", "Langchain", "Drizzle", "Auth0"],
     liveLink: "https://piplup-quiz.vercel.app/",
   },
   {
@@ -75,7 +75,15 @@ const projects: Project[] = [
     date: "2023",
     about: "🧠 A Mental Health Management platform",
     url: "https://github.com/nextpointer/Mind-Matrix",
-    techStack: ['ReactJS', 'MUI', 'Gemini', 'Zustand', 'Node', 'MongoDB', 'Express'],
+    techStack: [
+      "ReactJS",
+      "MUI",
+      "Gemini",
+      "Zustand",
+      "Node",
+      "MongoDB",
+      "Express",
+    ],
     liveLink: "https://mindrix.vercel.app/",
   },
   {
@@ -83,7 +91,7 @@ const projects: Project[] = [
     date: "2023",
     about: "🏫 An educational course and blog management platform 🚀",
     url: "https://github.com/nextpointer/RYATM",
-    techStack: ['Next', 'Sanity'], // Keep as an array of strings
+    techStack: ["Next", "Sanity"], // Keep as an array of strings
     liveLink: "https://www.theryit.com/",
   },
   {
@@ -91,7 +99,7 @@ const projects: Project[] = [
     date: "2024",
     about: "💸 A simple money-splitting app 🔪",
     url: "https://github.com/nextpointer/SplitIt",
-    techStack: ['ReactJS', 'Hono', 'SQLite', 'Tailwind'],
+    techStack: ["ReactJS", "Hono", "SQLite", "Tailwind"],
     liveLink: "https://github.com/nextpointer/SplitIt",
   },
   {
@@ -99,7 +107,7 @@ const projects: Project[] = [
     date: "2022",
     about: "🔢 A large number calculator 🤯",
     url: "https://github.com/nextpointer/Mr.-Calculator",
-    techStack: ['Fresh', 'Deno'], 
+    techStack: ["Fresh", "Deno"],
     liveLink: "https://mr-calculator.deno.dev/",
   },
 ];
@@ -134,7 +142,6 @@ const Projects = () => {
     };
   }, []);
 
-
   return (
     <div className="flex flex-col w-full mt-2">
       {projects.map((project, index) => (
@@ -157,10 +164,15 @@ const Projects = () => {
                 <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
               </Link>
             </h3>
-            <Link href={project.url} target="_blank" rel="noopener noreferrer">
+            <Link
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View source code of ${project.title} on GitHub`}
+            >
               <Image
                 src={MovingGithub}
-                alt="GitHub"
+                alt=""
                 width={24}
                 height={24}
                 className="h-5 w-5"
@@ -173,11 +185,13 @@ const Projects = () => {
             <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
               <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
                 {project.techStack.map((tech, techIndex) => (
-                  <span key={techIndex} className="mt-1 text-[10px] flex flex-row items-center justify-center pl-2 pr-2 pt-1 pb-1 gap-2 bg-[#1f1f1f] rounded-md min-w-20">
-                    
+                  <span
+                    key={techIndex}
+                    className="mt-1 text-[10px] flex flex-row items-center justify-center pl-2 pr-2 pt-1 pb-1 gap-2 bg-[#1f1f1f] rounded-md min-w-20"
+                  >
                     <Image
                       src={techIcons[tech]}
-                      alt={`${project.title} tech`}
+                      alt={`${tech} logo used in ${project.title}`}
                       width={24}
                       height={24}
                       className="h-5 w-5 object-contain"

@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   authors: [{ name: AUTHOR }],
   creator: CREATOR,
   icons: {
-    icon: '/favicon.ico',
-     apple: "/apple-touch-icon.png",
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
     other: [
       {
         rel: "icon",
@@ -94,7 +94,7 @@ export default function RootLayout({
         <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto">
           <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative">
             <div className="absolute left-0 top-0 flex flex-row gap-4 ml-4 mt-6">
-              <TransitionLink href="/">
+              <TransitionLink href="/" ariaLabel="Home">
                 <div className="relative">
                   <h2 className="text-sm px-2 py-1">Home</h2>
                   <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
@@ -104,7 +104,7 @@ export default function RootLayout({
                 </div>
               </TransitionLink>
 
-              <TransitionLink href="/blog">
+              <TransitionLink href="/blog" ariaLabel="About">
                 <div className="relative">
                   <h2 className="text-sm px-2 py-1">Blog</h2>
                   <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>

@@ -56,9 +56,10 @@ export default function Home() {
         href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="View all projects"
       >
         View all projects
-        <ArrowUpRight className="h-4" />
+        <ArrowUpRight className="h-4" aria-hidden="true" />
       </Link>
       <h2 className="mt-4 font-bold text-base">Experience</h2>
       <div className=" w-full flex justify-between items-center">
@@ -81,7 +82,10 @@ export default function Home() {
           maitysurajit0901@gmail.com
         </Link>
         <div className="flex gap-2">
-          <Link href="https://github.com/nextpointer">
+          <Link
+            href="https://github.com/nextpointer"
+            aria-label="GitHub profile"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -98,7 +102,7 @@ export default function Home() {
               <path d="M9 18c-4.51 2-5-2-7-2" />
             </svg>
           </Link>
-          <Link href="https://x.com/nextpointerX">
+          <Link href="https://x.com/nextpointerX" aria-label="X profile">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -114,7 +118,10 @@ export default function Home() {
               <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
             </svg>
           </Link>
-          <Link href="https://www.linkedin.com/in/surajitmaity3112/">
+          <Link
+            href="https://www.linkedin.com/in/surajitmaity3112/"
+            aria-label="LinkedIn profile"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
