@@ -11,6 +11,32 @@ body {
   scrollbar-width: none;
 }
 
+/* for scrollbar */
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d6d6d6;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d6d6d6 transparent;
+}
+
 .glow-hover {
   position: relative;
   transition: border-color 0.3s ease;
