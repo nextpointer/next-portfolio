@@ -50,7 +50,7 @@ export default function Home() {
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
         href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
       >
-        See More
+        View all projects
         <ArrowUpRight className="h-4" />
       </Link>
       <h2 className="mt-4 font-bold text-base">Experience</h2>
