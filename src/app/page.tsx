@@ -8,7 +8,12 @@ export default function Home() {
     <>
       <div className="flex items-center w-[100%] justify-between mt-8 md:mt-6 ">
         <div className="mt-10 flex flex-row gap-3">
-          <Image alt="" src={"/nextpointer.png"} height={"30"} width={"30"} />
+          <Image
+            alt="icon"
+            src={"/nextpointer.png"}
+            height={"30"}
+            width={"30"}
+          />
           <div className="h-8 overflow-hidden">
             <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
               Surajit Maity <br></br> nextpointer
@@ -49,6 +54,8 @@ export default function Home() {
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
         href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         View all projects
         <ArrowUpRight className="h-4" />
