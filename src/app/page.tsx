@@ -1,27 +1,31 @@
 import Projects from "@/Components/Projects";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div className="flex items-center w-[100%] justify-between mt-12 md:mt-8">
-        <div className="h-8 overflow-hidden">
-          <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
-            Surajit Maity <br></br> nextpointer
-          </h1>
+      <div className="flex items-center w-[100%] justify-between mt-8 md:mt-6 ">
+        <div className="mt-10 flex flex-row gap-3">
+          <Image alt="" src={"/nextpointer.png"} height={"30"} width={"30"} />
+          <div className="h-8 overflow-hidden">
+            <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
+              Surajit Maity <br></br> nextpointer
+            </h1>
+          </div>
         </div>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-2 mt-10">
           <span className="relative flex size-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
             <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
           </span>
-          <span className="text-red-100 text-[0.8rem] leading-3">
+          <span className="text-white text-[0.6rem] md:text-[0.8rem] leading-3">
             Open to work
           </span>
         </div>
       </div>
-      <p className="mt-8 text-sm leading-6">
+      <p className="mt-6 text-sm leading-6">
         I&apos;m full-stack developer from India, love to explore, build things
         and solving problems.
       </p>
@@ -36,7 +40,7 @@ export default function Home() {
         💊- a secure healthcare system that enables efficient patient management
         and communication.
       </p>
-      <h2 className="mt-8 font-bold text-base">What i&apos;m up to</h2>
+      <h2 className="mt-6 font-bold text-base">What i&apos;m up to</h2>
       <p className="mt-1 text-sm leading-5">
         CS undergradute. Still finding who am i {":}"}
       </p>
@@ -123,7 +127,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <span className="mt-2 text-sm leadin-5">
+      <span className="mt-2 text-sm leadin-5 mb-6">
         The greatest ideas come from collaboration. Feel free to reach out{" "}
         {":)"}
       </span>

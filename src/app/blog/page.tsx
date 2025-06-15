@@ -6,6 +6,7 @@ export default async function ListBlogs() {
   const posts = getAllPosts();
   return (
     <>
+      <title>blog [nextpointer]</title>
       <div className="md:mt-8 mt-12 w-full md:w-full">
         <h1 className="text-2xl font-bold mb-4">Blog</h1>
         <ul className="w-full">

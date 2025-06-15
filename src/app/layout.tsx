@@ -26,6 +26,24 @@ export const metadata: Metadata = {
   keywords: SEO_KEYWORDS,
   authors: [{ name: AUTHOR }],
   creator: CREATOR,
+  icons: {
+    icon: '/favicon.ico',
+     apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/android-chrome-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        rel: "icon",
+        url: "/android-chrome-512x512.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+  },
   openGraph: {
     title: OG_TITLE,
     description: OG_DESCRIPTION,
@@ -62,7 +80,7 @@ const GeistMono = localFont({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#09090b",
+  themeColor: "#171717",
 };
 
 export default function RootLayout({
@@ -75,7 +93,7 @@ export default function RootLayout({
       <body>
         <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto">
           <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative">
-            <div className="absolute left-0 top-0 flex flex-row gap-4 ml-4 mt-4">
+            <div className="absolute left-0 top-0 flex flex-row gap-4 ml-4 mt-6">
               <TransitionLink href="/">
                 <div className="relative">
                   <h2 className="text-sm px-2 py-1">Home</h2>

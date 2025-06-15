@@ -42,7 +42,7 @@ export const AUTHOR = "Surajit Maity";
 export const CREATOR = "Surajit Maity";
 export const SITE_NAME = "Surajit Maity Portfolio";
 export const DOMAIN = "https://nextpointer.vercel.app/";
-export const OG_IMAGE = `${DOMAIN}/og-image.png`;
+export const OG_IMAGE = `${DOMAIN}/nextpointer.png`;
 
 // 📣 Open Graph
 export const OG_TITLE = "Surajit Maity [nextpointer]";
