@@ -91,9 +91,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistMono.className}>
       <body>
-        <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto">
-          <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative">
-            <div className="absolute left-0 top-0 flex flex-row gap-4 ml-4 mt-6">
+        <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto ">
+          <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative ">
+            <div id="sticky-nav" className="sticky left-0 top-0 flex flex-row gap-4 z-50 w-full backdrop-filter backdrop-blur-3xl bg-opacity-30 text-green-300 pt-1.5 pb-1.5">
               <TransitionLink href="/" ariaLabel="Home">
                 <div className="relative">
                   <h2 className="text-sm px-2 py-1">Home</h2>

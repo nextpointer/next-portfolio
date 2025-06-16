@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="flex items-center w-[100%] justify-between mt-8 md:mt-6 ">
-        <div className="mt-10 flex flex-row gap-3">
+      <div className="flex items-center w-[100%] justify-between">
+        <div className="mt-8 flex flex-row gap-3">
           <Image
             alt="icon"
             src={"/nextpointer.png"}
@@ -15,7 +15,7 @@ export default function Home() {
             width={"30"}
           />
           <div className="h-8 overflow-hidden">
-            <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8">
+            <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8 text-[#ececed]">
               Surajit Maity <br></br> nextpointer
             </h1>
           </div>
@@ -45,11 +45,11 @@ export default function Home() {
         💊- a secure healthcare system that enables efficient patient management
         and communication.
       </p>
-      <h2 className="mt-6 font-bold text-base">What i&apos;m up to</h2>
+      <h2 className="mt-6 font-bold text-base text-[#ececed]">What i&apos;m up to</h2>
       <p className="mt-1 text-sm leading-5">
         CS undergradute. Still finding who am i {":}"}
       </p>
-      <h2 className="mt-4 font-bold text-base">My Works 🍀</h2>
+      <h2 className="mt-4 font-bold text-base text-[#ececed]">My Works 🍀</h2>
       <Projects />
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
@@ -61,7 +61,7 @@ export default function Home() {
         View all projects
         <ArrowUpRight className="h-4" aria-hidden="true" />
       </Link>
-      <h2 className="mt-4 font-bold text-base">Experience</h2>
+      <h2 className="mt-4 font-bold text-base text-[#ececed]">Experience</h2>
       <div className=" w-full flex justify-between items-center">
         <span className="m-1 ml-0 text-sm">
           Math Coders
@@ -73,7 +73,7 @@ export default function Home() {
           Jun 2024 - Aug 2024
         </span>
       </div>
-      <h2 className="mt-4 font-bold text-base">Contact Me</h2>
+      <h2 className="mt-4 font-bold text-base text-[#ececed]">Contact Me</h2>
       <div className="w-full mt-1 flex justify-between items-center flex-row">
         <Link
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"
