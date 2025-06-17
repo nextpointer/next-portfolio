@@ -1,6 +1,6 @@
 import Projects from "@/Components/Projects";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
         <div className="flex items-center justify-center gap-2 mt-10">
           <span className="relative flex size-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
-            <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
+            <span className="relative inline-flex size-3 rounded-full bg-green-400"></span>
           </span>
           <span className="text-neutral-200 text-[0.6rem] md:text-[0.8rem] leading-3">
             Open to work
@@ -45,14 +45,16 @@ export default function Home() {
         💊- a secure healthcare system that enables efficient patient management
         and communication.
       </p>
-      <h2 className="mt-6 font-bold text-base text-neutral-200">What i&apos;m up to</h2>
+      <h2 className="mt-6 font-bold text-base text-neutral-200">
+        What i&apos;m up to
+      </h2>
       <p className="mt-1 text-sm leading-5">
         CS undergradute. Still finding who am i {":}"}
       </p>
       <h2 className="mt-4 font-bold text-base text-neutral-200">My Works 🍀</h2>
       <Projects />
       <Link
-        className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
+        className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 text-green-400"
         href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
         target="_blank"
         rel="noopener noreferrer"
@@ -61,7 +63,7 @@ export default function Home() {
         View all projects
         <ArrowUpRight className="h-4" aria-hidden="true" />
       </Link>
-      <h2 className="mt-4 font-bold text-base text-neutral-200">Experience</h2>
+      <h2 className="mt-6 font-bold text-base text-neutral-200">Experience</h2>
       <div className=" w-full flex justify-between items-center">
         <span className="m-1 ml-0 text-sm">
           Math Coders
@@ -73,78 +75,25 @@ export default function Home() {
           Jun 2024 - Aug 2024
         </span>
       </div>
-      <h2 className="mt-4 font-bold text-base text-neutral-200">Contact Me</h2>
-      <div className="w-full mt-1 flex justify-between items-center flex-row">
+      <div className="flex flex-col w-full items-center mt-4">
+        <h2 className="mt-8 font-bold text-2xl md:text-3xl text-neutral-200 text-center w-full">
+          Let&apos;s work together
+        </h2>
+        <span className="mt-2 text-sm leadin-5 mb-6 w-full text-center">
+          {[
+            "The greatest ideas come from",
+            "collaboration. Feel free to reach out :)",
+          ].map((line, index) => (
+            <div key={index}>{line}</div>
+          ))}
+        </span>
         <Link
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"
-          className="italic underline decoration-gray-500 underline-offset-2 text-sm"
+          className="mb-8"
         >
-          maitysurajit0901@gmail.com
+          <button className="border border-zinc-700 p-3 text-md rounded-2xl flex flex-row items-center justify-center gap-2 hover:border-zinc-600 cursor-pointer text-green-400">Get in touch <ArrowRight height={15} width={15}/></button>
         </Link>
-        <div className="flex gap-2">
-          <Link
-            href="https://github.com/nextpointer"
-            aria-label="GitHub profile"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-github hover:text-[#d6d6d6]"
-            >
-              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-              <path d="M9 18c-4.51 2-5-2-7-2" />
-            </svg>
-          </Link>
-          <Link href="https://x.com/nextpointerX" aria-label="X profile">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 50 50"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className=" hover:text-[#d6d6d6]"
-            >
-              <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
-            </svg>
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/surajitmaity3112/"
-            aria-label="LinkedIn profile"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-linkedin  hover:text-[#d6d6d6]"
-            >
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect width="4" height="12" x="2" y="9" />
-              <circle cx="4" cy="4" r="2" />
-            </svg>
-          </Link>
-        </div>
       </div>
-      <span className="mt-2 text-sm leadin-5 mb-6">
-        The greatest ideas come from collaboration. Feel free to reach out{" "}
-        {":)"}
-      </span>
     </>
   );
 }
