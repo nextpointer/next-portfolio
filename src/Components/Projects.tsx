@@ -64,11 +64,19 @@ const techIcons: TechIcons = {
 const projects: Project[] = [
   {
     title: "Piplup",
-    date: "2024",
+    date: "2025",
     about: "🌟 A simple AI integrated Quiz App 📚",
     url: "https://github.com/nextpointer/piplup",
     techStack: ["Next", "Neon", "Gemini", "Langchain", "Drizzle", "Auth0"],
     liveLink: "https://piplup-quiz.vercel.app/",
+  },
+  {
+    title: "SplitIt",
+    date: "2024",
+    about: "💸 A simple money-splitting app 🔪",
+    url: "https://github.com/nextpointer/SplitIt",
+    techStack: ["ReactJS", "Hono", "SQLite", "Tailwind"],
+    liveLink: "https://github.com/nextpointer/SplitIt",
   },
   {
     title: "Mind Matrix",
@@ -91,16 +99,8 @@ const projects: Project[] = [
     date: "2023",
     about: "🏫 An educational course and blog management platform 🚀",
     url: "https://github.com/nextpointer/RYATM",
-    techStack: ["Next", "Sanity"], // Keep as an array of strings
+    techStack: ["Next", "Sanity"],
     liveLink: "https://www.theryit.com/",
-  },
-  {
-    title: "SplitIt",
-    date: "2024",
-    about: "💸 A simple money-splitting app 🔪",
-    url: "https://github.com/nextpointer/SplitIt",
-    techStack: ["ReactJS", "Hono", "SQLite", "Tailwind"],
-    liveLink: "https://github.com/nextpointer/SplitIt",
   },
   {
     title: "Mr. Calculator",
