@@ -1,4 +1,4 @@
-import { ArrowUpLeft } from "lucide-react";
+
 import { getAllPosts } from "../lib/markdown";
 import TransitionLink from "@/Components/TransitionLink";
 
@@ -8,7 +8,7 @@ export default async function ListBlogs() {
     <>
       <title>blog [nextpointer]</title>
       <div className="md:mt-8 mt-12 w-full md:w-full">
-        <h1 className="text-2xl font-bold mb-4">Blog</h1>
+        <h1 className="text-2xl font-bold mb-4 text-neutral-200">Blog</h1>
         <ul className="w-full">
           {posts.map((post) => (
             <li key={post.slug} className="mb-2 cursor-pointer">

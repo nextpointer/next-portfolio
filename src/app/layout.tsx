@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import MovingGithub from "../../public/line-md--github-loop (1).svg";
 import {
   SEO_KEYWORDS,
   AUTHOR,
@@ -16,6 +17,8 @@ import {
   TWITTER_TITLE,
 } from "./lib/content";
 import TransitionLink from "@/Components/TransitionLink";
+import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: {
@@ -91,28 +94,71 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistMono.className}>
       <body>
-        <main className="h-dvh flex flex-col items-center bg-[#171717] text-[#d1d5db] overflow-auto ">
+        <main className="h-dvh flex flex-col items-center bg-[#171717] text-neutral-400 overflow-auto ">
           <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative ">
-            <div id="sticky-nav" className="sticky left-0 top-0 flex flex-row gap-4 z-50 w-full backdrop-filter backdrop-blur-3xl bg-opacity-30 text-green-300 pt-1.5 pb-1.5">
-              <TransitionLink href="/" ariaLabel="Home">
-                <div className="relative">
-                  <h2 className="text-sm px-2 py-1">Home</h2>
-                  <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
-                  <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
-                  <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
-                  <span className="absolute bottom-0 right-0 w-1 h-1 border-b-1 border-r-1 border-zinc-500"></span>
-                </div>
-              </TransitionLink>
+            <div
+              id="sticky-nav"
+              className="sticky left-0 top-0 flex flex-row gap-4 z-50 w-full items-center justify-between backdrop-filter backdrop-blur-3xl bg-opacity-30 text-green-300 p-1.5 "
+            >
+              <div className="flex flex-row gap-4">
+                <TransitionLink href="/" ariaLabel="Home">
+                  <div className="relative">
+                    <h2 className="text-sm px-2 py-1">Home</h2>
+                    <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
+                    <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
+                    <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
+                    <span className="absolute bottom-0 right-0 w-1 h-1 border-b-1 border-r-1 border-zinc-500"></span>
+                  </div>
+                </TransitionLink>
 
-              <TransitionLink href="/blog" ariaLabel="About">
-                <div className="relative">
-                  <h2 className="text-sm px-2 py-1">Blog</h2>
-                  <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
-                  <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
-                  <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
-                  <span className="absolute bottom-0 right-0 w-1 h-1 border-b-1 border-r-1 border-zinc-500"></span>
-                </div>
-              </TransitionLink>
+                <TransitionLink href="/blog" ariaLabel="About">
+                  <div className="relative">
+                    <h2 className="text-sm px-2 py-1">Blog</h2>
+                    <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
+                    <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
+                    <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
+                    <span className="absolute bottom-0 right-0 w-1 h-1 border-b-1 border-r-1 border-zinc-500"></span>
+                  </div>
+                </TransitionLink>
+              </div>
+
+              <div className="flex gap-4 text-white justify-center h-full items-center">
+                <Link
+                  href="https://github.com/nextpointer"
+                  aria-label="GitHub profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={MovingGithub}
+                    alt=""
+                    width={24}
+                    height={24}
+                    className="h-5 w-5"
+                  />
+                </Link>
+                <Link
+                  href="https://x.com/nextpointerX"
+                  aria-label="X profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className=" hover:text-[#d6d6d6]"
+                  >
+                    <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
+                  </svg>
+                </Link>
+              </div>
             </div>
             {children}
           </div>

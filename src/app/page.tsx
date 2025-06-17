@@ -15,7 +15,7 @@ export default function Home() {
             width={"30"}
           />
           <div className="h-8 overflow-hidden">
-            <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8 text-[#ececed]">
+            <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8 text-neutral-200">
               Surajit Maity <br></br> nextpointer
             </h1>
           </div>
@@ -25,7 +25,7 @@ export default function Home() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
             <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
           </span>
-          <span className="text-white text-[0.6rem] md:text-[0.8rem] leading-3">
+          <span className="text-neutral-200 text-[0.6rem] md:text-[0.8rem] leading-3">
             Open to work
           </span>
         </div>
@@ -38,18 +38,18 @@ export default function Home() {
         Now building{" "}
         <Link
           href={"https://github.com/nextpointer/careflow"}
-          className="underline decoration-gray-500 underline-offset-3"
+          className="underline decoration-gray-500 underline-offset-3 text-neutral-300"
         >
           careflow{" "}
         </Link>
         💊- a secure healthcare system that enables efficient patient management
         and communication.
       </p>
-      <h2 className="mt-6 font-bold text-base text-[#ececed]">What i&apos;m up to</h2>
+      <h2 className="mt-6 font-bold text-base text-neutral-200">What i&apos;m up to</h2>
       <p className="mt-1 text-sm leading-5">
         CS undergradute. Still finding who am i {":}"}
       </p>
-      <h2 className="mt-4 font-bold text-base text-[#ececed]">My Works 🍀</h2>
+      <h2 className="mt-4 font-bold text-base text-neutral-200">My Works 🍀</h2>
       <Projects />
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 mt-2 text-green-500"
@@ -61,7 +61,7 @@ export default function Home() {
         View all projects
         <ArrowUpRight className="h-4" aria-hidden="true" />
       </Link>
-      <h2 className="mt-4 font-bold text-base text-[#ececed]">Experience</h2>
+      <h2 className="mt-4 font-bold text-base text-neutral-200">Experience</h2>
       <div className=" w-full flex justify-between items-center">
         <span className="m-1 ml-0 text-sm">
           Math Coders
@@ -73,7 +73,7 @@ export default function Home() {
           Jun 2024 - Aug 2024
         </span>
       </div>
-      <h2 className="mt-4 font-bold text-base text-[#ececed]">Contact Me</h2>
+      <h2 className="mt-4 font-bold text-base text-neutral-200">Contact Me</h2>
       <div className="w-full mt-1 flex justify-between items-center flex-row">
         <Link
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"

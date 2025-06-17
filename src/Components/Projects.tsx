@@ -153,7 +153,7 @@ const Projects = () => {
           className="glow-hover border border-zinc-800 rounded-lg p-4 mb-4 group"
         >
           <div className="flex flex-row w-full justify-between">
-            <h3 className="flex items-center gap-1 text-md font-semibold">
+            <h3 className="flex items-center gap-1 text-md font-semibold text-neutral-300">
               <Link
                 href={project.liveLink}
                 target="_blank"
@@ -181,7 +181,7 @@ const Projects = () => {
           </div>
 
           <div className="flex flex-col gap-2 mt-2">
-            <p className="text-sm text-gray-300">{project.about}</p>
+            <p className="text-sm text-neutral-400">{project.about}</p>
             <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
               <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
                 {project.techStack.map((tech, techIndex) => (
