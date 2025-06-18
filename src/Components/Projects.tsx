@@ -26,6 +26,8 @@ import Tailwind from "../../public/tailwindcss.svg";
 import Langchain from "../../public/simple-icons--langchain (3).svg";
 import { GithubLoopIcon } from "./icons/movingGithub";
 
+
+
 interface Project {
   title: string;
   date: string;
