@@ -24,7 +24,7 @@ import ReactJS from "../../public/react_dark.svg";
 import SQLite from "../../public/sqlite.svg";
 import Tailwind from "../../public/tailwindcss.svg";
 import Langchain from "../../public/simple-icons--langchain (3).svg";
-import MovingGithub from "../../public/line-md--github-loop (1).svg";
+import { GithubLoopIcon } from "./icons/movingGithub";
 
 interface Project {
   title: string;
@@ -150,10 +150,10 @@ const Projects = () => {
           ref={(el) => {
             cardsRef.current[index] = el;
           }}
-          className="glow-hover border border-zinc-800 rounded-lg p-4 mb-4 group"
+          className="glow-hover border border-sidebar-border rounded-lg p-4 mb-4 group"
         >
           <div className="flex flex-row w-full justify-between">
-            <h3 className="flex items-center gap-1 text-md font-semibold text-neutral-300">
+            <h3 className="flex items-center gap-1 text-md font-semibold text-subheading-text-color">
               <Link
                 href={project.liveLink}
                 target="_blank"
@@ -170,24 +170,18 @@ const Projects = () => {
               rel="noopener noreferrer"
               aria-label={`View source code of ${project.title} on GitHub`}
             >
-              <Image
-                src={MovingGithub}
-                alt=""
-                width={24}
-                height={24}
-                className="h-5 w-5"
-              />
+              <GithubLoopIcon/>
             </Link>
           </div>
 
           <div className="flex flex-col gap-2 mt-2">
-            <p className="text-sm text-neutral-400">{project.about}</p>
+            <p className="text-sm text-normal-text-color">{project.about}</p>
             <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
               <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
                 {project.techStack.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="mt-1 text-[10px] flex flex-row items-center justify-center pl-2 pr-2 pt-1 pb-1 gap-2 bg-[#1f1f1f] rounded-md min-w-20"
+                    className="mt-1 text-[10px] flex flex-row items-center justify-center pl-6 pr-6 pt-1 pb-1 gap-2 bg-muted border border-sidebar-border rounded-md w-auto"
                   >
                     <Image
                       src={techIcons[tech]}
@@ -201,7 +195,7 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              <span className="text-sm text-gray-400">{project.date}</span>
+              <span className="text-sm text-normral-text-color">{project.date}</span>
             </div>
           </div>
         </div>
