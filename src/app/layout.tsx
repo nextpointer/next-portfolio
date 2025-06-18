@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import MovingGithub from "../../public/line-md--github-loop (1).svg";
 import {
   SEO_KEYWORDS,
   AUTHOR,
@@ -18,7 +17,6 @@ import {
 } from "./lib/content";
 import TransitionLink from "@/components/TransitionLink";
 import Link from "next/link";
-import Image from "next/image";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ModeToggle";
 import { GithubLoopIcon } from "@/components/icons/movingGithub";
