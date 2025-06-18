@@ -21,11 +21,11 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center justify-center gap-2 mt-10">
-          <span className="relative flex size-3">
+          <span className="relative flex size-3 mr-4 sm:mr-0">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-100 opacity-75"></span>
             <span className="relative inline-flex size-3 rounded-full bg-green-400"></span>
           </span>
-          <span className="text-neutral-200 text-[0.6rem] md:text-[0.8rem] leading-3">
+          <span className="text-neutral-200 text-[0.6rem] md:text-[0.8rem] leading-3 hidden sm:block">
             Open to work
           </span>
         </div>
