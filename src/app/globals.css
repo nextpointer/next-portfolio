@@ -64,10 +64,6 @@ body {
   opacity: 1;
 }
 
-/* .glow-hover:hover {
-  border-color: transparent;
-  box-shadow: 0 0 5px 2px #3636362d;
-} */
 
 .glow-hover > * {
   position: relative;
