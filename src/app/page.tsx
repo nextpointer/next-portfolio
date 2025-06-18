@@ -1,4 +1,4 @@
-import Projects from "@/Components/Projects";
+import Projects from "@/components/Projects";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";

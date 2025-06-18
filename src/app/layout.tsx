@@ -16,7 +16,7 @@ import {
   TWITTER_DESCRIPTION,
   TWITTER_TITLE,
 } from "./lib/content";
-import TransitionLink from "@/Components/TransitionLink";
+import TransitionLink from "@/components/TransitionLink";
 import Link from "next/link";
 import Image from "next/image";
 
