@@ -18,15 +18,19 @@ export default function Home() {
             <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-2 mt-10">
-          <span className="relative flex size-3 mr-4 sm:mr-0">
+        <Link
+          className="flex items-center justify-center gap-2 mt-10 border px-4 py-2 rounded-md"
+          href={"mailto:maitysurajit0901@gmail.com"}
+          aria-label="Available for hire"
+        >
+          <span className="relative flex size-3">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
             <span className="relative inline-flex size-3 rounded-full bg-primary"></span>
           </span>
           <span className="text-heading-text-color text-[0.6rem] md:text-[0.8rem] leading-3 hidden sm:block">
-            Open to work
+            Available for hire
           </span>
-        </div>
+        </Link>
       </div>
       <p className="mt-6 text-sm leading-6">
         <span className="text-heading-text-color font-semibold">
@@ -41,8 +45,11 @@ export default function Home() {
         . <br />
       </p>
       <p className="mt-4 text-sm leading-6">
-        <span className="text-heading-text-color font-semibold">@nextpointer</span> is my alias on the internet — that references the
-        idea of staying flexible, connected, and always moving forward.
+        <span className="text-heading-text-color font-semibold">
+          @nextpointer
+        </span>{" "}
+        is my alias on the internet — that references the idea of staying
+        flexible, connected, and always moving forward.
       </p>
       <p className="mt-4 text-sm leading-6">
         Now building{" "}
