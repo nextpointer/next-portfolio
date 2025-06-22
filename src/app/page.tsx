@@ -31,14 +31,18 @@ export default function Home() {
         </div>
       </div>
       <p className="mt-6 text-sm leading-6">
-        I&apos;m full-stack developer from India, love to explore, build things
-        and solving problems.
+        <span className="text-heading-text-color font-semibold">Full-stack dev?</span> Yuppp.
+        But what&apos;s the real gig? It&apos;s not just about writing code — it&apos;s about
+        building things that solve real problems. You&apos;ll find me just as deep in{" "}
+        <span className="text-heading-text-color font-semibold">design </span>
+        as I am in <span className="text-heading-text-color font-semibold">debugging</span>. <br />
+        Always up for building the next cool thing on the web.
       </p>
       <p className="mt-4 text-sm leading-6">
         Now building{" "}
         <Link
           href={"https://github.com/nextpointer/careflow"}
-          className="underline decoration-gray-500 underline-offset-3 text-subheading-text-color"
+          className="underline decoration-gray-500 underline-offset-3 text-heading-text-color font-semibold"
         >
           careflow{" "}
         </Link>
@@ -51,7 +55,9 @@ export default function Home() {
       <p className="mt-1 text-sm leading-5">
         CS undergradute. Still finding who am i {":}"}
       </p>
-      <h2 className="mt-4 font-bold text-base text-heading-text-color">My works 🍀</h2>
+      <h2 className="mt-4 font-bold text-base text-heading-text-color">
+        My works 🍀
+      </h2>
       <Projects />
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 text-primary"
@@ -63,7 +69,9 @@ export default function Home() {
         View all projects
         <ArrowUpRight className="h-4" aria-hidden="true" />
       </Link>
-      <h2 className="mt-6 font-bold text-base text-heading-text-color">Experience</h2>
+      <h2 className="mt-6 font-bold text-base text-heading-text-color">
+        Experience
+      </h2>
       <div className=" w-full flex justify-between items-center">
         <span className="m-1 ml-0 text-sm">
           Math Coders
@@ -91,7 +99,9 @@ export default function Home() {
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"
           className="mb-8"
         >
-          <button className="border border-sidebar-border p-3 text-md rounded-2xl flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">Get in touch <ArrowRight height={15} width={15}/></button>
+          <button className="border border-sidebar-border p-3 text-md rounded-2xl flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">
+            Get in touch <ArrowRight height={15} width={15} />
+          </button>
         </Link>
       </div>
     </>
