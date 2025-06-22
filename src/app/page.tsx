@@ -19,7 +19,7 @@ export default function Home() {
           </div>
         </div>
         <Link
-          className="flex items-center justify-center gap-2 mt-10 border px-4 py-2 rounded-md"
+          className="flex items-center justify-center gap-2 mt-10 border px-2 sm:px-4 py-2 rounded-md"
           href={"mailto:maitysurajit0901@gmail.com"}
           aria-label="Available for hire"
         >
@@ -40,7 +40,7 @@ export default function Home() {
         code — it&apos;s about building things that solve real problems.
         You&apos;ll find me just as deep in{" "}
         <span className="text-heading-text-color font-semibold">design </span>
-        as I am in{" "}
+        as i am in{" "}
         <span className="text-heading-text-color font-semibold">debugging</span>
         . <br />
       </p>

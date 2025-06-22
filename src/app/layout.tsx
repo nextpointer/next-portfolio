@@ -20,6 +20,8 @@ import Link from "next/link";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/ModeToggle";
 import { GithubLoopIcon } from "@/components/icons/movingGithub";
+import ClientWrapper from "@/components/ClientWrapper";
+import DynamicTitle from "@/components/useDynamicTitle";
 
 export const metadata: Metadata = {
   title: {
@@ -95,6 +97,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistMono.className} suppressHydrationWarning>
       <body>
+        <ClientWrapper>
+          <DynamicTitle />
+        </ClientWrapper>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
