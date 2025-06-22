@@ -15,9 +15,7 @@ export default function Home() {
             width={"30"}
           />
           <div className="h-8 overflow-hidden">
-            <h1 className="text-2xl transition-transform duration-300 hover:-translate-y-8 text-heading-text-color">
-              Surajit Maity <br></br> nextpointer
-            </h1>
+            <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
           </div>
         </div>
         <div className="flex items-center justify-center gap-2 mt-10">
@@ -31,12 +29,20 @@ export default function Home() {
         </div>
       </div>
       <p className="mt-6 text-sm leading-6">
-        <span className="text-heading-text-color font-semibold">Full-stack dev?</span> Yuppp.
-        But what&apos;s the real gig? It&apos;s not just about writing code — it&apos;s about
-        building things that solve real problems. You&apos;ll find me just as deep in{" "}
+        <span className="text-heading-text-color font-semibold">
+          Full-stack dev?
+        </span>{" "}
+        Yuppp!! But what&apos;s the real gig? It&apos;s not just about writing
+        code — it&apos;s about building things that solve real problems.
+        You&apos;ll find me just as deep in{" "}
         <span className="text-heading-text-color font-semibold">design </span>
-        as I am in <span className="text-heading-text-color font-semibold">debugging</span>. <br />
-        Always up for building the next cool thing on the web.
+        as I am in{" "}
+        <span className="text-heading-text-color font-semibold">debugging</span>
+        . <br />
+      </p>
+      <p className="mt-4 text-sm leading-6">
+        <span className="text-heading-text-color font-semibold">@nextpointer</span> is my alias on the internet — that references the
+        idea of staying flexible, connected, and always moving forward.
       </p>
       <p className="mt-4 text-sm leading-6">
         Now building{" "}
@@ -53,7 +59,8 @@ export default function Home() {
         What i&apos;m up to
       </h2>
       <p className="mt-1 text-sm leading-5">
-        Still a CS undergrad, still exploring, still figuring things out — and loving it. {":}"}
+        Still a CS undergrad, still exploring, still figuring things out — and
+        loving it. {":}"}
       </p>
       <h2 className="mt-4 font-bold text-base text-heading-text-color">
         My works 🍀
