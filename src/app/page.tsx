@@ -53,7 +53,7 @@ export default function Home() {
         What i&apos;m up to
       </h2>
       <p className="mt-1 text-sm leading-5">
-        CS undergradute. Still finding who am i {":}"}
+        Still a CS undergrad, still exploring, still figuring things out — and loving it. {":}"}
       </p>
       <h2 className="mt-4 font-bold text-base text-heading-text-color">
         My works 🍀
