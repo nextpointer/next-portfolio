@@ -25,10 +25,14 @@ export default function Home() {
             <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Question height={20} width={20} className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200" />
+                <Question
+                  height={20}
+                  width={20}
+                  className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200"
+                />
               </TooltipTrigger>
               <TooltipContent
-              className="max-w-[620px] rounded-md bg-background text-normral-text-color p-4 pl-0"
+                className="max-w-[620px] rounded-md bg-background text-normral-text-color p-4 pl-0"
                 side="bottom"
                 sideOffset={15}
                 alignOffset={-205}
@@ -50,6 +54,8 @@ export default function Home() {
             className="flex items-center justify-center gap-2 border px-2 sm:px-4 py-2 rounded-md"
             href={"mailto:maitysurajit0901@gmail.com"}
             aria-label="Available for hire"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <span className="relative flex size-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
@@ -139,6 +145,8 @@ export default function Home() {
         <Link
           href="mailto:maitysurajit0901@gmail.com?subject=Hello"
           className="mb-8"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <button className="border border-sidebar-border p-3 text-md rounded-2xl flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">
             Get in touch <ArrowRight height={15} width={15} />
