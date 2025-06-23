@@ -88,11 +88,11 @@ export default function Home() {
         Now building{" "}
         <Link
           href={"https://github.com/nextpointer/careflow"}
-          className="underline decoration-gray-500 underline-offset-3 text-heading-text-color font-semibold"
+          className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
-          careflow{" "}
+          <span className="relative z-10">careflow 💊</span>
         </Link>
-        💊- a secure healthcare system that enables efficient patient management
+        {" "}secure healthcare system that enables efficient patient management
         and communication.
       </p>
       <h2 className="mt-6 font-bold text-base text-heading-text-color">
