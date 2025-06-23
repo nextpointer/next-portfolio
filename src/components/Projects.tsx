@@ -11,7 +11,7 @@ import Gemini from "../../public/gemini.svg";
 import Drizzle from "../../public/drizzle-orm_dark.svg";
 import Neon from "../../public/neon.svg";
 import Auth0 from "../../public/auth0.svg";
-import Deno from "../../public/deno_dark.svg";
+// import Deno from "../../public/deno_dark.svg";
 import Zustand from "../../public/devicon--zustand.svg";
 import Express from "../../public/expressjs_dark.svg";
 import Hono from "../../public/hono.svg";
@@ -25,8 +25,7 @@ import SQLite from "../../public/sqlite.svg";
 import Tailwind from "../../public/tailwindcss.svg";
 import Langchain from "../../public/simple-icons--langchain (3).svg";
 import { GithubLoopIcon } from "./icons/movingGithub";
-
-
+import Deno from "./icons/Deno";
 
 interface Project {
   title: string;
@@ -37,7 +36,7 @@ interface Project {
   liveLink: string;
 }
 
-type IconType = StaticImageData;
+type IconType = StaticImageData | React.FC<React.SVGProps<SVGSVGElement>>;
 interface TechIcons {
   [key: string]: IconType;
 }
@@ -172,7 +171,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               aria-label={`View source code of ${project.title} on GitHub`}
             >
-              <GithubLoopIcon/>
+              <GithubLoopIcon />
             </Link>
           </div>
 
@@ -180,24 +179,33 @@ const Projects = () => {
             <p className="text-sm text-normal-text-color">{project.about}</p>
             <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
               <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
-                {project.techStack.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="mt-1 text-[10px] flex flex-row items-center justify-center pl-6 pr-6 pt-1 pb-1 gap-2 bg-muted border border-sidebar-border rounded-md w-auto"
-                  >
-                    <Image
-                      src={techIcons[tech]}
-                      alt={`${tech} logo used in ${project.title}`}
-                      width={24}
-                      height={24}
-                      className="h-5 w-5 object-contain"
-                      loading="lazy"
-                    />
-                    {tech}
-                  </span>
-                ))}
+                {project.techStack.map((tech, techIndex) => {
+                  const Icon = techIcons[tech];
+                  return (
+                    <span
+                      key={techIndex}
+                      className="mt-1 text-[10px] flex flex-row items-center justify-center pl-6 pr-6 pt-1 pb-1 gap-2 bg-muted border border-sidebar-border rounded-md w-auto"
+                    >
+                      {typeof Icon === "function" ? (
+                        <Icon className="h-5 w-5" />
+                      ) : (
+                        <Image
+                          src={Icon}
+                          alt={`${tech} logo used in ${project.title}`}
+                          width={24}
+                          height={24}
+                          className="h-5 w-5 object-contain"
+                          loading="lazy"
+                        />
+                      )}
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
-              <span className="text-sm text-normral-text-color">{project.date}</span>
+              <span className="text-sm text-normral-text-color">
+                {project.date}
+              </span>
             </div>
           </div>
         </div>
