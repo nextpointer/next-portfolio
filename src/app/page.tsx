@@ -3,11 +3,17 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Arrow from "@/components/icons/Arrow";
+import { Question } from "@/components/icons/Question";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function Home() {
   return (
     <>
-      <div className="flex items-center w-[100%] justify-between">
+      <div className="flex items-center w-[100%] justify-between group">
         <div className="flex flex-row gap-3">
           <Image
             alt="icon"
@@ -15,8 +21,28 @@ export default function Home() {
             height={"30"}
             width={"30"}
           />
-          <div className="h-8 overflow-hidden">
+          <div className="h-8 flex flex-row gap-1 items-center ">
             <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Question height={20} width={20} className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200" />
+              </TooltipTrigger>
+              <TooltipContent
+              className="max-w-[620px] rounded-md bg-background text-normral-text-color p-4 pl-0"
+                side="bottom"
+                sideOffset={15}
+                alignOffset={-205}
+                align="start"
+              >
+                <p className="mt-4 text-sm leading-6">
+                  <span className="text-heading-text-color font-semibold">
+                    @nextpointer
+                  </span>{" "}
+                  is my alias on the internet — that references the idea of
+                  staying flexible, connected, and always moving forward.
+                </p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </div>
         <div className="relative">
@@ -33,7 +59,11 @@ export default function Home() {
               Available for hire
             </span>
           </Link>
-          <Arrow height={40} width={40} className="absolute -left-12 -top-5 rotate-90" />
+          <Arrow
+            height={40}
+            width={40}
+            className="absolute -left-12 -top-5 rotate-90"
+          />
         </div>
       </div>
       <p className="mt-6 text-sm leading-6">
@@ -47,13 +77,6 @@ export default function Home() {
         as i am in{" "}
         <span className="text-heading-text-color font-semibold">debugging</span>
         . <br />
-      </p>
-      <p className="mt-4 text-sm leading-6">
-        <span className="text-heading-text-color font-semibold">
-          @nextpointer
-        </span>{" "}
-        is my alias on the internet — that references the idea of staying
-        flexible, connected, and always moving forward.
       </p>
       <p className="mt-4 text-sm leading-6">
         Now building{" "}
