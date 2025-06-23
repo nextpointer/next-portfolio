@@ -2,12 +2,13 @@ import Projects from "@/components/Projects";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Arrow from "@/components/icons/Arrow";
 
 export default function Home() {
   return (
     <>
       <div className="flex items-center w-[100%] justify-between">
-        <div className="mt-8 flex flex-row gap-3">
+        <div className="flex flex-row gap-3">
           <Image
             alt="icon"
             src={"/nextpointer.png"}
@@ -18,19 +19,22 @@ export default function Home() {
             <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
           </div>
         </div>
-        <Link
-          className="flex items-center justify-center gap-2 mt-10 border px-2 sm:px-4 py-2 rounded-md"
-          href={"mailto:maitysurajit0901@gmail.com"}
-          aria-label="Available for hire"
-        >
-          <span className="relative flex size-3">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
-            <span className="relative inline-flex size-3 rounded-full bg-primary"></span>
-          </span>
-          <span className="text-heading-text-color text-[0.6rem] md:text-[0.8rem] leading-3 hidden sm:block">
-            Available for hire
-          </span>
-        </Link>
+        <div className="relative">
+          <Link
+            className="flex items-center justify-center gap-2 border px-2 sm:px-4 py-2 rounded-md"
+            href={"mailto:maitysurajit0901@gmail.com"}
+            aria-label="Available for hire"
+          >
+            <span className="relative flex size-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
+              <span className="relative inline-flex size-3 rounded-full bg-primary"></span>
+            </span>
+            <span className="text-heading-text-color text-[0.6rem] md:text-[0.8rem] leading-3 hidden sm:block">
+              Available for hire
+            </span>
+          </Link>
+          <Arrow height={40} width={40} className="absolute -left-12 -top-5 rotate-90" />
+        </div>
       </div>
       <p className="mt-6 text-sm leading-6">
         <span className="text-heading-text-color font-semibold">
