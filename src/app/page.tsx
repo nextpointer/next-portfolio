@@ -34,7 +34,7 @@ export default function Home() {
               <TooltipContent
                 className="max-w-[620px] rounded-md bg-background text-normral-text-color p-4 pl-0"
                 side="bottom"
-                sideOffset={15}
+                sideOffset={12}
                 alignOffset={-205}
                 align="start"
               >
@@ -122,7 +122,7 @@ export default function Home() {
       <div className=" w-full flex justify-between items-center">
         <span className="m-1 ml-0 text-sm">
           Math Coders
-          <span className="font-light italic bg-muted ml-4 p-2 rounded-4xl text-sm">
+          <span className="font-light italic bg-muted ml-4 p-2 rounded-md text-sm">
             Developer
           </span>
         </span>
