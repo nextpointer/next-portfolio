@@ -1,3 +1,5 @@
+"use client"
+
 import Projects from "@/components/Projects";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
@@ -9,8 +11,17 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  // to store the counts temply
+  const [visits, setVisits] = useState<number | null>(null);
+  // when the page mounts the user visits increaments
+  useEffect(() => {
+    fetch("/api/visits")
+      .then((res) => res.json())
+      .then((data) => setVisits(data.visits));
+  }, []);
   return (
     <>
       <div className="flex items-center w-[100%] justify-between group">
@@ -91,9 +102,9 @@ export default function Home() {
           className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
           <span className="relative z-10">careflow 💊</span>
-        </Link>
-        {" "}secure healthcare system that enables efficient patient management
-        and communication.
+        </Link>{" "}
+        secure healthcare system that enables efficient patient management and
+        communication.
       </p>
       <h2 className="mt-6 font-bold text-base text-heading-text-color">
         What i&apos;m up to
@@ -152,6 +163,9 @@ export default function Home() {
             Get in touch <ArrowRight height={15} width={15} />
           </button>
         </Link>
+      </div>
+      <div className="w-full flex justify-center items-center">
+        <p className="text-md"><span className="text-heading-text-color">{visits}</span> visits so far </p>
       </div>
     </>
   );
