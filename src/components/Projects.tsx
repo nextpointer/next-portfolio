@@ -151,7 +151,7 @@ const Projects = () => {
           ref={(el) => {
             cardsRef.current[index] = el;
           }}
-          className="glow-hover border border-sidebar-border rounded-lg p-4 mb-4 group"
+          className="glow-hover border border-sidebar-border rounded-lg p-4 mb-4"
         >
           <div className="flex flex-row w-full justify-between">
             <h3 className="flex items-center gap-1 text-md font-semibold text-subheading-text-color">
@@ -162,7 +162,7 @@ const Projects = () => {
                 className="flex items-center gap-1 hover:underline"
               >
                 {project.title}
-                <ArrowUpRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                <ArrowUpRight className="h-4 w-4 transition-opacity duration-200" />
               </Link>
             </h3>
             <Link
