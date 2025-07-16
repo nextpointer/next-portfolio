@@ -18,7 +18,7 @@ export default function Home() {
   const [visits, setVisits] = useState<number | null>(null);
   // when the page mounts the user visits increaments
   useEffect(() => {
-    fetch("/api/visits")
+    fetch("/api/visits",{ method: "POST" })
       .then((res) => res.json())
       .then((data) => setVisits(data.visits));
   }, []);

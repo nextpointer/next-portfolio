@@ -6,12 +6,12 @@ export async function POST(req: Request) {
   // increament the counter
   const count = await redis.incr("total_visits");
 
-  // optionally log the visits, that i can monitor
+ // optionally log the visits, that i can monitor
   await redis.lpush(
-    "total_visits",
+    "visit_logs",
     JSON.stringify({
       ip: req.headers.get("x-forwarded-for"),
-      time: new Date().toISOString,
+      time: new Date().toISOString(),
     })
   );
 
@@ -20,6 +20,8 @@ export async function POST(req: Request) {
   });
 }
 
+
+// Not required generally
 export async function GET() {
   // get the count
   const count = await redis.get<number>("total_visits");
