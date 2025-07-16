@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Projects from "@/components/Projects";
 import Link from "next/link";
@@ -16,12 +16,25 @@ import { useEffect, useState } from "react";
 export default function Home() {
   // to store the counts temply
   const [visits, setVisits] = useState<number | null>(null);
-  // when the page mounts the user visits increaments
+
   useEffect(() => {
-    fetch("/api/visits",{ method: "POST" })
-      .then((res) => res.json())
-      .then((data) => setVisits(data.visits));
+    const hasIncremented = sessionStorage.getItem("hasIncrementedVisit");
+
+    if (!hasIncremented) {
+      fetch("/api/visits", { method: "POST" })
+        .then((res) => res.json())
+        .then((data) => setVisits(data.visits))
+        .catch(console.error);
+
+      sessionStorage.setItem("hasIncrementedVisit", "true");
+    } else {
+      fetch("/api/visits", { method: "GET" })
+        .then((res) => res.json())
+        .then((data) => setVisits(data.visits))
+        .catch(console.error);
+    }
   }, []);
+
   return (
     <>
       <div className="flex items-center w-[100%] justify-between group">
@@ -165,7 +178,16 @@ export default function Home() {
         </Link>
       </div>
       <div className="w-full flex justify-center items-center">
-        <p className="text-md"><span className="text-heading-text-color">{visits}</span> visits so far </p>
+        <p className="text-md">
+          {visits !== null ? (
+            <>
+              <span className="text-heading-text-color">{visits}</span> visits
+              so far
+            </>
+          ) : (
+            <>Loading visits...</>
+          )}
+        </p>
       </div>
     </>
   );
