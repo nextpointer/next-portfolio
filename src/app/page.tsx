@@ -114,17 +114,15 @@ export default function Home() {
           href={"https://github.com/nextpointer/careflow"}
           className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
-          <span className="relative z-10">careflow 💊</span>
+          <span className="relative z-10">postori 💌</span>
         </Link>{" "}
-        secure healthcare system that enables efficient patient management and
-        communication.
+        - a little webmail client.
       </p>
       <h2 className="mt-6 font-bold text-base text-heading-text-color">
         What i&apos;m up to
       </h2>
       <p className="mt-1 text-sm leading-5">
-        Still a CS undergrad, still exploring, still figuring things out — and
-        loving it. {":}"}
+        Still exploring, still figuring things out — and loving it. {":}"}
       </p>
       <h2 className="mt-4 font-bold text-base text-heading-text-color">
         My works 🍀
