@@ -96,14 +96,6 @@ const projects: Project[] = [
     liveLink: "https://mindrix.vercel.app/",
   },
   {
-    title: "RYIT",
-    date: "2023",
-    about: "🏫 An educational course and blog management platform 🚀",
-    url: "https://github.com/nextpointer/RYATM",
-    techStack: ["Next", "Sanity"],
-    liveLink: "https://www.theryit.com/",
-  },
-  {
     title: "Mr. Calculator",
     date: "2022",
     about: "🔢 A large number calculator 🤯",
