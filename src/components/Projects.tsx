@@ -72,6 +72,14 @@ const projects: Project[] = [
     liveLink: "https://piplup-quiz.vercel.app/",
   },
   {
+    title: "NOT3S",
+    date: "2025",
+    about: "💫 A beautiful notes App 📝",
+    url: "https://github.com/nextpointer/n0t3s",
+    techStack: ["Next", "Gemini"],
+    liveLink: "https://n0t3s.vercel.app/",
+  },
+  {
     title: "SplitIt",
     date: "2024",
     about: "💸 A simple money-splitting app 🔪",
