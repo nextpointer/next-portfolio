@@ -111,12 +111,12 @@ export default function Home() {
       <p className="mt-4 text-sm leading-6">
         Now building{" "}
         <Link
-          href={"https://github.com/nextpointer/careflow"}
+          href={"https://github.com/nextpointer/postori"}
           className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
           <span className="relative z-10">postori 💌</span>
         </Link>{" "}
-        - a little webmail client.
+        - a open source little webmail client.
       </p>
       <h2 className="mt-6 font-bold text-base text-heading-text-color">
         What i&apos;m up to
