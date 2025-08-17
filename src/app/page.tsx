@@ -112,6 +112,8 @@ export default function Home() {
         Now building{" "}
         <Link
           href={"https://github.com/nextpointer/postori"}
+          target="_blank"
+          rel="noopener noreferrer"
           className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
           <span className="relative z-10">postori 💌</span>
