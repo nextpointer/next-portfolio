@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Arrow from "@/components/icons/Arrow";
-import { Question } from "@/components/icons/Question";
 import {
   Tooltip,
   TooltipContent,
@@ -49,17 +48,15 @@ export default function Home() {
             <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Question
-                  height={20}
-                  width={20}
-                  className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200"
-                />
+                <span className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200 border rounded-full px-2.5 py-0.5 ml-1">
+                  ?
+                </span>
               </TooltipTrigger>
               <TooltipContent
-                className="max-w-[620px] rounded-md bg-background text-normral-text-color p-4 pl-0"
+                className="max-w-[620px] rounded-md text-normral-text-color p-4 py-3 pl-0 bg-background"
                 side="bottom"
-                sideOffset={12}
-                alignOffset={-205}
+                sideOffset={7}
+                alignOffset={-210}
                 align="start"
               >
                 <p className="mt-4 text-sm leading-6">
