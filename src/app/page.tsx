@@ -129,7 +129,7 @@ export default function Home() {
       <Projects />
       <Link
         className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 text-primary"
-        href="https://spotless-zebra-fc0.notion.site/Surajit-s-Projects-1886b3ab415980eaa2c2e2ecaf547ca6"
+        href="https://nextpointer.notion.site/1886b3ab41598025aad0da5600f50062?v=1886b3ab41598088b63a000ce32bf7dc"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="View all projects"
