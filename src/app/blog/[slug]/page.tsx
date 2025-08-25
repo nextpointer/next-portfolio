@@ -1,11 +1,13 @@
-import { getAllPosts, getPostHtmlBySlug } from "@/app/lib/markdown";
+import { getAllPosts, getPostBySlug } from "@/app/lib/markdown";
+import { useMDXComponents } from "@/components/MDXComponents";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default async function BlogPost({
   params,
 }: {
   params: { slug: string };
 }) {
-  const { processed, metadata } = await getPostHtmlBySlug(params.slug);
+  const { metadata, content } = getPostBySlug(params.slug);
 
   return (
     <>
@@ -19,16 +21,15 @@ export default async function BlogPost({
           </span>
         </div>
 
-        <article
-          dangerouslySetInnerHTML={{ __html: processed.value }}
-          className="text-sm mt-8"
-        />
+        <article className="text-sm mt-8">
+          <MDXRemote source={content} components={useMDXComponents({})} />
+        </article>
       </div>
     </>
   );
 }
 
-// make it statically generated
+// Generate static params
 export async function generateStaticParams() {
   const posts = getAllPosts();
 
