@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface TransitionLinkProps extends LinkProps {
   href: string;
@@ -20,7 +20,7 @@ const TransitionLink = ({
   const router = useRouter();
 
   const handleNavigation = async (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
   ) => {
     e.preventDefault();
     const body = document.body;
@@ -35,7 +35,13 @@ const TransitionLink = ({
   };
 
   return (
-    <Link href={href}  aria-label={ariaLabel} {...props} onClick={handleNavigation}>
+    <Link
+      href={href}
+      aria-label={ariaLabel}
+      {...props}
+      onClick={handleNavigation}
+      className={`${href === usePathname() ? "text-green-500" : ""}`}
+    >
       {children}
     </Link>
   );

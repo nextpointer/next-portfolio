@@ -115,17 +115,26 @@ export default function RootLayout({
                 <div className="flex flex-row gap-4">
                   <TransitionLink href="/" ariaLabel="Home">
                     <div className="relative">
-                      <h2 className="text-sm px-2 py-1">Home</h2>
-                      <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
+                      <h2 className="text-[12px] px-2 py-1">Home</h2>
+                      <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500 hover:border-t-rounded"></span>
                       <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
                       <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
                       <span className="absolute bottom-0 right-0 w-1 h-1 border-b-1 border-r-1 border-zinc-500"></span>
                     </div>
                   </TransitionLink>
 
-                  <TransitionLink href="/blog" ariaLabel="About">
+                  <TransitionLink href="/blog" ariaLabel="Blog">
                     <div className="relative">
-                      <h2 className="text-sm px-2 py-1">Blog</h2>
+                      <h2 className="text-[12px] px-2 py-1">Blog</h2>
+                      <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
+                      <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
+                      <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
+                      <span className="absolute bottom-0 right-0 w-1 h-1 border-b-1 border-r-1 border-zinc-500"></span>
+                    </div>
+                  </TransitionLink>
+                  <TransitionLink href="/snippet" ariaLabel="Snippet">
+                    <div className="relative">
+                      <h2 className="text-[12px] px-2 py-1">Snippets</h2>
                       <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
                       <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
                       <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
