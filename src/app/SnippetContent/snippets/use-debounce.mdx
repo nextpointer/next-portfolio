@@ -1,0 +1,56 @@
+---
+title: "useDebounce"
+about: "A reusable debounce hook for React"
+tags: ["react", "hooks", "performance"]
+slug: "use-debounce"
+date: "2025-08-27"
+icon: "React"
+---
+
+### The Hook
+
+```tsx
+import { useEffect, useState } from "react";
+
+export function useDebounce<T>(value: T, delay: number = 500): T {
+  const [debounced, setDebounced] = useState(value);
+
+  useEffect(() => {
+    const id = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(id);
+  }, [value, delay]);
+
+  return debounced;
+}
+```
+### Example
+```typescript
+"use client";
+
+import { useState } from "react";
+import { useDebounce } from "@/hooks/useDebounce";
+
+export default function SearchBox() {
+  const [query, setQuery] = useState("");
+  const debouncedQuery = useDebounce(query, 400);
+
+  return (
+    <div className="mx-auto mt-10 max-w-sm space-y-3">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search..."
+        className="w-full rounded border px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-primary"
+      />
+
+      {debouncedQuery && (
+        <p className="text-sm text-muted-foreground">
+          You typed:{" "}
+          <span className="font-medium">{debouncedQuery}</span>
+        </p>
+      )}
+    </div>
+  );
+}
+```
