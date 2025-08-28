@@ -15,6 +15,7 @@ type SnippetData = {
   date: string;
   slug: string;
   tags: string[];
+  icon: string;
 };
 
 const BlogPostDir = path.join(
