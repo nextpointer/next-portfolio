@@ -110,12 +110,14 @@ export default function RootLayout({
             <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative ">
               <div
                 id="sticky-nav"
-                className="sticky left-0 top-0 flex flex-row gap-4 z-50 w-full items-center justify-between rounded-sm backdrop-filter backdrop-blur-3xl bg-opacity-30 text-subheading-text-color p-1.5 mb-8"
+                className="sticky left-0 top-0 flex flex-row gap-6 z-50 w-full items-center justify-between rounded-sm backdrop-filter backdrop-blur-3xl bg-opacity-30 text-subheading-text-color p-1.5 mb-8"
               >
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row gap-2">
                   <TransitionLink href="/" ariaLabel="Home">
                     <div className="relative">
-                      <h2 className="text-[12px] px-2 py-1">Home</h2>
+                      <h2 className="text-[10px] md:text-[12px] px-2 py-1">
+                        Home
+                      </h2>
                       <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500 hover:border-t-rounded"></span>
                       <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
                       <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
@@ -125,7 +127,9 @@ export default function RootLayout({
 
                   <TransitionLink href="/blog" ariaLabel="Blog">
                     <div className="relative">
-                      <h2 className="text-[12px] px-2 py-1">Blog</h2>
+                      <h2 className="text-[10px] md:text-[12px] px-2 py-1">
+                        Blog
+                      </h2>
                       <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
                       <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
                       <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
@@ -134,7 +138,9 @@ export default function RootLayout({
                   </TransitionLink>
                   <TransitionLink href="/snippet" ariaLabel="Snippet">
                     <div className="relative">
-                      <h2 className="text-[12px] px-2 py-1">Snippets</h2>
+                      <h2 className="text-[10px] md:text-[12px] px-2 py-1">
+                        Snippet
+                      </h2>
                       <span className="absolute top-0 left-0 w-1 h-1 border-t-1 border-l-1 border-zinc-500"></span>
                       <span className="absolute top-0 right-0 w-1 h-1 border-t-1 border-r-1 border-zinc-500"></span>
                       <span className="absolute bottom-0 left-0 w-1 h-1 border-b-1 border-l-1 border-zinc-500"></span>
