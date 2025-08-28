@@ -16,7 +16,11 @@ export default function Page() {
       <div className="w-full">
         <h1 className="text-3xl font-bold mb-8 text-foreground">Snippets</h1>
 
-        <div className="columns-1 md:columns-2 gap-6 md:gap-0 space-y-6 md:space-y-0">
+        <div
+          className={`columns-1 ${
+            snippets.length > 1 ? "md:columns-2" : ""
+          } gap-6 md:gap-0 space-y-6 md:space-y-0`}
+        >
           {snippets.map((snippet) => (
             <TransitionLink
               key={snippet.slug}
