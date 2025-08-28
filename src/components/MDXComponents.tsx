@@ -1,86 +1,115 @@
+import { cn } from "@/lib/utils";
+
 export function useMDXComponents(components: any) {
   return {
     // Headings
-    h1: ({ children }: any) => (
-      <h1 className="text-3xl font-bold text-heading-text-color mt-8 mb-4">
+    h1: ({ children, ...props }: any) => (
+      <h1
+        className={cn(
+          "scroll-m-20 text-3xl font-bold lg:text-4xl text-heading-text-color mb-6 mt-10",
+        )}
+        {...props}
+      >
         {children}
       </h1>
     ),
-    h2: ({ children }: any) => (
-      <h2 className="text-2xl font-bold text-heading-text-color mt-6 mb-3">
+    h2: ({ children, ...props }: any) => (
+      <h2
+        className={cn(
+          "scroll-m-20 text-2xl font-semibold tracking-tight lg:text-3xl text-subheading-text-color mb-4 mt-8",
+        )}
+        {...props}
+      >
         {children}
       </h2>
     ),
-    h3: ({ children }: any) => (
-      <h3 className="text-xl font-semibold text-heading-text-color mt-5 mb-2">
+    h3: ({ children, ...props }: any) => (
+      <h3
+        className={cn(
+          "scroll-m-20 text-xl lg:text-2xl text-subheading-text-color mb-3 mt-6",
+        )}
+        {...props}
+      >
         {children}
       </h3>
     ),
-    h4: ({ children }: any) => (
-      <h4 className="text-lg font-medium text-heading-text-color mt-4 mb-2">
+    h4: ({ children, ...props }: any) => (
+      <h4
+        className={cn(
+          "scroll-m-20 text-lg font-medium tracking-tight text-subheading-text-color mb-2 mt-5",
+        )}
+        {...props}
+      >
         {children}
       </h4>
     ),
 
     // Paragraphs
-    p: ({ children }: any) => (
-      <p className="text-base leading-7 text-subheading-text-color my-4">
+    p: ({ children, ...props }: any) => (
+      <p
+        className={cn(
+          "leading-7 text-[12px] md:text-base mb-4 text-normral-text-color",
+        )}
+        {...props}
+      >
         {children}
       </p>
     ),
 
     // Lists
-    ul: ({ children }: any) => (
-      <ul className="list-disc list-inside my-4 pl-4">{children}</ul>
-    ),
-    ol: ({ children }: any) => (
-      <ol className="list-decimal list-inside my-4 pl-4">{children}</ol>
-    ),
-    li: ({ children }: any) => (
-      <li className="my-1 text-subheading-text-color">{children}</li>
-    ),
-
-    // Code blocks
-    code: ({ children, className }: any) => {
-      const isInline = !className?.includes("language-");
-
-      return isInline ? (
-        <code className="bg-gray-100 rounded px-1 py-0.5 text-sm font-mono">
-          {children}
-        </code>
-      ) : (
-        <code className={className}>{children}</code>
-      );
-    },
-    pre: ({ children }: any) => (
-      <pre className="bg-gray-800 text-gray-100 p-4 rounded-lg my-4 overflow-x-auto">
+    ul: ({ children, ...props }: any) => (
+      <ul
+        className={cn(
+          "list-disc list-inside space-y-1 my-4 pl-5 text-muted-foreground",
+        )}
+        {...props}
+      >
         {children}
-      </pre>
+      </ul>
+    ),
+    ol: ({ children, ...props }: any) => (
+      <ol
+        className={cn(
+          "list-decimal list-inside space-y-1 my-4 pl-5 text-muted-foreground",
+        )}
+        {...props}
+      >
+        {children}
+      </ol>
+    ),
+    li: ({ children, ...props }: any) => (
+      <li className="leading-6">{children}</li>
     ),
 
     // Blockquotes
-    blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-gray-300 pl-4 italic my-4">
+    blockquote: ({ children, ...props }: any) => (
+      <blockquote
+        className={cn("mt-6 border-l-2 pl-6 italic text-muted-foreground")}
+        {...props}
+      >
         {children}
       </blockquote>
     ),
 
     // Links
-    a: ({ children, href }: any) => (
+    a: ({ children, href, ...props }: any) => (
       <a
         href={href}
-        className="text-blue-600 hover:text-blue-800 underline"
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        className={cn(
+          "font-medium text-primary underline-offset-4 hover:underline",
+        )}
+        target={href?.startsWith("http") ? "_blank" : undefined}
+        rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+        {...props}
       >
         {children}
       </a>
     ),
 
     // Horizontal rule
-    hr: () => <hr className="my-6 border-t border-gray-200" />,
+    hr: (props: any) => <hr className="my-8 border-border" {...props} />,
 
-    // Add any custom components you want to use in MDX
+    // Merge custom components
     ...components,
   };
 }
