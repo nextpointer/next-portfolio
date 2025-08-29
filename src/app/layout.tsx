@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { Plus_Jakarta_Sans, Figtree } from "next/font/google";
 import {
   SEO_KEYWORDS,
   AUTHOR,
@@ -80,9 +81,21 @@ export const metadata: Metadata = {
   },
 };
 
+// Configure Fonts
 const GeistMono = localFont({
   src: "./Fonts/GeistMonoVF.woff",
   display: "swap",
+  variable: "--font-geist-mono",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+});
+
+const fitgree = Figtree({
+  subsets: ["latin"],
+  variable: "--font-figtree",
 });
 
 export const viewport: Viewport = {
@@ -95,7 +108,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={GeistMono.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${plusJakarta.variable} ${GeistMono.variable} ${fitgree.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <ClientWrapper>
           <DynamicTitle />
@@ -106,7 +123,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="h-dvh flex flex-col items-center bg-background text-normral-text-color overflow-auto ">
+          <main className="h-dvh flex flex-col items-center bg-background text-normral-text-color overflow-auto">
             <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative ">
               <div
                 id="sticky-nav"

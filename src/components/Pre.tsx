@@ -51,6 +51,7 @@ export default function Pre({ children, ...props }: ComponentProps<"pre">) {
         text-[13px] sm:text-[14px] leading-relaxed
         max-w-full overflow-x-auto
         break-words whitespace-pre-wrap
+        border-dashed
       `}
     >
       {children}

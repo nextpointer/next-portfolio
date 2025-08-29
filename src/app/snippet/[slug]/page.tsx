@@ -30,9 +30,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             Back
           </Link>
         </div>
-        <h1 className="text-3xl font-bold text-heading-text-color dark:text-white mb-2">
-          {metadata.title}
-        </h1>
+        <h1 className="text-3xl font-bold mb-2">{metadata.title}</h1>
         <p className="text-md text-normral-text-color mb-8">{metadata.about}</p>
         <article className="max-w-[650px] w-full">
           <MDXRemote

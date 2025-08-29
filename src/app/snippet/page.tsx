@@ -14,7 +14,7 @@ export default function Page() {
     <>
       <title>snippets [nextpointer]</title>
       <div className="w-full">
-        <h1 className="text-3xl font-bold mb-8 text-foreground">Snippets</h1>
+        <h1 className="text-2xl mb-8">Snippets</h1>
 
         <div
           className={`columns-1 ${
@@ -27,7 +27,7 @@ export default function Page() {
               href={`/snippet/${snippet.slug}`}
               className="break-inside-avoid block"
             >
-              <div className="group relative border border-border bg-card p-5 transition-all hover:border-primary/40">
+              <div className="group relative border border-border bg-card p-5 transition-all border-dashed hover:border-primary/40">
                 {/* Title */}
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-muted group-hover:bg-primary/40">

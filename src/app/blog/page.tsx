@@ -8,9 +8,7 @@ export default function ListBlogs() {
     <>
       <title>blog [nextpointer]</title>
       <div className="w-full">
-        <h1 className="text-2xl font-bold mb-4 text-heading-text-color">
-          Blog
-        </h1>
+        <h1 className="text-2xl mb-4">Blog</h1>
         <ul className="w-full">
           {posts.map((post) => (
             <li key={post.slug} className="mb-2 cursor-pointer">
@@ -18,7 +16,7 @@ export default function ListBlogs() {
                 href={`/blog/${post.slug}`}
                 className="text-blue-600 underline"
               >
-                <div className="flex flex-row justify-between items-center group relative text-sm border px-4 py-2">
+                <div className="flex flex-row justify-between items-center group relative text-sm border border-dashed px-4 py-2">
                   <div className="flex flex-col">
                     <h2 className="text-subheading-text-color">{post.title}</h2>
                     <span className="mr-8">{post.date}</span>

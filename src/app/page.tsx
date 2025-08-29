@@ -45,7 +45,7 @@ export default function Home() {
             width={"30"}
           />
           <div className="h-8 flex flex-row gap-1 items-center ">
-            <h1 className="text-2xl text-heading-text-color">nextpointer</h1>
+            <h1 className="text-2xl">nextpointer</h1>
             <Tooltip>
               <TooltipTrigger asChild>
                 <span className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200 border rounded-full px-2.5 py-0.5 ml-1">
