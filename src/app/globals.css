@@ -54,7 +54,7 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     background: radial-gradient(
-        200px circle at var(--x, 50%) var(--y, 50%),
+        200px 70px ellipse at var(--x, 50%) var(--y, 50%),
         var(--muted-foreground),
         transparent
     );
@@ -74,6 +74,7 @@ body {
     position: absolute;
     inset: 1px;
     background: var(--card);
+    opacity: 0.99;
     border-radius: inherit;
 }
 
