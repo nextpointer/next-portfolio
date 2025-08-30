@@ -12,10 +12,7 @@ export default function ListBlogs() {
         <ul className="w-full">
           {posts.map((post) => (
             <li key={post.slug} className="mb-2 cursor-pointer">
-              <TransitionLink
-                href={`/blog/${post.slug}`}
-                className="text-blue-600 underline"
-              >
+              <TransitionLink href={`/blog/${post.slug}`} className="">
                 <div className="flex flex-row justify-between items-center group relative text-sm border border-dashed hover:border-ring/40 px-4 py-2">
                   <div className="flex flex-col">
                     <h2 className="text-subheading-text-color">{post.title}</h2>

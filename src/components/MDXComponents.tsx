@@ -44,12 +44,7 @@ export function useMDXComponents(components: any) {
 
     // Paragraphs
     p: ({ children, ...props }: any) => (
-      <p
-        className={cn(
-          "leading-7 text-[12px] md:text-base mb-4 text-normral-text-color",
-        )}
-        {...props}
-      >
+      <p className={cn("text-sm mb-4 text-normral-text-color")} {...props}>
         {children}
       </p>
     ),
