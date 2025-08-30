@@ -13,7 +13,7 @@ export default async function BlogPost({
     <>
       <title>{metadata.title}</title>
       <div className="">
-        <h1 className="text-3xl">{metadata.title}</h1>
+        <h1 className="text-3xl h-1/5">{metadata.title}</h1>
         <div className="flex flex-row gap-4">
           <p className="text-md text-subheading-text-color">{metadata.date}</p>
           <span className="bg-muted pl-2 pr-2 pt-1 pb-1 rounded-2xl text-[10px]">

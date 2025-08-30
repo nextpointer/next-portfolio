@@ -1,6 +1,5 @@
 import { getAllSnippet } from "../lib/markdown";
 import TransitionLink from "@/components/TransitionLink";
-import Image from "next/image";
 import { ReactBW } from "../../components/icons/ReactBW";
 
 const snippetIcons: Record<string, JSX.Element> = {
@@ -14,7 +13,7 @@ export default function Page() {
     <>
       <title>snippets [nextpointer]</title>
       <div className="w-full">
-        <h1 className="text-2xl mb-8">Snippets</h1>
+        <h1 className="text-3xl md:text-5xl h-1/2">Snippets</h1>
 
         <div
           className={`columns-1 ${

@@ -5,7 +5,7 @@ export function useMDXComponents(components: any) {
     // Headings
     h1: ({ children, ...props }: any) => (
       <h1
-        className={cn("scroll-m-20 text-3xl font-bold lg:text-4xl mb-6 mt-10 ")}
+        className={cn("scroll-m-20 text-3xl lg:text-4xl mb-6 mt-10")}
         {...props}
       >
         {children}
