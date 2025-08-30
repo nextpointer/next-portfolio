@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import TransitionLink from "@/components/TransitionLink";
 
 const options = {
   grid: true,
@@ -22,13 +23,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <div className="max-w-2xl mx-auto ">
         {" "}
         <div className="flex items-center gap-2 mb-6">
-          <Link
+          <TransitionLink
             href="/snippet"
-            className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center text-sm bg-muted p-2 rounded-full text-muted-foreground transition-colors justify-center"
           >
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            Back
-          </Link>
+            <ArrowLeft className="w-4 h-4" />
+          </TransitionLink>
         </div>
         <h1 className="text-3xl">{metadata.title}</h1>
         <p className="text-md text-normral-text-color mb-8">{metadata.about}</p>

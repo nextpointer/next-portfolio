@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 
 import Link, { LinkProps } from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -40,7 +41,7 @@ const TransitionLink = ({
       aria-label={ariaLabel}
       {...props}
       onClick={handleNavigation}
-      className={`${href === usePathname() ? "text-green-500" : ""}`}
+      className={cn(className, href === usePathname() && "text-green-500")}
     >
       {children}
     </Link>
