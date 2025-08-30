@@ -53,10 +53,10 @@ export default function Home() {
                 </span>
               </TooltipTrigger>
               <TooltipContent
-                className="max-w-[620px] rounded-md text-normral-text-color p-4 py-3 pl-0 bg-background"
+                className="max-w-[620px] rounded-md text-normral-text-color p-4 py-3 pl-1 bg-background"
                 side="bottom"
-                sideOffset={7}
-                alignOffset={-210}
+                sideOffset={0}
+                alignOffset={-185}
                 align="start"
               >
                 <p className="mt-4 text-sm leading-6">
