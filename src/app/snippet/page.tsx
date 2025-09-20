@@ -13,12 +13,12 @@ export default function Page() {
     <>
       <title>snippets [nextpointer]</title>
       <div className="w-full">
-        <h1 className="text-3xl md:text-5xl h-1/2">Snippets</h1>
+        <h1 className="text-3xl md:text-5xl h-1/5 md:h-1/2">Snippets</h1>
 
         <div
           className={`columns-1 ${
             snippets.length > 1 ? "md:columns-2" : ""
-          } gap-6 md:gap-0 space-y-6 md:space-y-0`}
+          } gap-6 md:gap-0 space-y-0`}
         >
           {snippets.map((snippet) => (
             <TransitionLink
