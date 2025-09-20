@@ -1,0 +1,181 @@
+---
+title: "useFetch"
+about: "A simple reusable GET-only fetch hook for React."
+tags: ["react", "hooks", "performance"]
+slug: "use-fetch"
+date: "2025-09-21"
+icon: "React"
+---
+
+#### The Hook
+
+```tsx
+import { useEffect, useState } from "react";
+
+interface FetchState<T> {
+  data: T | null;
+  loading: boolean;
+  error: string | null;
+}
+
+/**
+ * useFetch - A simple GET-only fetch hook for React.
+ *
+ * @param url - The URL to fetch data from
+ * @param options - Optional fetch options
+ * @param deps - Dependencies array to refetch when changed
+ *
+ * Limitations:
+ * 1. GET requests only.
+ * 2. Does not support POST, PUT, DELETE, or other HTTP methods.
+ * 3. Does not cache responses (always fetches fresh data).
+ */
+export function useFetch<T = unknown>(
+  url: string,
+  options?: RequestInit,
+  deps: unknown[] = [],
+): FetchState<T> {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!url) return;
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+    let isCancelled = false;
+
+    setLoading(true);
+    setError(null);
+
+    fetch(url, { ...options, signal })
+      .then(async (res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        const json = (await res.json()) as T;
+        if (!isCancelled) setData(json);
+      })
+      .catch((err) => {
+        if (!isCancelled && err.name !== "AbortError") {
+          setError(err.message || "Something went wrong");
+        }
+      })
+      .finally(() => {
+        if (!isCancelled) setLoading(false);
+      });
+
+    return () => {
+      isCancelled = true;
+      controller.abort();
+    };
+  }, [url, ...deps]);
+
+  return { data, loading, error };
+}
+```
+
+#### Example 1
+
+```typescript
+"use client";
+
+import React from "react";
+import { useFetch } from "@/hooks/useFetch";
+
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
+export default function PostsList() {
+  const { data: posts, loading, error } = useFetch<Post[]>(
+    "https://jsonplaceholder.typicode.com/posts"
+  );
+
+  if (loading) return <p>Loading posts...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  return (
+    <div>
+      <h3>Posts from JSONPlaceholder</h3>
+      <ul>
+        {posts?.slice(0, 5).map((post) => (
+          <li key={post.id}>
+            <b>{post.title}</b>
+            <p>{post.body}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+#### Example 2
+
+```typescript
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { useFetch } from "@/hooks/useFetch";
+
+interface Story {
+  id: number;
+  title: string;
+  url: string;
+  by: string;
+  score: number;
+}
+
+export default function HackerNewsTop() {
+  const { data: topIds, loading: idsLoading, error: idsError } = useFetch<number[]>(
+    "https://hacker-news.firebaseio.com/v0/topstories.json"
+  );
+
+  const [stories, setStories] = useState<Story[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!topIds) return;
+
+    const fetchStories = async () => {
+      setLoading(true);
+      try {
+        const top5Ids = topIds.slice(0, 5);
+        const promises = top5Ids.map((id) =>
+          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then((res) => res.json())
+        );
+        const results: Story[] = await Promise.all(promises);
+        setStories(results);
+      } catch {
+        setStories([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchStories();
+  }, [topIds]);
+
+  if (idsLoading || loading) return <p>Loading top Hacker News stories...</p>;
+  if (idsError) return <p>Error: {idsError}</p>;
+
+  return (
+    <div>
+      <h2>Top 5 Hacker News Stories</h2>
+      <ul>
+        {stories.map((story) => (
+          <li key={story.id}>
+            <a href={story.url} target="_blank" rel="noopener noreferrer">
+              {story.title}
+            </a>{" "}
+            by <b>{story.by}</b> (Score: {story.score})
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
