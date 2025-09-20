@@ -25,8 +25,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex items-center gap-2 mb-6">
           <TransitionLink
             href="/snippet"
-            className="flex items-center text-sm bg-muted p-2 rounded-full text-muted-foreground transition-colors justify-center"
+            className="relative group flex items-center text-sm p-2 text-muted-foreground transition-colors justify-center"
           >
+            <span className="absolute top-0 left-0 w-1 h-1 border-t border-l border-border group-hover:border-primary/50"></span>
+            <span className="absolute top-0 right-0 w-1 h-1 border-t border-r border-border group-hover:border-primary/50"></span>
+            <span className="absolute bottom-0 left-0 w-1 h-1 border-b border-l border-border group-hover:border-primary/50"></span>
+            <span className="absolute bottom-0 right-0 w-1 h-1 border-b border-r border-border group-hover:border-primary/50"></span>
             <ArrowLeft className="w-4 h-4" />
           </TransitionLink>
         </div>
