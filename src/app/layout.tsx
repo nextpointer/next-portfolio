@@ -127,7 +127,7 @@ export default function RootLayout({
             <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative ">
               <div
                 id="sticky-nav"
-                className="sticky left-0 top-0 flex flex-row gap-6 z-50 w-full items-center justify-between rounded-sm backdrop-filter backdrop-blur-3xl bg-opacity-30 text-subheading-text-color p-1.5 mb-8"
+                className="sticky left-0 top-0 flex flex-row gap-6 z-50 w-full items-center justify-between rounded-sm backdrop-filter backdrop-blur-3xl bg-opacity-30 text-subheading-text-color p-1.5 mb-8 border-1 border-dotted"
               >
                 <div className="flex flex-row gap-2">
                   <TransitionLink href="/" ariaLabel="Home">
