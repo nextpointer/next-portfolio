@@ -49,7 +49,7 @@ export default function Pre({ children, ...props }: ComponentProps<"pre">) {
         !bg-background !dark:bg-background
         p-3 sm:p-4
         text-[13px] sm:text-[14px] leading-relaxed
-        max-w-full overflow-x-auto
+        max-w-[90vw] overflow-x-auto
         break-words whitespace-pre-wrap
         border-dashed
       `}
