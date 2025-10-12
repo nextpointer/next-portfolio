@@ -1,14 +1,11 @@
 import { NextResponse } from "next/server";
 
 export async function GET(): Promise<NextResponse> {
-  const clientId = process.env.SPOTIFY_CLIENT_ID;
-  const redirectUri = process.env.SPOTIFY_REDIRECT_URI;
+  const clientId = process.env.SPOTIFY_CLIENT_ID!;
+  const redirectUri = process.env.SPOTIFY_REDIRECT_URI!;
 
-  // Validate environment variables
   if (!clientId || !redirectUri) {
-    throw new Error(
-      "Missing required environment variables: SPOTIFY_CLIENT_ID or SPOTIFY_REDIRECT_URI",
-    );
+    throw new Error("Missing SPOTIFY_CLIENT_ID or SPOTIFY_REDIRECT_URI");
   }
 
   const scope = [

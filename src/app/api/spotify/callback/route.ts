@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-// Define types for Spotify token response
 interface SpotifyTokenResponse {
   access_token: string;
   token_type: string;
@@ -18,20 +17,11 @@ export async function GET(request: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "No code provided" }, { status: 400 });
   }
 
+  const clientId = process.env.SPOTIFY_CLIENT_ID!;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET!;
+  const redirectUri = process.env.SPOTIFY_REDIRECT_URI!;
+
   try {
-    const clientId = process.env.SPOTIFY_CLIENT_ID;
-    const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
-    const redirectUri = process.env.SPOTIFY_REDIRECT_URI;
-
-    // Validate environment variables
-    if (!clientId || !clientSecret || !redirectUri) {
-      return NextResponse.json(
-        { error: "Server configuration error: Missing Spotify credentials" },
-        { status: 500 },
-      );
-    }
-
-    // Exchange code for access token
     const tokenResponse = await fetch(
       "https://accounts.spotify.com/api/token",
       {
@@ -44,7 +34,7 @@ export async function GET(request: Request): Promise<NextResponse> {
         },
         body: new URLSearchParams({
           grant_type: "authorization_code",
-          code: code,
+          code,
           redirect_uri: redirectUri,
         }),
       },
@@ -56,12 +46,8 @@ export async function GET(request: Request): Promise<NextResponse> {
       return NextResponse.json({ error: tokenData.error }, { status: 400 });
     }
 
-    // Create redirect response
-    const response = NextResponse.redirect(
-      new URL("/spotify?authenticated=true", request.url),
-    );
+    const response = NextResponse.redirect(new URL("/spotify", request.url));
 
-    // Set tokens as secure cookies
     response.cookies.set("spotify_access_token", tokenData.access_token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
@@ -74,15 +60,15 @@ export async function GET(request: Request): Promise<NextResponse> {
       response.cookies.set("spotify_refresh_token", tokenData.refresh_token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        maxAge: 60 * 60 * 24 * 30, // 30 days
+        maxAge: 60 * 60 * 24 * 30,
         sameSite: "lax",
         path: "/",
       });
     }
 
     return response;
-  } catch (error) {
-    console.error("Spotify callback error:", error);
+  } catch (err) {
+    console.error("Spotify callback error:", err);
     return NextResponse.json(
       { error: "Authentication failed" },
       { status: 500 },
