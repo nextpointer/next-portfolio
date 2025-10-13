@@ -11,7 +11,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
-import CurrentPlaying from "@/components/CurrentPlaying";
 
 export default function Home() {
   // to store the counts temply
@@ -152,7 +151,6 @@ export default function Home() {
           Jun 2024 - Aug 2024
         </span>
       </div>
-      <CurrentPlaying />
       <div className="flex flex-col w-full items-center mt-4">
         <h2 className="mt-8 font-bold text-2xl md:text-3xl text-heading-text-color text-center w-full">
           Let&apos;s work together
