@@ -91,7 +91,7 @@ body {
 /*page transition class */
 .exit-animation {
     opacity: 0;
-    transform: translateY(-30px);
+    /*transform: translateY(-30px);*/
     filter: blur(8px);
     transition:
         opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
@@ -102,7 +102,7 @@ body {
 }
 .enter-animation {
     opacity: 1;
-    transform: translateY(0);
+    /*transform: translateY(0);*/
     filter: blur(0);
     transition:
         opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
