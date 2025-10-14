@@ -1,5 +1,7 @@
 import { getAllPosts, getPostBySlug } from "@/app/lib/markdown";
 import { useMDXComponents } from "@/components/MDXComponents";
+import TransitionLink from "@/components/TransitionLink";
+import { ArrowLeft } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default async function BlogPost({
@@ -11,9 +13,21 @@ export default async function BlogPost({
 
   return (
     <>
+      <div className="flex items-center gap-2 mb-6">
+        <TransitionLink
+          href="/blog"
+          className="relative group flex items-center text-sm p-2 text-muted-foreground transition-colors justify-center"
+        >
+          <span className="absolute top-0 left-0 w-1 h-1 border-t border-l border-border group-hover:border-primary/50"></span>
+          <span className="absolute top-0 right-0 w-1 h-1 border-t border-r border-border group-hover:border-primary/50"></span>
+          <span className="absolute bottom-0 left-0 w-1 h-1 border-b border-l border-border group-hover:border-primary/50"></span>
+          <span className="absolute bottom-0 right-0 w-1 h-1 border-b border-r border-border group-hover:border-primary/50"></span>
+          <ArrowLeft className="w-4 h-4" />
+        </TransitionLink>
+      </div>
       <title>{metadata.title}</title>
       <div className="">
-        <h1 className="text-3xl h-1/5">{metadata.title}</h1>
+        <h1 className="text-3xl h-12n de">{metadata.title}</h1>
         <div className="flex flex-row gap-4">
           <p className="text-md text-subheading-text-color">{metadata.date}</p>
           <span className="bg-muted pl-2 pr-2 pt-1 pb-1 rounded-2xl text-[10px]">

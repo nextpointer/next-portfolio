@@ -7,6 +7,7 @@ type PostData = {
   date: string;
   slug: string;
   readingTime: string;
+  draft: boolean;
 };
 
 type SnippetData = {
