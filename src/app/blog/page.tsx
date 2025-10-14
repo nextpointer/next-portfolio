@@ -13,7 +13,7 @@ export default function ListBlogs() {
           {posts.map((post) => (
             <li key={post.slug} className="mb-2 cursor-pointer">
               <TransitionLink href={`/blog/${post.slug}`} className="">
-                <div className="flex flex-row justify-between items-center group relative text-sm border border-dashed hover:border-ring/40 px-4 py-2">
+                <div className="flex flex-row justify-between items-center group relative text-sm border border-transparent hover:border-dashed hover:hover:border-ring/40 px-4 py-2">
                   <div className="flex flex-col">
                     <h2 className="text-subheading-text-color">{post.title}</h2>
                     <span className="mr-8">{post.date}</span>
@@ -21,10 +21,10 @@ export default function ListBlogs() {
                   <span className="bg-muted pl-2 pr-2 pt-1 pb-1 rounded-2xl text-[10px]">
                     {post.readingTime} read
                   </span>
-                  <span className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-border group-hover:border-primary"></span>
-                  <span className="absolute -top-1 -right-1 w-2 h-2 border-t border-r border-border group-hover:border-primary"></span>
-                  <span className="absolute -bottom-1 -left-1 w-2 h-2 border-b border-l border-border group-hover:border-primary"></span>
-                  <span className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-border group-hover:border-primary"></span>
+                  <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all"></span>
+                  <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all"></span>
+                  <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all"></span>
+                  <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all"></span>
                 </div>
               </TransitionLink>
             </li>
