@@ -151,7 +151,7 @@ const Projects = () => {
           ref={(el) => {
             cardsRef.current[index] = el;
           }}
-          className="glow-hover border border-sidebar-border hover:border-transparent rounded-lg p-4 mb-4"
+          className="glow-hover border border-sidebar-border hover:border-transparent rounded-sm p-4 mb-4"
         >
           <div className="flex flex-row w-full justify-between">
             <h3 className="flex items-center gap-1 text-md font-semibold text-subheading-text-color">

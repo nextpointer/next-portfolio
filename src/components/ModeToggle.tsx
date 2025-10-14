@@ -1,42 +1,34 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Toggle } from "@/components/ui/toggle";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
+
+  const isDark = theme === "dark";
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button
-          type="button"
-          className="relative flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background p-2 outline-none cursor-pointer"
-        >
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
+    <Toggle
+      aria-label="Toggle theme"
+      pressed={isDark}
+      onPressedChange={() => setTheme(isDark ? "light" : "dark")}
+      className="dark:bg-background bg-background transition-all hover:bg-background m-0 p-0 rounded-full ml-auto"
+    >
+      {isDark ? (
+        <Moon className="transition-all h-24" />
+      ) : (
+        <Sun className="transition-all" />
+      )}
+    </Toggle>
+  );
 }

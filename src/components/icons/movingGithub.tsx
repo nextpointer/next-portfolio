@@ -2,8 +2,8 @@
 export const GithubLoopIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="19"
+    height="19"
     viewBox="0 0 24 24"
   >
     <mask id="SVGtXXaGeHA" width="24" height="24" x="0" y="0">

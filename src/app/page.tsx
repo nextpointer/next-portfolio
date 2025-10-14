@@ -11,6 +11,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
+import { ModeToggle } from "@/components/ModeToggle";
+import { GithubLoopIcon } from "@/components/icons/movingGithub";
 
 export default function Home() {
   // to store the counts temply
@@ -38,14 +40,8 @@ export default function Home() {
     <>
       <div className="flex items-center w-[100%] justify-between group">
         <div className="flex flex-row gap-3">
-          <Image
-            alt="icon"
-            src={"/nextpointer.png"}
-            height={"30"}
-            width={"30"}
-          />
-          <div className="h-8 flex flex-row gap-1 items-center ">
-            <h1 className="text-2xl">nextpointer</h1>
+          <div className="h-8 flex flex-row gap-1 items-center">
+            <h1 className="text-2xl"> I&apos;m nextpointer</h1>
             <Tooltip>
               <TooltipTrigger asChild>
                 <span className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200 border rounded-full px-2.5 py-0.5 ml-1">
@@ -137,17 +133,22 @@ export default function Home() {
         View all projects
         <ArrowUpRight className="h-4" aria-hidden="true" />
       </Link>
-      <h2 className="mt-6 font-bold text-base text-heading-text-color">
+
+      <h2 className="mt-6 mb-4 font-bold text-base text-heading-text-color">
         Experience
       </h2>
-      <div className=" w-full flex justify-between items-center">
-        <span className="m-1 ml-0 text-sm">
+      <div className=" w-full flex justify-between items-center relative p-2 group border border-transparent hover:border">
+        <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all"></span>
+        <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all"></span>
+        <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all"></span>
+        <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all"></span>
+        <span className="text-md flex flex-col md:flex-row md:gap-6 justify-center items-start gap-2">
           Math Coders
-          <span className="font-light italic bg-muted ml-4 p-2 rounded-md text-sm">
+          <span className="font-light italic bg-muted py-1 px-2 rounded-md text-xs ">
             Developer
           </span>
         </span>
-        <span className="font-light text-sm max-w-28 md:max-w-full">
+        <span className="font-light text-sm max-w-[50%] md:max-w-full">
           Jun 2024 - Aug 2024
         </span>
       </div>
@@ -169,12 +170,62 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="border border-sidebar-border p-3 text-md rounded-2xl flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">
+          <button className="border border-sidebar-border p-3 text-md rounded-md flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">
             Get in touch <ArrowRight height={15} width={15} />
           </button>
         </Link>
       </div>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-between flex-row items-center pb-4">
+        <div className="flex gap-4 text-heading-text-color justify-center h-full items-center">
+          <Link
+            href="https://github.com/nextpointer"
+            aria-label="GitHub profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubLoopIcon />
+          </Link>
+          <Link
+            href="https://x.com/nextpointerX"
+            aria-label="X profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 50 50"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className=""
+            >
+              <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
+            </svg>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/surajitmaity3112/"
+            aria-label="LinkedIn profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width={20}
+              height={20}
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+              ></path>
+            </svg>
+          </Link>
+          <ModeToggle />
+        </div>
         <p className="text-md">
           {visits !== null ? (
             <>
@@ -182,7 +233,7 @@ export default function Home() {
               so far
             </>
           ) : (
-            <>Loading visits...</>
+            <>000 visits so far</>
           )}
         </p>
       </div>
