@@ -175,7 +175,7 @@ export default function Home() {
           </button>
         </Link>
       </div>
-      <div className="w-full flex justify-between flex-row items-center pb-4">
+      <div className="w-full px-4 flex justify-between flex-row items-center pb-4">
         <div className="flex gap-4 text-heading-text-color justify-center h-full items-center">
           <Link
             href="https://github.com/nextpointer"

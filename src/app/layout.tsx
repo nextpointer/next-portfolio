@@ -21,6 +21,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import ClientWrapper from "@/components/ClientWrapper";
 import DynamicTitle from "@/components/useDynamicTitle";
 import Image from "next/image";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -164,6 +165,7 @@ export default function RootLayout({
 
               {children}
             </div>
+            <Footer />
           </main>
         </ThemeProvider>
       </body>
