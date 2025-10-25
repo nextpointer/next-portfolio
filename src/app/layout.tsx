@@ -81,11 +81,11 @@ export const metadata: Metadata = {
 };
 
 // Configure Fonts
-const GeistMono = localFont({
-  src: "./Fonts/GeistMonoVF.woff",
-  display: "swap",
-  variable: "--font-geist-mono",
-});
+// const GeistMono = localFont({
+//   src: "./Fonts/GeistMonoVF.woff",
+//   display: "swap",
+//   variable: "--font-geist-mono",
+// });
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -109,7 +109,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${GeistMono.variable} ${fitgree.variable}`}
+      className={`${plusJakarta.variable} ${fitgree.variable}`}
       suppressHydrationWarning
     >
       <body>

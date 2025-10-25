@@ -38,7 +38,7 @@ body {
     scrollbar-width: thin;
     scrollbar-color: var(--muted-foreground) transparent;
 }
-
+/*
 .glow-hover {
     position: relative;
     transition: border-color 0.3s ease;
@@ -73,10 +73,10 @@ body {
     content: "";
     position: absolute;
     inset: 1px;
-    background: var(--card);
+    background: var(--background);
     opacity: 0.99;
     border-radius: inherit;
-}
+}*/
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
@@ -115,7 +115,7 @@ body {
     color: var(--heading-text-color);
 }
 
-.currentProject::before {
+/*.currentProject::before {
     content: "";
     position: absolute;
     top: -30%;
@@ -150,6 +150,30 @@ body {
     }
     100% {
         left: 150%;
+    }
+}*/
+
+@theme {
+    --animate-border-blink: border-blink 0.2s ease-in-out 3;
+    --animate-outside-border-blink: outside-border-blink 0.2s ease-in-out 3;
+
+    @keyframes border-blink {
+        0%,
+        100% {
+            border-color: transparent;
+        }
+        50% {
+            border-color: var(--sidebar-border);
+        }
+    }
+    @keyframes outside-border-blink {
+        0%,
+        100% {
+            border-color: transparent;
+        }
+        50% {
+            border-color: var(--primary);
+        }
     }
 }
 
@@ -198,7 +222,7 @@ body {
     --radius: 0.625rem;
     --background: oklab(97.015% 0 -0.00011);
     --foreground: oklch(0.145 0 0);
-    --normal-text-color: oklch(50% 0 0);
+    --normal-text-color: oklch(30% 0 0);
     --heading-text-color: #151515;
     --subheading-text-color: #262626;
     --card: oklab(97.015% 0 -0.00011);
