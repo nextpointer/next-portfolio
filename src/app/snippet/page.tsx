@@ -41,19 +41,6 @@ export default function Page() {
 
                 <p className="text-sm text-muted-foreground">{snippet.about}</p>
 
-                {snippet.tags?.length > 0 && (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {snippet.tags.map((tag: string) => (
-                      <span
-                        key={tag}
-                        className="rounded-sm bg-muted px-2 py-1 text-xs text-muted-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
                 {/* Corner Borders */}
                 <span className="absolute top-0 left-0 w-2 h-2 border-t border-l border-border group-hover:border-primary"></span>
                 <span className="absolute top-0 right-0 w-2 h-2 border-t border-r border-border group-hover:border-primary"></span>
