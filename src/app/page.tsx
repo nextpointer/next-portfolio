@@ -5,14 +5,10 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Arrow from "@/components/icons/Arrow";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "@/components/ModeToggle";
 import { GithubLoopIcon } from "@/components/icons/movingGithub";
+import { Email } from "@/components/icons/Email";
 
 export default function Home() {
   // to store the counts temply
@@ -41,8 +37,8 @@ export default function Home() {
       <div className="flex items-center w-[100%] justify-between group">
         <div className="flex flex-row gap-3">
           <div className="h-8 flex flex-row gap-1 items-center">
-            <h1 className="text-2xl"> I&apos;m nextpointer</h1>
-            <Tooltip>
+            <h1 className="text-3xl font-semibold"> I&apos;m nextpointer</h1>
+            {/*<Tooltip>
               <TooltipTrigger asChild>
                 <span className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200 border rounded-full px-2.5 py-0.5 ml-1">
                   ?
@@ -63,12 +59,12 @@ export default function Home() {
                   staying flexible, connected, and always moving forward.
                 </p>
               </TooltipContent>
-            </Tooltip>
+            </Tooltip>*/}
           </div>
         </div>
         <div className="relative">
           <Link
-            className="flex items-center justify-center gap-2 border px-2 sm:px-4 py-2 rounded-md"
+            className="flex items-center justify-center gap-2 border px-2 sm:px-4 py-2 rounded-xs"
             href={"mailto:maitysurajit0901@gmail.com"}
             aria-label="Available for hire"
             target="_blank"
@@ -89,19 +85,19 @@ export default function Home() {
           />
         </div>
       </div>
-      <p className="mt-6 text-sm leading-6">
+      <p className="mt-6 text-sm leading-relaxed">
         <span className="text-heading-text-color font-semibold">
           Full-stack dev?
         </span>{" "}
         Yuppp!! But what&apos;s the real gig? It&apos;s not just about writing
-        code — it&apos;s about building things that solve real problems.
+        code -- it&apos;s about building things that solve real problems.
         You&apos;ll find me just as deep in{" "}
         <span className="text-heading-text-color font-semibold">design </span>
         as i am in{" "}
         <span className="text-heading-text-color font-semibold">debugging</span>
         . <br />
       </p>
-      <p className="mt-4 text-sm leading-6">
+      <p className="mt-2 text-sm leading-relaxed">
         Now building{" "}
         <Link
           href={"https://github.com/nextpointer/postori"}
@@ -109,30 +105,39 @@ export default function Home() {
           rel="noopener noreferrer"
           className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
-          <span className="relative z-10">postori 💌</span>
+          <span className="relative z-10 flex flex-row gap-1 justify-center items-center">
+            postori <Email className="h-4 w-4 text-primary" />
+          </span>
         </Link>{" "}
-        - a open source little webmail client.
+        - a little{" "}
+        <span className="text-heading-text-color font-semibold">
+          open source
+        </span>{" "}
+        webmail client.
       </p>
-      <h2 className="mt-6 font-bold text-base text-heading-text-color">
+      <h2 className="mt-6 font-semibold text-base leading-relaxed text-heading-text-color">
         What i&apos;m up to
       </h2>
-      <p className="mt-1 text-sm leading-5">
-        Still exploring, still figuring things out — and loving it. {":}"}
+      <p className="mt-1 text-sm leading-relaxed">
+        Exploring new technologies, contributing to open source, and building
+        projects that matter {":>"}
       </p>
-      <h2 className="mt-4 font-bold text-base text-heading-text-color">
-        My works 🍀
-      </h2>
+      <div className="mt-8 flex justify-between items-center flex-row w-full">
+        <h2 className="font-semibold text-base text-heading-text-color">
+          My works
+        </h2>
+        <Link
+          className=" flex flex-row items-center text-sm text-primary gap-1"
+          href="https://nextpointer.notion.site/1886b3ab41598025aad0da5600f50062?v=1886b3ab41598088b63a000ce32bf7dc"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View all projects"
+        >
+          more
+          <ArrowRight className="h-3 w-3" aria-hidden="true" />
+        </Link>
+      </div>
       <Projects />
-      <Link
-        className=" flex flex-row items-center underline  decoration-gray-500 underline-offset-2 text-primary"
-        href="https://nextpointer.notion.site/1886b3ab41598025aad0da5600f50062?v=1886b3ab41598088b63a000ce32bf7dc"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="View all projects"
-      >
-        View all projects
-        <ArrowUpRight className="h-4" aria-hidden="true" />
-      </Link>
 
       <h2 className="mt-6 mb-4 font-bold text-base text-heading-text-color">
         Experience
@@ -170,7 +175,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="border border-sidebar-border p-3 text-md rounded-md flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">
+          <button className="border border-sidebar-border p-3 text-md rounded-xs flex flex-row items-center justify-center gap-2 cursor-pointer text-heading-text-color">
             Get in touch <ArrowRight height={15} width={15} />
           </button>
         </Link>
