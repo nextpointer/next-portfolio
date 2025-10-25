@@ -26,6 +26,13 @@ import Tailwind from "../../public/tailwindcss.svg";
 import { Langchain } from "./icons/Langchain";
 import { GithubLoopIcon } from "./icons/movingGithub";
 import Deno from "./icons/Deno";
+import { Motion } from "./icons/Motion";
+import { Quiz } from "./icons/Quiz";
+import { Time } from "./icons/Time";
+import { Financial } from "./icons/Financial";
+import { Note } from "./icons/Note";
+import { Mood } from "./icons/Mood";
+import { Math } from "./icons/Math";
 
 interface Project {
   title: string;
@@ -34,6 +41,7 @@ interface Project {
   url: string;
   techStack: string[];
   liveLink: string;
+  icon: string;
 }
 
 type IconType = StaticImageData | React.FC<React.SVGProps<SVGSVGElement>>;
@@ -60,37 +68,58 @@ const techIcons: TechIcons = {
   Tailwind: Tailwind,
   Fresh: Fresh,
   Deno: Deno,
+  Motion: Motion,
+
+  // for projects
+  Quiz: Quiz,
+  Time: Time,
+  Financial: Financial,
+  Note: Note,
+  Mood: Mood,
+  Math: Math,
 };
 
 const projects: Project[] = [
   {
-    title: "Piplup",
+    title: "piplup",
     date: "2025",
-    about: "🌟 A simple AI integrated Quiz App 📚",
+    about: "AI integrated quiz app",
     url: "https://github.com/nextpointer/piplup",
     techStack: ["Next", "Neon", "Gemini", "Langchain", "Drizzle", "Auth0"],
     liveLink: "https://piplup-quiz.vercel.app/",
+    icon: "Quiz",
   },
   {
-    title: "NOT3S",
+    title: "n0t3s",
     date: "2025",
-    about: "💫 A beautiful notes App 📝",
+    about: "A beautiful notes app",
     url: "https://github.com/nextpointer/n0t3s",
     techStack: ["Next", "Gemini"],
     liveLink: "https://n0t3s.vercel.app/",
+    icon: "Note",
   },
   {
-    title: "SplitIt",
+    title: "timer",
+    date: "2025",
+    about: "A minimalist timer app",
+    url: "https://github.com/nextpointer/next-timer",
+    techStack: ["ReactJS", "Motion"],
+    liveLink: "https://next-timer.netlify.app/",
+    icon: "Time",
+  },
+  {
+    title: "splitit",
     date: "2024",
-    about: "💸 A simple money-splitting app 🔪",
+    about: "Simple money-splitting app",
     url: "https://github.com/nextpointer/SplitIt",
     techStack: ["ReactJS", "Hono", "SQLite", "Tailwind"],
     liveLink: "https://github.com/nextpointer/SplitIt",
+    icon: "Financial",
   },
   {
-    title: "Mind Matrix",
+    title: "mind-matrix",
     date: "2023",
-    about: "🧠 A Mental Health Management platform",
+    about: "Mental health management platform",
     url: "https://github.com/nextpointer/Mind-Matrix",
     techStack: [
       "ReactJS",
@@ -102,114 +131,128 @@ const projects: Project[] = [
       "Express",
     ],
     liveLink: "https://mindrix.vercel.app/",
+    icon: "Mood",
   },
   {
-    title: "Mr. Calculator",
+    title: "mr. calculator",
     date: "2022",
-    about: "🔢 A large number calculator 🤯",
+    about: "A large number calculator ",
     url: "https://github.com/nextpointer/Mr.-Calculator",
     techStack: ["Fresh", "Deno"],
     liveLink: "https://mr-calculator.deno.dev/",
+    icon: "Math",
   },
 ];
 
 const Projects = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    const handlers: ((e: MouseEvent) => void)[] = [];
+  // useEffect(() => {
+  //   const handlers: ((e: MouseEvent) => void)[] = [];
 
-    cardsRef.current.forEach((card, index) => {
-      if (!card) return;
+  //   cardsRef.current.forEach((card, index) => {
+  //     if (!card) return;
 
-      const handler = (e: MouseEvent) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty("--x", `${x}px`);
-        card.style.setProperty("--y", `${y}px`);
-      };
+  //     const handler = (e: MouseEvent) => {
+  //       const rect = card.getBoundingClientRect();
+  //       const x = e.clientX - rect.left;
+  //       const y = e.clientY - rect.top;
+  //       card.style.setProperty("--x", `${x}px`);
+  //       card.style.setProperty("--y", `${y}px`);
+  //     };
 
-      handlers[index] = handler;
-      card.addEventListener("mousemove", handler);
-    });
+  //     handlers[index] = handler;
+  //     card.addEventListener("mousemove", handler);
+  //   });
 
-    return () => {
-      cardsRef.current.forEach((card, index) => {
-        if (card && handlers[index]) {
-          card.removeEventListener("mousemove", handlers[index]);
-        }
-      });
-    };
-  }, []);
+  //   return () => {
+  //     cardsRef!.current.forEach((card, index) => {
+  //       if (card && handlers[index]) {
+  //         card.removeEventListener("mousemove", handlers[index]);
+  //       }
+  //     });
+  //   };
+  // }, []);
 
   return (
-    <div className="flex flex-col w-full mt-2">
-      {projects.map((project, index) => (
-        <div
-          key={index}
-          ref={(el) => {
-            cardsRef.current[index] = el;
-          }}
-          className="glow-hover border border-sidebar-border hover:border-transparent rounded-sm p-4 mb-4"
-        >
-          <div className="flex flex-row w-full justify-between">
-            <h3 className="flex items-center gap-1 text-md font-semibold text-subheading-text-color">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 w-full mt-4">
+      {projects.map((project, index) => {
+        const ProjectIcon = techIcons[project.icon];
+        return (
+          <div
+            key={index}
+            ref={(el) => {
+              cardsRef.current[index] = el;
+            }}
+            className="border border-sidebar-border rounded-xs p-4 w-full relative group  hover:border-dashed hover:bg-foreground/3 hover:rounded-none hover:animate-border-blink"
+          >
+            <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all group-hover:animate-outside-border-blink"></span>
+            <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all group-hover:animate-outside-border-blink"></span>
+            <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all group-hover:animate-outside-border-blink"></span>
+            <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all group-hover:animate-outside-border-blink"></span>
+            <div className="flex flex-row w-full justify-between">
+              <h3 className="flex items-center gap-2 text-sm font-semibold text-subheading-text-color">
+                {typeof ProjectIcon === "function" ? (
+                  <ProjectIcon className="h-4 w-4 text-foreground/50 " />
+                ) : (
+                  <></>
+                )}
+                <Link
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:underline"
+                >
+                  {project.title}
+                  <ArrowUpRight className="h-4 w-4 transition-opacity duration-200" />
+                </Link>
+              </h3>
               <Link
-                href={project.liveLink}
+                href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:underline"
+                aria-label={`View source code of ${project.title} on GitHub`}
               >
-                {project.title}
-                <ArrowUpRight className="h-4 w-4 transition-opacity duration-200" />
+                <GithubLoopIcon />
               </Link>
-            </h3>
-            <Link
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View source code of ${project.title} on GitHub`}
-            >
-              <GithubLoopIcon />
-            </Link>
-          </div>
+            </div>
 
-          <div className="flex flex-col gap-2 mt-2">
-            <p className="text-sm text-normal-text-color">{project.about}</p>
-            <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
-              <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
-                {project.techStack.map((tech, techIndex) => {
-                  const Icon = techIcons[tech];
-                  return (
-                    <span
-                      key={techIndex}
-                      className="mt-1 text-[10px] flex flex-row items-center justify-center pl-6 pr-6 pt-1 pb-1 gap-2 bg-muted border border-sidebar-border rounded-md w-auto"
-                    >
-                      {typeof Icon === "function" ? (
-                        <Icon className="h-5 w-5" />
-                      ) : (
-                        <Image
-                          src={Icon}
-                          alt={`${tech} logo used in ${project.title}`}
-                          width={24}
-                          height={24}
-                          className="h-5 w-5 object-contain"
-                          loading="lazy"
-                        />
-                      )}
-                      {tech}
-                    </span>
-                  );
-                })}
+            <div className="flex flex-col gap-2 mt-2">
+              <p className="text-sm text-normal-text-color">{project.about}</p>
+              <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
+                <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
+                  {project.techStack.map((tech, techIndex) => {
+                    const Icon = techIcons[tech];
+                    return (
+                      <span
+                        key={techIndex}
+                        className="mt-1 text-[10px] text-subheading-text-color-text-color flex flex-row items-center justify-center px-4 py-1 gap-2 bg-foreground/5 rounded-xs w-auto"
+                      >
+                        {typeof Icon === "function" ? (
+                          <Icon className="h-3 w-3 " />
+                        ) : (
+                          <Image
+                            src={Icon}
+                            alt={`${tech} logo used in ${project.title}`}
+                            width={10}
+                            height={10}
+                            className="h-3 w-3 object-contain"
+                            loading="lazy"
+                          />
+                        )}
+                        {tech}
+                      </span>
+                    );
+                  })}
+                </div>
+                <span className="text-sm text-normral-text-color">
+                  {project.date}
+                </span>
               </div>
-              <span className="text-sm text-normral-text-color">
-                {project.date}
-              </span>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
