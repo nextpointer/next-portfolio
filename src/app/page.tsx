@@ -37,7 +37,7 @@ export default function Home() {
       <div className="flex items-center w-[100%] justify-between group">
         <div className="flex flex-row gap-3">
           <div className="h-8 flex flex-row gap-1 items-center">
-            <h1 className="text-3xl font-semibold"> I&apos;m nextpointer</h1>
+            <h1 className="text-3xl font-normal"> I&apos;m nextpointer</h1>
             {/*<Tooltip>
               <TooltipTrigger asChild>
                 <span className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200 border rounded-full px-2.5 py-0.5 ml-1">
@@ -86,15 +86,19 @@ export default function Home() {
         </div>
       </div>
       <p className="mt-6 text-sm leading-relaxed">
-        <span className="text-heading-text-color font-semibold">
+        <span className="text-heading-text-color font-medium dark:font-light">
           Full-stack dev?
         </span>{" "}
         Yuppp!! But what&apos;s the real gig? It&apos;s not just about writing
         code -- it&apos;s about building things that solve real problems.
         You&apos;ll find me just as deep in{" "}
-        <span className="text-heading-text-color font-semibold">design </span>
+        <span className="text-heading-text-color font-medium dark:font-light">
+          Design{" "}
+        </span>
         as i am in{" "}
-        <span className="text-heading-text-color font-semibold">debugging</span>
+        <span className="text-heading-text-color font-medium dark:font-light">
+          Debugging
+        </span>
         . <br />
       </p>
       <p className="mt-2 text-sm leading-relaxed">
@@ -103,15 +107,15 @@ export default function Home() {
           href={"https://github.com/nextpointer/postori"}
           target="_blank"
           rel="noopener noreferrer"
-          className="border px-2 py-[2px] text-heading-text-color font-semibold currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
+          className="border px-2 py-[2px] text-heading-text-color font-medium dark:font-light currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
           <span className="relative z-10 flex flex-row gap-1 justify-center items-center">
-            postori <Email className="h-4 w-4 text-primary" />
+            Postori <Email className="h-4 w-4 text-primary" />
           </span>
         </Link>{" "}
         - a little{" "}
-        <span className="text-heading-text-color font-semibold">
-          open source
+        <span className="text-heading-text-color font-medium dark:font-light">
+          Open source
         </span>{" "}
         webmail client.
       </p>

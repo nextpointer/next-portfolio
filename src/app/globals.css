@@ -313,4 +313,7 @@ body {
     h1 {
         @apply bg-gradient-to-r from-heading-text-color via-heading-text-color/80 to-heading-text-color/30 bg-clip-text text-transparent inline-block;
     }
+    p {
+        font-weight: 300;
+    }
 }
