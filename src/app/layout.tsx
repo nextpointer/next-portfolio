@@ -130,7 +130,7 @@ export default function RootLayout({
             <div className="p-4 w-full max-w-[650px] flex items-start flex-col pt-4 md:pt-8 relative ">
               <div
                 id="sticky-nav"
-                className="sticky left-0 top-0 flex flex-row gap-6 z-50 w-full items-center justify-between rounded-sm backdrop-filter backdrop-blur-3xl bg-opacity-30 text-subheading-text-color p-1.5 mb-8"
+                className="sticky left-0 top-0 flex flex-row gap-6 z-50 w-full items-center justify-between rounded-sm backdrop-filter backdrop-blur-3xl bg-opacity-30 text-subheading-text-color p-1.5 mb-8 "
               >
                 <TransitionLink href="/" ariaLabel="Home">
                   <div className="relative">
@@ -145,21 +145,21 @@ export default function RootLayout({
                 <div className="flex flex-row gap-2 ">
                   <TransitionLink href="/blog" ariaLabel="Blog">
                     <div className="relative">
-                      <h2 className="text-[12px] md:text-[14px] px-2 py-1">
+                      <h2 className="text-[12px] md:text-[14px] px-2 py-1 hover:underline hover:underline-offset-2 hover:decoration-primary">
                         Blog
                       </h2>
                     </div>
                   </TransitionLink>
                   <TransitionLink href="/snippet" ariaLabel="Snippet">
                     <div className="relative">
-                      <h2 className="text-[12px] md:text-[14px] px-2 py-1">
+                      <h2 className="text-[12px] md:text-[14px] px-2 py-1 hover:underline hover:underline-offset-2 hover:decoration-primary">
                         Snippet
                       </h2>
                     </div>
                   </TransitionLink>
                   <TransitionLink href="/playground" ariaLabel="Playground">
                     <div className="relative">
-                      <h2 className="text-[12px] md:text-[14px] px-2 py-1">
+                      <h2 className="text-[12px] md:text-[14px] px-2 py-1 hover:underline hover:underline-offset-2 hover:decoration-primary">
                         Playground
                       </h2>
                     </div>

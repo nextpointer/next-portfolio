@@ -131,7 +131,7 @@ export default function Home() {
           My works
         </h2>
         <Link
-          className=" flex flex-row items-center text-sm text-primary gap-1"
+          className=" flex flex-row items-center text-sm text-normal-text-color gap-1 underline underline-offset-2 decoration-primary"
           href="https://nextpointer.notion.site/1886b3ab41598025aad0da5600f50062?v=1886b3ab41598088b63a000ce32bf7dc"
           target="_blank"
           rel="noopener noreferrer"
