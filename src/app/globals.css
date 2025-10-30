@@ -222,7 +222,7 @@ body {
     --radius: 0.625rem;
     --background: oklab(97.015% 0 -0.00011);
     --foreground: oklch(0.145 0 0);
-    --normal-text-color: oklch(30% 0 0);
+    --normal-text-color: oklch(50% 0 0);
     --heading-text-color: #151515;
     --subheading-text-color: #262626;
     --card: oklab(97.015% 0 -0.00011);
@@ -254,6 +254,7 @@ body {
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(85.452% 0.0001 271.152);
     --sidebar-ring: oklch(0.708 0 0);
+    --font-mono: var(--font-geist-mono);
 }
 
 .dark {
@@ -311,9 +312,9 @@ body {
         font-family: var(--font-jakarta);
     }
     h1 {
-        @apply bg-gradient-to-r from-heading-text-color via-heading-text-color/80 to-heading-text-color/30 bg-clip-text text-transparent inline-block;
+        @apply bg-gradient-to-r from-heading-text-color via-heading-text-color/80 to-heading-text-color/30 bg-clip-text text-transparent inline-block tracking-normal;
     }
     p {
-        font-weight: 300;
+        /*font-weight: 500;*/
     }
 }

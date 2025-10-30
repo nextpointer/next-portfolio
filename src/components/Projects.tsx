@@ -226,7 +226,7 @@ const Projects = () => {
                     return (
                       <span
                         key={techIndex}
-                        className="mt-1 text-[10px] text-subheading-text-color-text-color flex flex-row items-center justify-center px-4 py-1 gap-2 bg-foreground/5 rounded-xs w-auto"
+                        className="mt-1 text-[10px] text-subheading-text-color-text-color flex flex-row items-center justify-center px-4 py-1 gap-2 bg-foreground/5 rounded-xs w-auto font-mono"
                       >
                         {typeof Icon === "function" ? (
                           <Icon className="h-3 w-3 " />

@@ -86,20 +86,20 @@ export default function Home() {
         </div>
       </div>
       <p className="mt-6 text-sm leading-relaxed">
-        <span className="text-heading-text-color font-medium dark:font-light">
+        <span className="text-heading-text-color font-medium">
           Full-stack dev?
         </span>{" "}
         Yuppp!! But what&apos;s the real gig? It&apos;s not just about writing
         code -- it&apos;s about building things that solve real problems.
-        You&apos;ll find me just as deep in{" "}
-        <span className="text-heading-text-color font-medium dark:font-light">
-          Design{" "}
+        <span className="block md:inline-block mt-2 md:m-0 p-0">
+          You&apos;ll find me just as deep in{" "}
+          <span className="text-heading-text-color font-medium ">Design </span>
+          as i am in{" "}
+          <span className="text-heading-text-color font-medium ">
+            Debugging
+          </span>
+          .
         </span>
-        as i am in{" "}
-        <span className="text-heading-text-color font-medium dark:font-light">
-          Debugging
-        </span>
-        . <br />
       </p>
       <p className="mt-2 text-sm leading-relaxed">
         Now building{" "}
