@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { Toggle } from "@/components/ui/toggle";
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -15,7 +15,7 @@ export function ModeToggle() {
 
   if (!mounted) return null;
 
-  const isDark = theme === "dark";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <Toggle
