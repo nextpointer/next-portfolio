@@ -9,6 +9,12 @@ import { useEffect, useState } from "react";
 import { ModeToggle } from "@/components/ModeToggle";
 import { GithubLoopIcon } from "@/components/icons/movingGithub";
 import { Email } from "@/components/icons/Email";
+import { Me } from "@/components/icons/Me";
+import { Design } from "@/components/icons/Design";
+import { Debug } from "@/components/icons/Debug";
+import { Doing } from "@/components/icons/Doing";
+import { Work } from "@/components/icons/Work";
+import { Done } from "@/components/icons/Done";
 
 export default function Home() {
   // to store the counts temply
@@ -35,9 +41,16 @@ export default function Home() {
   return (
     <>
       <div className="flex items-center w-[100%] justify-between group">
-        <div className="flex flex-row gap-3">
-          <div className="h-8 flex flex-row gap-1 items-center">
-            <h1 className="text-3xl font-normal"> I&apos;m nextpointer</h1>
+        <div className="flex flex-row gap-3 ">
+          <div className="h-8 flex flex-row gap-1 items-center ">
+            <h1 className="text-3xl font-normal flex flex-col items-start justify-start">
+              {" "}
+              <span className="text-[12px] text-sidebar-ring flex flex-row gap-1 items-center justify-center">
+                <Me className="h-4 w-4" />
+                I&apos;m
+              </span>{" "}
+              nextpointer
+            </h1>
             {/*<Tooltip>
               <TooltipTrigger asChild>
                 <span className="invisible hover:visible group-hover:visible cursor-help transition-opacity duration-200 border rounded-full px-2.5 py-0.5 ml-1">
@@ -71,7 +84,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <span className="relative flex size-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-300 opacity-75"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex size-3 rounded-full bg-primary"></span>
             </span>
             <span className="text-heading-text-color text-[0.6rem] md:text-[0.8rem] leading-3 hidden sm:block">
@@ -85,7 +98,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <p className="mt-6 text-sm leading-relaxed">
+      <p className="mt-10 text-sm leading-relaxed">
         <span className="text-heading-text-color font-medium">
           Full-stack dev?
         </span>{" "}
@@ -93,15 +106,17 @@ export default function Home() {
         code -- it&apos;s about building things that solve real problems.
         <span className="block md:inline-block mt-2 md:m-0 p-0">
           You&apos;ll find me just as deep in{" "}
-          <span className="text-heading-text-color font-medium ">Design </span>
+          <span className="text-heading-text-color font-medium inline-block ">
+            Design (<Design className="h-4 w-4 inline-block" />)
+          </span>{" "}
           as i am in{" "}
-          <span className="text-heading-text-color font-medium ">
-            Debugging
+          <span className="text-heading-text-color font-medium inline-block">
+            Debugging (<Debug className="h-4 w-4 inline-block" />)
           </span>
           .
         </span>
       </p>
-      <p className="mt-2 text-sm leading-relaxed">
+      <p className="mt-4 text-sm leading-relaxed">
         Now building{" "}
         <Link
           href={"https://github.com/nextpointer/postori"}
@@ -110,25 +125,22 @@ export default function Home() {
           className="border px-2 py-[2px] text-heading-text-color font-medium dark:font-light currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
         >
           <span className="relative z-10 flex flex-row gap-1 justify-center items-center">
-            Postori <Email className="h-4 w-4 text-primary" />
+            Postori <Email className="h-4 w-4 " />
           </span>
         </Link>{" "}
         - a little{" "}
-        <span className="text-heading-text-color font-medium dark:font-light">
-          Open source
-        </span>{" "}
+        <span className="text-heading-text-color font-medium">Open source</span>{" "}
         webmail client.
       </p>
-      <h2 className="mt-6 font-semibold text-base leading-relaxed text-heading-text-color">
-        What i&apos;m up to
+      <h2 className="mt-6 font-semibold text-base text-heading-text-color flex flex-row justify-start items-center gap-2">
+        <Doing className="h-4 w-4 inline-block" /> What i&apos;m up to
       </h2>
       <p className="mt-1 text-sm leading-relaxed">
-        Exploring new technologies, contributing to open source, and building
-        projects that matter {":>"}
+        still exploring, still figuring things out — and loving it {":>"}
       </p>
       <div className="mt-8 flex justify-between items-center flex-row w-full">
-        <h2 className="font-semibold text-base text-heading-text-color">
-          My works
+        <h2 className="font-semibold text-base text-heading-text-color flex flex-row justify-start items-center gap-2">
+          <Work className="h-4 w-4 inline-block text-primary" /> My works
         </h2>
         <Link
           className=" flex flex-row items-center text-sm text-normal-text-color gap-1 underline underline-offset-2 decoration-primary"
@@ -143,10 +155,10 @@ export default function Home() {
       </div>
       <Projects />
 
-      <h2 className="mt-6 mb-4 font-bold text-base text-heading-text-color">
-        Experience
+      <h2 className="mt-6 mb-4 font-bold text-base text-heading-text-color flex flex-row gap-2 justify-center items-center">
+        <Done className="h-4 w-4 inline-block" /> Experience
       </h2>
-      <div className=" w-full flex justify-between items-center relative p-2 group border border-transparent hover:border">
+      <div className="w-full flex justify-between items-center relative p-2 group border border-transparent hover:border">
         <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all"></span>
         <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all"></span>
         <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all"></span>

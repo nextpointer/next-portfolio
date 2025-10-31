@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import { Plus_Jakarta_Sans, Figtree, Inter } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Figtree,
+  Inter,
+  Space_Mono,
+} from "next/font/google";
 import {
   SEO_KEYWORDS,
   AUTHOR,
@@ -87,6 +92,12 @@ const GeistMono = localFont({
   variable: "--font-geist-mono",
 });
 
+const spacemono = Space_Mono({
+  subsets: ["latin"],
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
+});
+
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-jakarta",
@@ -113,7 +124,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${fitgree.variable} ${int.variable} ${GeistMono.variable}`}
+      className={`${plusJakarta.variable} ${fitgree.variable} ${int.variable} ${GeistMono.variable} ${spacemono.variable}`}
       suppressHydrationWarning
     >
       <body>

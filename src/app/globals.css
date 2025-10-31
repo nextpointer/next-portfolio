@@ -115,7 +115,7 @@ body {
     color: var(--heading-text-color);
 }
 
-/*.currentProject::before {
+.currentProject::before {
     content: "";
     position: absolute;
     top: -30%;
@@ -139,8 +139,9 @@ body {
     );
 
     box-shadow:
-        0 0 20px 4px color-mix(in oklch, var(--foreground) 6%, transparent),
-        0 0 40px 16px color-mix(in oklch, var(--foreground) 4%, transparent),
+        0 0 20px 4px color-mix(in oklch, var(--foreground) 2%, transparent),
+        0 0 40px 16px
+            color-mix(in oklch, var(--heading-text-color) 9%, transparent),
         0 0 60px 28px color-mix(in oklch, var(--foreground) 2%, transparent);
 }
 
@@ -151,7 +152,7 @@ body {
     100% {
         left: 150%;
     }
-}*/
+}
 
 @theme {
     --animate-border-blink: border-blink 0.2s ease-in-out 3;
@@ -258,7 +259,7 @@ body {
 }
 
 .dark {
-    --background: oklch(0.1408 0.0044 285.82);
+    --background: oklch(0.2046 0 0);
     --foreground: oklch(0.985 0 0);
     --normal-text-color: oklch(60% 0.004 270);
     --heading-text-color: oklch(92.191% 0.0001 271.152);
@@ -300,7 +301,7 @@ body {
     }
     body {
         @apply bg-background text-foreground;
-        font-family: var(--font-figtree);
+        font-family: var(--font-geist-mono);
     }
     /* Apply Jakarta Sans to all headings */
     h1,
@@ -309,7 +310,7 @@ body {
     h4,
     h5,
     h6 {
-        font-family: var(--font-jakarta);
+        font-family: var(--font-space-mono);
     }
     h1 {
         @apply bg-gradient-to-r from-heading-text-color via-heading-text-color/80 to-heading-text-color/30 bg-clip-text text-transparent inline-block tracking-normal;
