@@ -19,23 +19,30 @@ export default function ListBlogs() {
                   isDraft ? "cursor-not-allowed" : ""
                 }`}
               >
-                <div className="flex flex-col">
-                  <h2 className="text-subheading-text-color flex items-center gap-2">
-                    {post.title}
-                    {isDraft && <Lock className="w-3 h-3 opacity-70" />}
+                <div className="flex flex-col gap-2">
+                  <h2 className="text-subheading-text-color leading-snug">
+                    <span className="inline">
+                      {post.title}
+                      {isDraft && (
+                        <span className="ml-1 inline-block align-middle -translate-y-[3px]">
+                          <Lock className="w-3 h-3 opacity-70 inline-block" />
+                        </span>
+                      )}
+                    </span>
                   </h2>
+
                   <span className="mr-8 text-xs text-muted-foreground">
                     {post.date}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap justify-end">
                   {isDraft && (
                     <span className="text-[10px] bg-destructive/20 text-destructive px-2 py-1 rounded-full tracking-wide">
                       Draft
                     </span>
                   )}
-                  <span className="bg-muted px-2 py-1 rounded-2xl text-[10px]">
+                  <span className="bg-muted px-2 py-1 rounded-2xl text-[10px] text-center">
                     {post.readingTime} read
                   </span>
                 </div>

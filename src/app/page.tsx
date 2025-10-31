@@ -132,14 +132,14 @@ export default function Home() {
         <span className="text-heading-text-color font-medium">Open source</span>{" "}
         webmail client.
       </p>
-      <h2 className="mt-6 font-semibold text-base text-heading-text-color flex flex-row justify-start items-center gap-2">
+      <h2 className="mt-6 font-semibold text-base text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row justify-start items-center gap-2">
         <Doing className="h-4 w-4 inline-block" /> What i&apos;m up to
       </h2>
       <p className="mt-1 text-sm leading-relaxed">
         still exploring, still figuring things out — and loving it {":>"}
       </p>
       <div className="mt-8 flex justify-between items-center flex-row w-full">
-        <h2 className="font-semibold text-base text-heading-text-color flex flex-row justify-start items-center gap-2">
+        <h2 className="font-semibold text-base  text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row justify-start items-center gap-2">
           <Work className="h-4 w-4 inline-block text-primary" /> My works
         </h2>
         <Link
@@ -155,7 +155,7 @@ export default function Home() {
       </div>
       <Projects />
 
-      <h2 className="mt-6 mb-4 font-bold text-base text-heading-text-color flex flex-row gap-2 justify-center items-center">
+      <h2 className="mt-6 mb-4 font-semibold text-base  text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row gap-2 justify-center items-center">
         <Done className="h-4 w-4 inline-block" /> Experience
       </h2>
       <div className="w-full flex justify-between items-center relative p-2 group border border-transparent hover:border">
@@ -250,11 +250,13 @@ export default function Home() {
         <p className="text-md">
           {visits !== null ? (
             <>
-              <span className="text-heading-text-color">{visits}</span> visits
-              so far
+              <span className="text-heading-text-color ">{visits}</span>{" "}
+              <span className="text-xs">visits so far</span>
             </>
           ) : (
-            <>000 visits so far</>
+            <>
+              000 <span className="text-xs">visits so far</span>
+            </>
           )}
         </p>
       </div>

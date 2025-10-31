@@ -119,7 +119,7 @@ const projects: Project[] = [
   {
     title: "mind-matrix",
     date: "2023",
-    about: "Mental health management platform",
+    about: "Mind wellness platform",
     url: "https://github.com/nextpointer/Mind-Matrix",
     techStack: [
       "ReactJS",
@@ -186,12 +186,12 @@ const Projects = () => {
             }}
             className="border border-sidebar-border rounded-xs p-4 w-full relative group  hover:border-dashed hover:bg-foreground/3 hover:rounded-none hover:animate-border-blink"
           >
-            <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all group-hover:animate-outside-border-blink"></span>
-            <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all group-hover:animate-outside-border-blink"></span>
-            <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all group-hover:animate-outside-border-blink"></span>
-            <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all group-hover:animate-outside-border-blink"></span>
+            <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all group-hover:animate-outside-border-blink opacity-0 group-hover:opacity-100"></span>
+            <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all group-hover:animate-outside-border-blink opacity-0 group-hover:opacity-100"></span>
+            <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all group-hover:animate-outside-border-blink opacity-0 group-hover:opacity-100"></span>
+            <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all group-hover:animate-outside-border-blink opacity-0 group-hover:opacity-100"></span>
             <div className="flex flex-row w-full justify-between">
-              <h3 className="flex items-center gap-2 text-sm font-semibold text-subheading-text-color">
+              <h3 className="flex items-center gap-2 text-sm font-semibold text-subheading-text-color/80">
                 {typeof ProjectIcon === "function" ? (
                   <ProjectIcon className="h-4 w-4 text-foreground/50 " />
                 ) : (
