@@ -6,16 +6,15 @@ import { ArrowUpRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 
 // Icons
-import Next from "../../public/logos--nextjs-icon.svg";
+import Next from "../../public/nextjs_icon_dark.svg";
 import Gemini from "../../public/gemini.svg";
-import Drizzle from "../../public/drizzle-orm_dark.svg";
-import Neon from "../../public/neon.svg";
+import { Drizzle } from "./icons/Drizzle";
+import { Neon } from "./icons/Neon";
 import { Auth0 } from "./icons/Auth0";
-// import Deno from "../../public/deno_dark.svg";
 import Zustand from "../../public/devicon--zustand.svg";
 import { Express } from "./icons/Express";
-import Hono from "../../public/hono.svg";
-import Fresh from "../../public/logos--fresh.svg";
+import { Hono } from "./icons/Hono";
+import { Fresh } from "./icons/Fresh";
 import Sanity from "../../public/logos--sanity.svg";
 import MUI from "../../public/materialui.svg";
 import MongoDB from "../../public/mongodb.svg";
@@ -32,7 +31,7 @@ import { Time } from "./icons/Time";
 import { Financial } from "./icons/Financial";
 import { Note } from "./icons/Note";
 import { Mood } from "./icons/Mood";
-import { Math } from "./icons/Math";
+import { Maths } from "./icons/Math";
 
 interface Project {
   title: string;
@@ -76,7 +75,7 @@ const techIcons: TechIcons = {
   Financial: Financial,
   Note: Note,
   Mood: Mood,
-  Math: Math,
+  Maths: Maths,
 };
 
 const projects: Project[] = [
@@ -147,33 +146,6 @@ const projects: Project[] = [
 const Projects = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  // useEffect(() => {
-  //   const handlers: ((e: MouseEvent) => void)[] = [];
-
-  //   cardsRef.current.forEach((card, index) => {
-  //     if (!card) return;
-
-  //     const handler = (e: MouseEvent) => {
-  //       const rect = card.getBoundingClientRect();
-  //       const x = e.clientX - rect.left;
-  //       const y = e.clientY - rect.top;
-  //       card.style.setProperty("--x", `${x}px`);
-  //       card.style.setProperty("--y", `${y}px`);
-  //     };
-
-  //     handlers[index] = handler;
-  //     card.addEventListener("mousemove", handler);
-  //   });
-
-  //   return () => {
-  //     cardsRef!.current.forEach((card, index) => {
-  //       if (card && handlers[index]) {
-  //         card.removeEventListener("mousemove", handlers[index]);
-  //       }
-  //     });
-  //   };
-  // }, []);
-
   return (
     <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 w-full mt-4">
       {projects.map((project, index) => {
@@ -219,14 +191,14 @@ const Projects = () => {
 
             <div className="flex flex-col gap-2 mt-2">
               <p className="text-sm text-normal-text-color">{project.about}</p>
-              <div className="flex flex-row justify-between items-center gap-8 md:gap-14 ">
-                <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar ">
+              <div className="flex flex-row justify-between items-center gap-8 md:gap-14">
+                <div className="flex flex-row gap-2 overflow-x-scroll no-scrollbar">
                   {project.techStack.map((tech, techIndex) => {
                     const Icon = techIcons[tech];
                     return (
                       <span
                         key={techIndex}
-                        className="mt-1 text-[10px] text-subheading-text-color-text-color flex flex-row items-center justify-center px-4 py-1 gap-2 bg-foreground/5 rounded-xs w-auto font-mono"
+                        className="mt-1 text-[10px] text-subheading-text-color-text-color flex flex-row items-center justify-center px-4 py-1 gap-2 bg-foreground/5 rounded-xs w-auto font-mono "
                       >
                         {typeof Icon === "function" ? (
                           <Icon className="h-3 w-3 " />
@@ -236,7 +208,7 @@ const Projects = () => {
                             alt={`${tech} logo used in ${project.title}`}
                             width={10}
                             height={10}
-                            className="h-3 w-3 object-contain"
+                            className="h-4 w-4 object-contain"
                             loading="lazy"
                           />
                         )}
