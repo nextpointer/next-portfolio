@@ -122,7 +122,7 @@ export default function Home() {
           href={"https://github.com/nextpointer/postori"}
           target="_blank"
           rel="noopener noreferrer"
-          className="border px-2 py-[2px] text-heading-text-color font-medium dark:font-light currentProject relative overflow-hidden rounded-md isolate inline-block align-middle"
+          className="border px-2 py-[2px] text-heading-text-color font-medium dark:font-light currentProject relative overflow-hidden rounded-xs isolate inline-block align-middle"
         >
           <span className="relative z-10 flex flex-row gap-1 justify-center items-center">
             Postori <Email className="h-4 w-4 " />
