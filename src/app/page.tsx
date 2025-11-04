@@ -15,6 +15,9 @@ import { Debug } from "@/components/icons/Debug";
 import { Doing } from "@/components/icons/Doing";
 import { Work } from "@/components/icons/Work";
 import { Done } from "@/components/icons/Done";
+import { Github } from "@/components/icons/Github";
+import { Resume } from "@/components/icons/Resume";
+import { Dm } from "@/components/icons/Dm";
 
 export default function Home() {
   // to store the counts temply
@@ -132,12 +135,128 @@ export default function Home() {
         <span className="text-heading-text-color font-medium">Open source</span>{" "}
         webmail client.
       </p>
+      {/*quick buttons*/}
+
       <h2 className="mt-6 font-semibold text-base text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row justify-start items-center gap-2">
         <Doing className="h-4 w-4 inline-block" /> What i&apos;m up to
       </h2>
       <p className="mt-1 text-sm leading-relaxed">
         still exploring, still figuring things out — and loving it {":>"}
       </p>
+
+      <div className="mt-6 mb-2 flex flex-row gap-3 items-center justify-start">
+        <Link
+          href={"#"}
+          className="
+              px-2 py-1
+              rounded-md
+              bg-background
+              border-none outline-none cursor-pointer
+              flex items-center justify-center gap-2
+              transition-all duration-300 ease-in-out
+              shadow-[0px_-2px_0px_0px_rgba(0,0,0,0.2),inset_0px_-6px_0px_-3px_rgba(255,255,255,0.5),0px_5px_0px_0px_rgba(255,255,255,0.1),0px_0px_0px_2px_rgba(0,0,0,0.05)]
+
+
+              dark:shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.2),inset_0px_-6px_0px_-3px_rgba(0,0,0,0.5),0px_5px_0px_0px_rgba(0,0,0,0.1),0px_0px_0px_2px_rgba(255,255,255,0.05)]
+              group
+            "
+        >
+          <Github className="h-4 w-4" />
+          <span className="text-heading-text-color text-xs opacity-90 group-hover:opacity-100 transition-opacity">
+            github
+          </span>
+          <span
+            className="
+                ml-1 px-1.5 py-0.5
+                text-normral-text-color text-xs font-mono
+                border border-[rgba(255,255,255,0.12)]
+                rounded
+                bg-[rgba(0,0,0,0.2)]
+                group-hover:border-[rgba(255,255,255,0.18)]
+                group-hover:bg-[rgba(0,0,0,0.15)]
+                transition-all
+
+                hidden md:block
+              "
+          >
+            G
+          </span>
+        </Link>
+        <Link
+          href={"#"}
+          className="
+              px-2 py-1
+              rounded-md
+              bg-background
+              border-none outline-none cursor-pointer
+              flex items-center justify-center gap-2
+              transition-all duration-300 ease-in-out
+              shadow-[0px_-2px_0px_0px_rgba(0,0,0,0.2),inset_0px_-6px_0px_-3px_rgba(255,255,255,0.5),0px_5px_0px_0px_rgba(255,255,255,0.1),0px_0px_0px_2px_rgba(0,0,0,0.05)]
+              dark:shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.2),inset_0px_-6px_0px_-3px_rgba(0,0,0,0.5),0px_5px_0px_0px_rgba(0,0,0,0.1),0px_0px_0px_2px_rgba(255,255,255,0.05)]
+
+              group
+            "
+        >
+          <Resume className="h-4 w-4" />
+
+          {/* Text */}
+          <span className="text-heading-text-color text-xs opacity-90 group-hover:opacity-100 transition-opacity">
+            resume
+          </span>
+          <span
+            className="
+                ml-1 px-1.5 py-0.5
+                text-normral-text-color text-xs font-mono
+                border border-[rgba(255,255,255,0.12)]
+                rounded
+                bg-[rgba(0,0,0,0.2)]
+                group-hover:border-[rgba(255,255,255,0.18)]
+                group-hover:bg-[rgba(0,0,0,0.15)]
+                transition-all
+                hidden md:block
+              "
+          >
+            R
+          </span>
+        </Link>
+        <Link
+          href={"#"}
+          className="
+              px-1.5 py-1
+              rounded-md
+              bg-background
+              border-none outline-none cursor-pointer
+              flex items-center justify-center gap-2
+              transition-all duration-300 ease-in-out
+              shadow-[0px_-2px_0px_0px_rgba(0,0,0,0.2),inset_0px_-6px_0px_-3px_rgba(255,255,255,0.5),0px_5px_0px_0px_rgba(255,255,255,0.1),0px_0px_0px_2px_rgba(0,0,0,0.05)]
+              dark:shadow-[0px_-2px_0px_0px_rgba(255,255,255,0.2),inset_0px_-6px_0px_-3px_rgba(0,0,0,0.5),0px_5px_0px_0px_rgba(0,0,0,0.1),0px_0px_0px_2px_rgba(255,255,255,0.05)]
+              group
+            "
+        >
+          <Dm className="h-4 w-4" />
+
+          {/* Text */}
+          <span className="text-heading-text-color text-xs opacity-90 group-hover:opacity-100 transition-opacity">
+            twitter dm
+          </span>
+          <span
+            className="
+                ml-1 px-1.5 py-0.5
+                text-normral-text-color text-xs font-mono
+                border border-[rgba(255,255,255,0.12)]
+                rounded
+                bg-[rgba(0,0,0,0.2)]
+                group-hover:border-[rgba(255,255,255,0.18)]
+                group-hover:bg-[rgba(0,0,0,0.15)]
+                transition-all
+                hidden md:block
+              "
+          >
+            D
+          </span>
+        </Link>
+      </div>
+
       <div className="mt-8 flex justify-between items-center flex-row w-full">
         <h2 className="font-semibold text-base  text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row justify-start items-center gap-2">
           <Work className="h-4 w-4 inline-block text-primary" /> My works
