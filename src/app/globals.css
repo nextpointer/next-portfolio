@@ -13,6 +13,17 @@ body {
     scrollbar-width: none;
 }
 
+::selection {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+/* For Firefox */
+::-moz-selection {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
 /* for scrollbar */
 /* For WebKit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
