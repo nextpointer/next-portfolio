@@ -129,12 +129,13 @@ export default function Home() {
           className="border px-2 py-[2px] text-heading-text-color font-medium dark:font-light currentProject relative overflow-hidden rounded-xs isolate inline-block align-middle"
         >
           <span className="relative z-10 flex flex-row gap-1 justify-center items-center">
-            Postori <Email className="h-4 w-4 " />
+            &gt;_&lt;
           </span>
         </Link>{" "}
-        - a little{" "}
-        <span className="text-heading-text-color font-medium">Open source</span>{" "}
-        webmail client.
+        - Someting bigger is{" "}
+        <span className="text-heading-text-color font-medium">
+          coming soon.
+        </span>
       </p>
 
       <h2 className="mt-6 font-semibold text-base text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row justify-start items-center gap-2">
@@ -166,21 +167,73 @@ export default function Home() {
       <h2 className="mt-6 mb-4 font-semibold text-base  text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row gap-2 justify-center items-center">
         <Done className="h-4 w-4 inline-block" /> Experience
       </h2>
-      <div className="w-full flex justify-between items-center relative p-2 group border border-transparent hover:border">
+      <div className="w-full flex-col justify-center items-center relative p-2 group border border-transparent hover:border">
         <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all"></span>
         <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all"></span>
         <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all"></span>
         <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all"></span>
-        <span className="text-md flex flex-col md:flex-row md:gap-6 justify-center items-start gap-2">
-          Math Coders
-          <span className="font-light italic bg-muted py-1 px-2 rounded-md text-xs ">
-            Developer
+        <div className="flex justify-between items-center">
+          <span className="text-md flex flex-col md:flex-row md:gap-3 justify-center items-start gap-2">
+            <span className="flex flex-col justify-center items-start gap-1 ">
+              Unified Mentor
+              <span className="font-light text-[10px] underline decoration-1 underline-offset-2 decoration-primary">
+                Fullstack Developer
+              </span>
+            </span>
+
+            <span className="font-light italic bg-muted py-1 px-2 rounded-md text-xs ">
+              intern
+            </span>
           </span>
-        </span>
-        <span className="font-light text-sm max-w-[50%] md:max-w-full">
-          Jun 2024 - Aug 2024
-        </span>
+          <span className="font-light text-xs max-w-[50%] md:max-w-full">
+            Jan 2025 - June 2025
+          </span>
+        </div>
+        <ul className="list-disc pl-4 pt-4 text-[10px] flex flex-col gap-2">
+          <li>
+            Optimized development by creating clean, responsive UIs and fully
+            functional components using modern technologies.
+          </li>
+          <li className="">
+            Improved website performance and user experience through efficient
+            backend integration and streamlined deployments.
+          </li>
+        </ul>
       </div>
+      <div className="w-full flex-col justify-center items-center relative p-2 group border border-transparent hover:border mt-2">
+        <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all"></span>
+        <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all"></span>
+        <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all"></span>
+        <span className="absolute -bottom-1 -right-1 w-1 h-1 border-b border-r border-border group-hover:border-primary group-hover:bottom-0 group-hover:right-0 transition-all"></span>
+        <div className="flex justify-between items-center">
+          <span className="text-md flex flex-col md:flex-row md:gap-1 justify-center items-start gap-2">
+            <span className="flex flex-col justify-center items-start gap-1 ">
+              Math Coders
+              <span className="font-light text-[10px] underline decoration-1 underline-offset-2 decoration-primary">
+                Fullstack Developer
+              </span>
+            </span>
+
+            <span className="font-light italic bg-muted py-1 px-2 rounded-md text-xs ">
+              intern
+            </span>
+          </span>
+          <span className="font-light text-xs max-w-[50%] md:max-w-full">
+            Jun 2024 - Aug 2024
+          </span>
+        </div>
+        <ul className="list-disc pl-4 pt-4 text-[10px] flex flex-col gap-2">
+          <li>
+            Developed a scalable educational platform using Next.js and Tailwind
+            CSS, driving a 40% increase in user interactions.
+          </li>
+          <li className="">
+            Automated administrative workflows via Sanity CMS, reducing data
+            processing time by 20% and eliminating manual errors.
+          </li>
+        </ul>
+      </div>
+
       <div className="flex flex-col w-full items-center mt-4">
         <h2 className="mt-8 font-bold text-2xl md:text-3xl text-heading-text-color text-center w-full">
           Let&apos;s work together
@@ -263,7 +316,7 @@ export default function Home() {
             </>
           ) : (
             <>
-              000 <span className="text-xs">visits so far</span>
+              999 <span className="text-xs">visits so far</span>
             </>
           )}
         </p>
