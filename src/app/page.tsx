@@ -123,7 +123,7 @@ export default function Home() {
       <p className="mt-4 text-sm leading-relaxed">
         Now building{" "}
         <Link
-          href={"https://github.com/nextpointer/postori"}
+          href={"https://github.com/nextpointer"}
           target="_blank"
           rel="noopener noreferrer"
           className="border px-2 py-[2px] text-heading-text-color font-medium dark:font-light currentProject relative overflow-hidden rounded-xs isolate inline-block align-middle"
