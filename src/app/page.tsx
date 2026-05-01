@@ -19,6 +19,8 @@ import { Github } from "@/components/icons/Github";
 import { Resume } from "@/components/icons/Resume";
 import { Dm } from "@/components/icons/Dm";
 import QuickButtons from "@/components/QuickButtons";
+import { Ship } from "@/components/Ship";
+import { Experience } from "@/components/Experience";
 
 export default function Home() {
   // to store the counts temply
@@ -151,7 +153,7 @@ export default function Home() {
         <h2 className="font-semibold text-base  text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row justify-start items-center gap-2">
           <Work className="h-4 w-4 inline-block text-primary" /> My works
         </h2>
-        <Link
+        {/*<Link
           className=" flex flex-row items-center text-sm text-normal-text-color gap-1 underline underline-offset-2 decoration-primary"
           href="https://nextpointer.notion.site/1886b3ab41598025aad0da5600f50062?v=1886b3ab41598088b63a000ce32bf7dc"
           target="_blank"
@@ -160,14 +162,16 @@ export default function Home() {
         >
           more
           <ArrowRight className="h-3 w-3" aria-hidden="true" />
-        </Link>
+        </Link>*/}
       </div>
-      <Projects />
+      {/*shipping projects*/}
+      <Ship />
 
       <h2 className="mt-6 mb-4 font-semibold text-base  text-subheading-text-color/90 dark:text-subheading-text-color flex flex-row gap-2 justify-center items-center">
         <Done className="h-4 w-4 inline-block" /> Experience
       </h2>
-      <div className="w-full flex-col justify-center items-center relative p-2 group border border-transparent hover:border">
+      <Experience />
+      {/*<div className="w-full flex-col justify-center items-center relative p-2 group border border-transparent hover:border">
         <span className="absolute -top-1 -left-1 w-1 h-1 border-t border-l border-border group-hover:border-primary group-hover:top-0 group-hover:left-0 transition-all"></span>
         <span className="absolute -top-1 -right-1 w-1 h-1 border-t border-r border-border group-hover:border-primary group-hover:top-0 group-hover:right-0 transition-all"></span>
         <span className="absolute -bottom-1 -left-1 w-1 h-1 border-b border-l border-border group-hover:border-primary group-hover:bottom-0 group-hover:left-0 transition-all"></span>
@@ -232,7 +236,7 @@ export default function Home() {
             processing time by 20% and eliminating manual errors.
           </li>
         </ul>
-      </div>
+      </div>*/}
 
       <div className="flex flex-col w-full items-center mt-4">
         <h2 className="mt-8 font-bold text-2xl md:text-3xl text-heading-text-color text-center w-full">

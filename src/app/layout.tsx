@@ -161,13 +161,13 @@ export default function RootLayout({
                       </h2>
                     </div>
                   </TransitionLink>
-                  <TransitionLink href="/snippet" ariaLabel="Snippet">
+                  {/*<TransitionLink href="/snippet" ariaLabel="Snippet">
                     <div className="relative">
                       <h2 className="text-[12px] md:text-[14px] px-2 py-1 hover:underline hover:underline-offset-2 hover:decoration-primary">
                         Snippet
                       </h2>
                     </div>
-                  </TransitionLink>
+                  </TransitionLink>*/}
                   <TransitionLink href="/playground" ariaLabel="Playground">
                     <div className="relative">
                       <h2 className="text-[12px] md:text-[14px] px-2 py-1 hover:underline hover:underline-offset-2 hover:decoration-primary">
