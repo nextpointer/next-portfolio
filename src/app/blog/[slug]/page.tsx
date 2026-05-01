@@ -7,9 +7,13 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { metadata, content } = getPostBySlug(params.slug);
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
+
+  if (!slug) return null;
+  const { metadata, content } = getPostBySlug(slug);
 
   return (
     <>

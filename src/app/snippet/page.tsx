@@ -2,7 +2,7 @@ import { getAllSnippet } from "../lib/markdown";
 import TransitionLink from "@/components/TransitionLink";
 import { ReactBW } from "../../components/icons/ReactBW";
 
-const snippetIcons: Record<string, JSX.Element> = {
+const snippetIcons: Record<string, React.JSX.Element> = {
   React: <ReactBW className="h-5 w-5" />,
 };
 

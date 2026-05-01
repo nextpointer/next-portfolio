@@ -12,8 +12,13 @@ const options = {
   theme: "one-dark-pro",
 };
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { content, metadata } = await getSnippetBySlug(params.slug);
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = (await params).slug;
+  const { content, metadata } = await getSnippetBySlug(resolvedParams);
   // Merge MDX components with your custom Pre component
   const mdxComponents = useMDXComponents({});
 

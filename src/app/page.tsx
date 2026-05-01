@@ -1,23 +1,17 @@
 "use client";
 
-import Projects from "@/components/Projects";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Arrow from "@/components/icons/Arrow";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "@/components/ModeToggle";
 import { GithubLoopIcon } from "@/components/icons/movingGithub";
-import { Email } from "@/components/icons/Email";
 import { Me } from "@/components/icons/Me";
 import { Design } from "@/components/icons/Design";
 import { Debug } from "@/components/icons/Debug";
 import { Doing } from "@/components/icons/Doing";
 import { Work } from "@/components/icons/Work";
 import { Done } from "@/components/icons/Done";
-import { Github } from "@/components/icons/Github";
-import { Resume } from "@/components/icons/Resume";
-import { Dm } from "@/components/icons/Dm";
 import QuickButtons from "@/components/QuickButtons";
 import { Ship } from "@/components/Ship";
 import { Experience } from "@/components/Experience";
@@ -109,7 +103,7 @@ export default function Home() {
           Full-stack dev?
         </span>{" "}
         Yuppp!! But what&apos;s the real gig? It&apos;s not just about writing
-        code -- it&apos;s about building things that solve real problems.
+        code; it&apos;s about building things that solve real problems.
         <span className="block md:inline-block mt-2 md:m-0 p-0">
           You&apos;ll find me just as deep in{" "}
           <span className="text-heading-text-color font-medium inline-block ">
