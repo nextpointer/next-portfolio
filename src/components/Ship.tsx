@@ -81,7 +81,7 @@ export function Ship() {
                 key={index}
                 href={liveLink}
                 target="_blank"
-                className="flex w-full flex-row items-center gap-3 py-2 text-left focus:outline-none group"
+                className="flex w-full flex-row items-center gap-2 py-2 text-left focus:outline-none group"
               >
                 <div className="w-20 shrink-0 hidden sm:block">
                   {showStatus && (
@@ -91,9 +91,7 @@ export function Ship() {
                   )}
                 </div>
 
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-xs border border-foreground/10 bg-muted/50 group-hover:bg-muted transition-colors">
-                  <AppIcon className="size-4 text-foreground/70" />
-                </div>
+                <AppIcon className="size-5 text-foreground/70" />
 
                 <span className="shrink-0 w-30 text-xs font-medium text-foreground ml-3 truncate">
                   {title}

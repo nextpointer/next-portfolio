@@ -25,7 +25,7 @@ const EXPERIENCE: ExperienceType[] = [
 
 export function Experience() {
   return (
-    <div className="flex w-full flex-row ">
+    <div className="flex w-full flex-col">
       <SharedLayoutBackground>
         {EXPERIENCE.map(({ company, role, year }, index) => {
           return (
@@ -37,7 +37,7 @@ export function Experience() {
                 {company}
               </span>
 
-              <span className="shrink-0 w-64 text-xs font-medium text-foreground mr-auto truncate ">
+              <span className="shrink-0 w-24 text-xs font-medium text-foreground mr-auto truncate ">
                 <span className="bg-foreground/10 p-2 rounded-xs text-subheading-text-color">
                   {role}
                 </span>
