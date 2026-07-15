@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import type { Viewport } from "next";
 import "./globals.css";
-import localFont from "next/font/local";
 import {
   Plus_Jakarta_Sans,
   Figtree,
   Inter,
   Space_Mono,
+  Geist_Mono
 } from "next/font/google";
 import {
   SEO_KEYWORDS,
@@ -86,8 +86,8 @@ export const metadata: Metadata = {
 };
 
 // Configure Fonts
-const GeistMono = localFont({
-  src: "./Fonts/GeistMonoVF.woff",
+const GeistMono = Geist_Mono({
+  subsets: ["latin"],
   display: "swap",
   variable: "--font-geist-mono",
 });
