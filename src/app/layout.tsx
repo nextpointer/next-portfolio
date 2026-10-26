@@ -24,7 +24,7 @@ import {
 import TransitionLink from "@/components/TransitionLink";
 import { ThemeProvider } from "@/components/theme-provider";
 import ClientWrapper from "@/components/ClientWrapper";
-import DynamicTitle from "@/components/useDynamicTitle";
+import DynamicTitle from "@/components/DynamicTitle";
 import Image from "next/image";
 import { Footer } from "@/components/Footer";
 
