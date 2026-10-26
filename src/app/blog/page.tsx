@@ -1,5 +1,5 @@
 import { Lock } from "lucide-react";
-import { getAllPosts } from "../lib/markdown";
+import { getAllPosts } from "@/lib/markdown";
 import TransitionLink from "@/components/TransitionLink";
 
 export default function ListBlogs() {

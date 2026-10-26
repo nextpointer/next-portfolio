@@ -1,4 +1,4 @@
-import { getAllSnippet } from "../lib/markdown";
+import { getAllSnippet } from "@/lib/markdown";
 import TransitionLink from "@/components/TransitionLink";
 import { ReactBW } from "../../components/icons/ReactBW";
 
