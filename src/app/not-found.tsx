@@ -1,6 +1,6 @@
 import TransitionLink from "@/components/TransitionLink";
 import { ArrowUpRight } from "lucide-react";
-import { NotFoundIcon } from "@/components/icons/not-found";
+import { NotFoundIcon } from "@/components/icons/NotFoundIcon";
 
 export default function NotFound() {
   return (
