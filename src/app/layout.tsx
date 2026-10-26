@@ -20,7 +20,7 @@ import {
   TWITTER_CREATOR,
   TWITTER_DESCRIPTION,
   TWITTER_TITLE,
-} from "./lib/content";
+} from "@/lib/content";
 import TransitionLink from "@/components/TransitionLink";
 import { ThemeProvider } from "@/components/theme-provider";
 import ClientWrapper from "@/components/ClientWrapper";

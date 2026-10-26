@@ -1,4 +1,4 @@
-import { getSnippetBySlug, getAllSnippet } from "@/app/lib/markdown";
+import { getSnippetBySlug, getAllSnippet } from "@/lib/markdown";
 import { useMDXComponents } from "@/components/MDXComponents";
 import Pre from "@/components/Pre";
 import { MDXRemote } from "next-mdx-remote/rsc";

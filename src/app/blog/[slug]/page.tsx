@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug } from "@/app/lib/markdown";
+import { getAllPosts, getPostBySlug } from "@/lib/markdown";
 import { useMDXComponents } from "@/components/MDXComponents";
 import TransitionLink from "@/components/TransitionLink";
 import { ArrowLeft } from "lucide-react";
