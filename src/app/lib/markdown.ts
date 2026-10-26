@@ -19,21 +19,9 @@ type SnippetData = {
   icon: string;
 };
 
-const BlogPostDir = path.join(
-  process.cwd(),
-  "src",
-  "app",
-  "BlogContent",
-  "blogs",
-);
+const BlogPostDir = path.join(process.cwd(), "src", "content", "blogs");
 
-const SnippetDir = path.join(
-  process.cwd(),
-  "src",
-  "app",
-  "SnippetContent",
-  "snippets",
-);
+const SnippetDir = path.join(process.cwd(), "src", "content", "snippets");
 
 export function getAllPosts(): PostData[] {
   const files = fs.readdirSync(BlogPostDir);
