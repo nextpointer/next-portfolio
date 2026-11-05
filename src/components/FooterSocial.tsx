@@ -19,7 +19,7 @@ export function FooterSocial() {
             <GithubLoopIcon />
           </Link>
           <Link
-            href="https://x.com/nextpointerX"
+            href="https://x.com/nextpointer_"
             aria-label="X profile"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export function FooterSocial() {
             </svg>
           </Link>
           <Link
-            href="https://www.linkedin.com/in/surajitmaity3112/"
+            href="https://www.linkedin.com/in/nextpointer/"
             aria-label="LinkedIn profile"
             target="_blank"
             rel="noopener noreferrer"
