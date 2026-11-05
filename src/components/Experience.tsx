@@ -12,13 +12,18 @@ interface ExperienceType {
 
 const EXPERIENCE: ExperienceType[] = [
   {
+    company: "Sentinel Mangement",
+    role: "Frontend Developer",
+    year: "2026",
+  },
+  {
     company: "Unified Mentor",
-    role: "Developer",
+    role: "Fullstack Developer",
     year: "2025",
   },
   {
     company: "Math Coders",
-    role: "Developer",
+    role: "Fullstack Developer",
     year: "2024",
   },
 ];
@@ -33,12 +38,12 @@ export function Experience() {
               key={index}
               className="flex w-full flex-row items-center gap-3 py-2 text-left focus:outline-none group"
             >
-              <span className="text-xs font-medium text-heading-text-color w-32 shrink-0">
+              <span className="text-xs font-medium text-heading-text-color w-40 shrink-0">
                 {company}
               </span>
 
-              <span className="shrink-0 w-24 text-xs font-medium text-foreground mr-auto truncate ">
-                <span className="bg-foreground/10 p-2 rounded-xs text-subheading-text-color">
+              <span className="shrink-0 w-40 text-xs font-medium text-foreground mr-auto truncate ">
+                <span className="text-normral-text-color/70">
                   {role}
                 </span>
               </span>
