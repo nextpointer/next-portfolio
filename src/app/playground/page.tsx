@@ -15,7 +15,7 @@ const Links: Link[] = [
   },{
     title: "Wordle",
     description: "Multiplayer wordle game",
-    link:"https://dock.nextpointer.dev"
+    link:"https://wordle.nextpointer.dev"
   },
   {
     title: "Morphhy",
