@@ -29,11 +29,15 @@ import Image from "next/image";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(DOMAIN),
   title: {
     default: "Surajit Maity [nextpointer]",
     template: `%s | Surajit Maity [nextpointer]`,
   },
   description: OG_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
   keywords: SEO_KEYWORDS,
   authors: [{ name: AUTHOR }],
   creator: CREATOR,
