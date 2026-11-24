@@ -8,7 +8,7 @@ import { Quiz } from "./icons/Quiz";
 import { Time } from "./icons/Time";
 import { Financial } from "./icons/Financial";
 import { Note } from "./icons/Note";
-import { Maths } from "./icons/Math";
+import { Dock } from "./icons/Dock";
 
 type IconFC = React.FC<React.SVGProps<SVGSVGElement>>;
 
@@ -55,11 +55,11 @@ const PROJECTS: Project[] = [
     status: "Shipped",
   },
   {
-    title: "Mr. Calculator",
-    description: "A large number calculator",
-    href: "https://github.com/nextpointer/Mr.-Calculator",
-    liveLink: "https://mr-calculator.deno.dev/",
-    appIcon: Maths,
+    title: "Dock",
+    description: "Animated dock playground",
+    href: "https://dock.nextpointer.dev",
+    liveLink: "https://dock.nextpointer.dev",
+    appIcon: Dock,
     status: "Shipped",
   },
 ];

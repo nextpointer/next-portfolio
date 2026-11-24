@@ -31,7 +31,7 @@ import { Time } from "./icons/Time";
 import { Financial } from "./icons/Financial";
 import { Note } from "./icons/Note";
 import { Mood } from "./icons/Mood";
-import { Maths } from "./icons/Math";
+import { Dock } from "./icons/Dock";
 
 interface Project {
   title: string;
@@ -75,7 +75,7 @@ const techIcons: TechIcons = {
   Financial: Financial,
   Note: Note,
   Mood: Mood,
-  Maths: Maths,
+  Dock: Dock,
 };
 
 const projects: Project[] = [
@@ -133,13 +133,13 @@ const projects: Project[] = [
     icon: "Mood",
   },
   {
-    title: "mr. calculator",
-    date: "2022",
-    about: "A large number calculator ",
-    url: "https://github.com/nextpointer/Mr.-Calculator",
-    techStack: ["Fresh", "Deno"],
-    liveLink: "https://mr-calculator.deno.dev/",
-    icon: "Math",
+    title: "dock",
+    date: "2026",
+    about: "Animated dock playground",
+    url: "https://dock.nextpointer.dev",
+    techStack: ["Next", "Motion"],
+    liveLink: "https://dock.nextpointer.dev",
+    icon: "Dock",
   },
 ];
 

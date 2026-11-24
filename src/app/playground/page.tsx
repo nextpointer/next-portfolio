@@ -22,11 +22,7 @@ const Links: Link[] = [
     description: "Animated Gradient Blob Generator",
     link:"https://blob.nextpointer.dev"
   },
-  {
-    title: "Dock",
-    description: "Animated Dock Playground",
-    link:"https://dock.nextpointer.dev"
-  }
+
 ]
 
 export default function Page() {
