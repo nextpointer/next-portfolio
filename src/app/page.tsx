@@ -54,7 +54,7 @@ export default function Home() {
         <div className="relative">
           <Link
             className="flex items-center justify-center gap-2 border px-2 sm:px-4 py-2 rounded-xs"
-            href={"mailto:maitysurajit0901@gmail.com"}
+            href={"mailto:hello@nextpointer.dev"}
             aria-label="Available for hire"
             target="_blank"
             rel="noopener noreferrer"
@@ -221,7 +221,7 @@ export default function Home() {
           ))}
         </span>
         <Link
-          href="mailto:maitysurajit0901@gmail.com?subject=Hello"
+          href="mailto:hello@nextpointer.dev?subject=Hello"
           className="mb-8"
           target="_blank"
           rel="noopener noreferrer"

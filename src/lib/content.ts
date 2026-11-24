@@ -41,7 +41,7 @@ export const SEO_KEYWORDS = [
 export const AUTHOR = "Surajit Maity";
 export const CREATOR = "Surajit Maity";
 export const SITE_NAME = "Surajit Maity Portfolio";
-export const DOMAIN = "https://nextpointer.vercel.app/";
+export const DOMAIN = "https://nextpointer.dev";
 export const OG_IMAGE = `${DOMAIN}/nextpointer.png`;
 
 // 📣 Open Graph

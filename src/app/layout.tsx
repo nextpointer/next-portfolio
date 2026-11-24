@@ -128,6 +128,22 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Surajit Maity",
+              url: "https://nextpointer.dev",
+              sameAs: [
+                "https://github.com/nextpointer",
+                "https://x.com/nextpointer_",
+                "https://www.linkedin.com/in/nextpointer/",
+              ],
+            }),
+          }}
+        />
         <ClientWrapper>
           <DynamicTitle />
         </ClientWrapper>
