@@ -26,15 +26,16 @@ export function VisitCounter() {
   return (
     <>
       {/*visit counter*/}
-      <p className="text-md">
+      <p className="text-xs sm:text-base">
         {visits !== null ? (
           <>
-            <span className="text-heading-text-color ">{visits}</span>{" "}
-            <span className="text-xs">visits so far</span>
+            <span className="text-heading-text-color">{visits}</span>{" "}
+            <span className="text-[10px] sm:text-xs">visits so far</span>
           </>
         ) : (
           <>
-            999 <span className="text-xs">visits so far</span>
+            <span className="text-heading-text-color">999</span>{" "}
+            <span className="text-[10px] sm:text-xs">visits so far</span>
           </>
         )}
       </p>
